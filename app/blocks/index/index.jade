@@ -1,5 +1,12 @@
 include ../content/content
 include ../container/container
+include ../history/history
+include ../how-works/how-works
+include ../projects/projects
+include ../support/support
+include ../banner/banner
+
+
 include ../subtitle/subtitle
 include ../heading/heading
 include ../list/list
@@ -10,35 +17,9 @@ include ../tree/tree
 
 mixin index()
 	+b.index
-		+content()
-			.index__group
-				+subtitle()
-					| ЧТО В КОРОБКЕ
+		+history
+		+how-works
+		+projects
+		+support
+		+banner
 
-			+heading()
-				| Инструменты
-
-			.index__group
-				+list(getData('tools'))
-
-			.index__group
-				+subtitle()
-					| СТРУКТУРА ФАЙЛОВ
-
-			+container()
-				+col()
-					+heading()
-						| Исходники
-					+tree(getData('source-tree'))
-
-				+col()
-					.index__arrow
-						+arrow()
-							| Сборка
-
-				+col()
-					+heading()
-						| Готовые файлы
-					+tree(getData('build-tree'))
-
-			+fork()

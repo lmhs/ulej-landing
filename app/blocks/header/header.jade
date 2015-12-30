@@ -1,15 +1,40 @@
 include ../logo/logo
 include ../dark/dark
 include ../title/title
+include ../like/like
 include ../description/description
+include ../sticker-link/sticker-link
 
 mixin header()
 	+b.header&attributes(attributes)
-		+logo
+		+e.inner
+			+logo
+			+box()
+				+like
+				+e('h1').heading Улей — краудфандинговая площадка
+					small Самый легкий способ привлечения финансирования вашего проекта.
+				+sticker-link().header__sticker-link
+			+b.help-block
+				+e.text Звоните нам!
+				+e('a')(href='tel:+375291323123') +375 (29) 132-31-23
+				+e.text
+					| Вы также можете !{''}
+					a(href=jv0) заказать звонок
+					|  от нашего консультанта.
+			+e.honeycombs
+			+e.subheader
+				+e('h2').subheading
+					| За пол года активной работы Улья
+					| успешно профинансировано !{''}
+					strong 24 проекта
+					|  на сумму !{''}
+					strong 550 000 000
+					|  рублей.
+			+b.half-subsection
+				+e.strong 1 480
+				+e.description Умных инвесторов
+			+b.half-subsection
+				+e.strong 50%
+				+e.description Успешных проектов
 
-		+e.title
-			+dark
-				+title
-		+e.description
-			+description
-				| Шаблон проекта для быстрого старта
+

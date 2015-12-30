@@ -1,0 +1,29 @@
+
+include ../container/container
+include ../col/col
+
+mixin how-works()
+	+b('section').how-works
+		+content()
+			+container()
+				+col()
+					+b.how-item
+
+						+e('h3').heading
+							| Проект
+						+e('p').caption
+							| Sit voluptatem accusantium laudantium, rem aperiam, eaque ipsa  inventore veritatis et.
+
+					+b.how-item
+
+						+e('h3').heading
+							| Размещение в улье
+						+e('p').caption
+							| Sit voluptatem accusantium laudantium, rem aperiam, eaque ipsa  inventore veritatis et.
+
+					+b.how-item
+
+						+e('h3').heading
+							| Сбор средств
+						+e('p').caption
+							| Sit voluptatem accusantium laudantium, rem aperiam, eaque ipsa  inventore veritatis et.

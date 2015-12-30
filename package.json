@@ -40,6 +40,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^6.2.3",
     "autoprefixer-stylus": "^0.8.0",
     "babel": "^5.8.34",
     "babel-core": "^5.8.34",
@@ -47,6 +48,7 @@
     "babel-loader": "^5.4.0",
     "bemto.jade": "^0.2.2",
     "browser-sync": "^2.10.0",
+    "cssgrace": "^3.0.0",
     "debuga": "^1.0.2",
     "eslint": "^1.9.0",
     "eslint-loader": "^1.1.1",
@@ -65,6 +67,7 @@
     "gulp-minify-css": "^1.2.1",
     "gulp-plumber": "^1.0.1",
     "gulp-plumber-error-handler": "^1.0.0",
+    "gulp-postcss": "^6.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.1.0",
     "gulp-svg-symbols": "^1.0.0",
@@ -76,14 +79,27 @@
     "jquery": "^2.1.4",
     "merge-stream": "^1.0.0",
     "node-notifier": "^4.3.1",
+    "postcss-color-rgba-fallback": "^2.1.0",
+    "postcss-cssnext": "^2.3.0",
+    "postcss-font-weights": "^2.0.1",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
     "rupture": "^0.6.1",
+    "slick-carousel": "^1.5.9",
     "source-map-loader": "^0.1.5",
     "spritesheet-templates": "^10.0.0",
     "stylus-svg-size-template": "^1.0.0",
     "svg4everybody": "^2.0.0",
     "webpack": "^1.12.9",
     "webpack-stream": "^2.3.0"
+  },
+  "browsers": {
+    "android": 4,
+    "chrome": 15,
+    "firefox": 15,
+    "ie": 9,
+    "ios": 7,
+    "opera": 12,
+    "safari": 5
   }
 }

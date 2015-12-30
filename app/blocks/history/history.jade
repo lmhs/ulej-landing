@@ -1,0 +1,32 @@
+mixin history()
+	+b('section').history
+		+content()
+			+e('h1').heading Истории !{''}
+				strong успеха
+			+e.stories-cards
+				+story-card().story-card--is-active
+				+story-card()
+				+story-card()
+			+e.stories-text
+				+story()
+				+story()
+				+story()
+
+
+mixin story-card()
+	+b('section').story-card&attributes(attributes)
+		+e.head
+			+e('h3').title Картина на стене
+				small 278 Спонсоров
+		+e.body
+			+e.img-wrap
+				+e('img')(src="http://dummyimage.com/290x290/4d494d/686a82.gif&text=Картина на стене", width='290', height='290', alt="Картина на стене").img
+			+e('strong').price 431 300 300 руб.
+		+e.foot
+			+e.author-img-wrap
+				+e('img')(src="http://dummyimage.com/290x290/4d494d/686a82.gif&text=Картина на стене", width='290', height='290', alt="Картина на стене").author-img
+			+e.author-name Митя Писляк
+
+mixin story()
+	+b('section').story&attributes(attributes)
+		+e.text Проект «Картина на стене» завершился успешно: его поддержали 108 человек. Кроме того, во время кампании у меня появился крупный спонсор (ОАО «Приорбанк»), который выразил желание также поддерживать мои будущие проекты. Чему я несказанно рад, ведь они обязательно будут :).

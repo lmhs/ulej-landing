@@ -1,0 +1,40 @@
+.sticker-link
+	width 190px
+	height 206px
+	display block
+	text-align center
+	text-decoration none
+
+	&:before
+		display inline-block
+
+		height 100%
+
+		content ''
+		vertical-align middle
+
+
+	retinaSprite $section_green_group
+
+	&__heading
+		font-size 22px
+		color #FFF
+		line-height 24px
+		font-family robotoCond
+		display inline-block
+		vertical-align middle
+		small
+			font-family openSans
+			color #E5FFF6
+			font-size 14px
+			display block
+			margin-top 8px
+
+
+.header__sticker-link
+	position absolute
+	right 215px
+	top 416px
+
+	+below(1024px)
+		right 127px

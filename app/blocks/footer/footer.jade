@@ -2,8 +2,22 @@ include ../felixexter/felixexter
 
 mixin footer()
 	+b.footer&attributes(attributes)
-		+e.copyright
-			+e('a').link(href='https://github.com/felixexter' title="Felix Exter")
-				+felixexter
-			+e('a').link(href='http://csssr.ru')
-				+icon('csssr').footer__logo
+		+box()
+			+container()
+				+col()
+					+b('a')(href='http://ulej.by').link Ulej.by
+					+b('span').divider  /  !{''}
+					+b.caption ООО “Хайв Проджект” 220121, г.Минск
+						br
+						| ул. Ефросиньи Полоцкой 3, оф. 53
+					+b('a')(href=jv0).link Пользовательское соглашение
+				+col()
+					+b('a')(href='tel:+375172547045') +375 (17) 254 70 45
+					| ,
+					+b('a')(href='tel:+375291323123') +375 (29) 132 31 23
+				+col()
+					+e.social
+				+col()
+					+e.partner
+							+icon('belgazprombank')
+						+e.partner-text Официальный партнер
