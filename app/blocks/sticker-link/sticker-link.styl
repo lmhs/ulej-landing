@@ -16,6 +16,10 @@
 
 	retinaSprite $section_green_group
 
+	+mobile()
+		retinaSprite $section_green_mobile_group
+
+
 	&__heading
 		font-size 22px
 		color #FFF
@@ -23,6 +27,8 @@
 		font-family robotoCond
 		display inline-block
 		vertical-align middle
+		+mobile()
+			display none
 		small
 			font-family openSans
 			color #E5FFF6
