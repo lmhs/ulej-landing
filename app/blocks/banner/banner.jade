@@ -1,8 +1,8 @@
 mixin banner()
 	+b('section').banner
-		+e('a')(href='http://ulej.by')
+		+e('a')(href='http://ulej.by').link-main
 		+e.text
-			+e.link
+			+e('span').link
 				| www.
 				+e('span').underline Ulej.by
 			|  — заходите к нам на кофе ;)

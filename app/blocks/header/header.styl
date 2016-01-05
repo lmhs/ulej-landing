@@ -1,11 +1,21 @@
 .header
 	&__inner
-		background url(../images/header-background.png) top center no-repeat
-		background-size 1207px 658px
+		// background url(../images/header-background.png) top center no-repeat
+
+		// background-size 1207px 658px
 		position relative
 		max-width 1207px
 		min-height 658px
 		margin-x auto
+
+
+
+	&__bg
+		background url(../images/bg1.jpg) top center no-repeat
+		// background-size 2048px 1365px
+		height 1365px
+
+
 
 	&__heading
 		color #FFF
@@ -22,3 +32,11 @@
 			margin-top 14px
 			font-size 19px
 			color #DDD
+
+.bg1
+	clip-path url(#clipping)
+
+.svg-defs
+	position absolute
+	width 0
+	height 0
