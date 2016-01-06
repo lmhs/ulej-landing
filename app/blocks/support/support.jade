@@ -1,11 +1,53 @@
 mixin support()
-	+b('section').support-write
+	+b('section').support.support-write
 		+box()
 			+content()
-				+e('h2').heading О наших проектах !{''}
-					strong пишут...
+				+e.head
+					+e('h2').heading.heading О наших проектах !{''}
+						strong пишут...
+				+e.body
+					+container()
+						+col()
+							+support-card
+						+col()
+							+support-card
+						+col()
+							+support-card
+
 	+b('section').support
 		+box()
 			+content()
-				+e('h2').heading ... наши проекты !{''}
-					strong поддерживают
+				+e.head
+					+e('h2').heading.heading ... наши проекты !{''}
+						strong поддерживают
+				+e.body
+					+container()
+						+col()
+							+support-card-small
+							+support-card-small
+						+col()
+							+support-card-small
+							+support-card-small
+						+col()
+							+support-card-small
+							+support-card-small
+
+
+mixin support-card()
+	+b('section').support-card
+		+e.head
+			+e.logo
+				+e('img')(src="http://dummyimage.com/180x40/4d494d/686a82.gif&text=placeholder+image",width="180",height="40", alt="placeholder+image").logo-img
+		+e.body
+			+e('p').text.link
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit
+			+e.comment
+				+e('a')(href=jv0).comment-link.link
+					+icon('comment').comment-icon
+					+e.comment-count.js-count
+						| 342
+
+mixin support-card-small()
+	+b('section').support-card-small
+		+e.logo
+			+e('img')(src="http://dummyimage.com/180x40/4d494d/686a82.gif&text=placeholder+image",width="180",height="40", alt="placeholder+image").logo-img
