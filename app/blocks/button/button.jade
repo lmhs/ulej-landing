@@ -1,0 +1,19 @@
+mixin button(args)
+	if args
+		case args.type
+			when 'button'
+				button(type='button').btn&attributes(attributes)
+					block
+			when 'buttonSubmit'
+				button(type='submit').btn&attributes(attributes)
+					block
+			when 'input'
+				input.btn(type='button',value=args.name)&attributes(attributes)
+			when 'submit'
+				input.btn(type='submit',value=args.name)&attributes(attributes)
+			default
+				a.btn(href= jv0, role='button')&attributes(attributes)
+					block
+	else
+		a.btn(href= jv0, role='button')&attributes(attributes)
+			block

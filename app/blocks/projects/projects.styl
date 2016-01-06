@@ -1,0 +1,64 @@
+.projects
+
+	width 1809px
+	height 817px
+
+	position relative
+
+	&__promo
+		position absolute
+		right 0
+		bottom 0
+		width 50%
+		padding-right 180px
+		padding-bottom 160px
+		text-align right
+
+	&__text
+		color #171717
+		font-size 24px
+		line-height 40px
+		font-weight bold
+		margin-bottom 36px
+		text-align right
+
+.mail-icon
+	width 18px
+	height 12px
+	margin-left 6px
+
+
+.tile
+	width 208px
+	height 226px
+
+	display inline-block
+	vertical-align top
+
+	overflow hidden
+
+	&-clip
+		clip-path url(#clipping-tile)
+
+	&-element
+		color #FFF
+		// clip-path url(#clipping-tile)
+		a
+			color #FFF
+		&__fill
+		&__text
+		&__mail
+			display none
+
+		&__text
+			text-anchor middle
+			font-size 20px
+			font-weight bold
+			font-family robotoCond
+
+		&:hover
+			cursor pointer
+			.tile-element__fill
+			.tile-element__text
+			.tile-element__mail
+				display block

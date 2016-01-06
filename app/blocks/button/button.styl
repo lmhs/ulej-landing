@@ -1,0 +1,60 @@
+.btn
+	position relative
+
+	display inline-block
+	overflow visible
+
+
+	transition all 0.2s ease-out
+	text-align center
+
+	margin 0
+	padding 0
+	cursor pointer
+
+	user-select none
+
+	vertical-align middle
+	text-decoration none
+
+	border 0
+	color #ffffff
+
+	font-family robotoCond
+
+	&:focus
+	&:active
+		outline-style none
+
+	&:hover
+		transition all 0s
+		text-decoration none
+
+	&--green
+		background-color #16BB7F
+		font-size 18px
+		line-height 22px
+		padding-top 9px
+		padding-bottom 9px
+		margin-x 14px
+		box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.22)
+		&::before
+			content ''
+			display inline-block
+			position absolute
+			top 0
+			left -14px
+			width 14px
+			height 40px
+			background url('../images/button-honeycomb-left.svg') no-repeat
+		&::after
+			content ''
+			display inline-block
+			position absolute
+			top 0
+			right -14px
+			width 14px
+			height 40px
+			background url('../images/button-honeycomb-right.svg') no-repeat
+
+
