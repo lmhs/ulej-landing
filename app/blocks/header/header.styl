@@ -5,22 +5,43 @@
 		// background-size 1207px 658px
 		position relative
 		max-width 1207px
-		min-height 658px
+		// min-height 860px
 		margin-x auto
 
 
 
 	&__bg
 		background url(../images/bg1.jpg) top center no-repeat
-		// background-size 2048px 1365px
 		height 1365px
+
+	&__bg-clip
+		position relative
+		left 0
+		right 0
+		top 0
+		z-index 0
+		// height 1365px
+		height 860px
+		background 	url(../images/header-background-big.png) 40px top no-repeat,
+							 	url(../images/bg1.jpg) 40px -70px no-repeat
+		background-size 	1162px 860px,
+											1123px 748px
+
+	&__content
+		position relative
+		// padding-top 260px
 
 
 
 	&__heading
 		color #FFF
 		font-family openSans
-		margin-top 258px
+		position absolute
+		left 0
+		right 0
+		top 260px
+
+		// margin-top 258px
 
 		font-weight semibold
 		font-size 40px
@@ -33,6 +54,18 @@
 			font-size 19px
 			color #DDD
 
+	&__subheader
+		position relative
+		text-align center
+
+	&__subheading
+		font-size 42px
+		line-height 48px
+		font-weight regular
+		font-family openSans
+		strong
+			font-weight bold
+
 .bg1
 	clip-path url(#clipping)
 
@@ -40,3 +73,29 @@
 	position absolute
 	width 0
 	height 0
+
+.help-block
+	position absolute
+	top 560px
+	left 68px
+	padding 16px 20px
+	width 280px
+	border-radius 6px
+	background-color #fff
+	border 1px dashed #CCC
+	font-size 14px
+	line-height 20px
+	color #333
+
+	&__phone
+		margin-top 5px
+		margin-bottom 5px
+		display block
+		text-decoration none
+		color #000
+		font-size 18px
+		font-weight semibold
+
+
+.social-link
+	position absolute

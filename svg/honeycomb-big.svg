@@ -1,3 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="206" height="223" preserveAspectRatio="xMidYMid" viewBox="0 0 206 223">
-  <path fill="none" d="M189.822 47.83L118.187 7.582c-8.782-4.934-19.602-4.934-28.382 0L18.17 47.83C9.388 52.762 3.98 61.877 3.98 71.75v80.49c0 9.867 5.408 18.984 14.19 23.92l71.635 40.244c8.78 4.933 19.6 4.933 28.382 0l71.635-40.245c8.78-4.937 14.19-14.054 14.19-23.92V71.75c0-9.872-5.41-18.987-14.19-23.92z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="209px" height="224px" viewBox="0 0 209 224" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>honeycomb-big</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.154 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M189.842,45.9033263 L118.207,5.69669634 C109.425,0.767767887 98.605,0.767767887 89.825,5.69669634 L18.19,45.9033263 C9.408,50.8302568 4,59.9358877 4,69.7987395 L4,150.206006 C4,160.062864 9.408,169.170492 18.19,174.101419 L89.825,214.304053 C98.605,219.231982 109.425,219.231982 118.207,214.304053 L189.842,174.10042 C198.622,169.168494 204.032,160.060866 204.032,150.205007 L204.032,69.7987395 C204.032,59.9368867 198.622,50.8312558 189.842,45.9033263 L189.842,45.9033263 Z" id="Shape" fill="white" filter="url(#filter-1)" sketch:type="MSShapeGroup"></path>
+    </g>
 </svg>

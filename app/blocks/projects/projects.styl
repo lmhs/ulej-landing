@@ -29,8 +29,8 @@
 
 
 .tile
-	width 208px
-	height 226px
+	width 200px
+	height 216px
 
 	display inline-block
 	vertical-align top
@@ -42,7 +42,10 @@
 
 	&-element
 		color #FFF
+		mask url(#masking)
+		// box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.22)
 		// clip-path url(#clipping-tile)
+		// clip-path polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
 		a
 			color #FFF
 		&__fill

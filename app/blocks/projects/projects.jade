@@ -38,10 +38,11 @@ mixin projects()
 
 mixin tile(args)
 	+b.tile(class='tile-'+args.count)
-		svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', preserveaspectratio='xMidYMid', clip-path='url(#clipping-tile)', viewbox='0 0 208 226').tile-element
-			a(xlink:href='https://vk.com/ulejby', target='_blank')
+		//- svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', preserveaspectratio='xMidYMid', clip-path='url(#clipping-tile)', viewbox='0 0 200 216').tile-element
+		svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', preserveaspectratio='xMidYMid',  viewbox='0 0 200 216').tile-element
+			a(xlink:href=jv0, target='_blank')
 				image(width='507', height='507', x='-130', y='-130' xlink:href='./assets/images/tile-baking.jpg')
-				rect(fill='#503012', width='208', height='226' opacity='.7').tile-element__fill
+				rect(fill='#503012', width='200', height='216' opacity='.7').tile-element__fill
 				text(fill='currentColor', x='50%', y='50%', dy='0').tile-element__text
 					| ДЕЛАЙ МЕЧТУ
 				text(fill='currentColor', x='50%', y='50%', dy='1.2em').tile-element__text
