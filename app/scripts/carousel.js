@@ -179,7 +179,7 @@ import $ from 'jquery';
 		asNavFor: '.js-stories-carousel',
 		centerMode: true,
 		centerPadding: '40px',
-  	focusOnSelect: true,
+		focusOnSelect: true,
 		responsive: [
 		{
 			breakpoint: 990,

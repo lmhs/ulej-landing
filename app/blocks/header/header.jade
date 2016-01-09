@@ -12,7 +12,12 @@ mixin header()
 				path(fill='#fff', fill-rule='evenodd', d='M189.842 45.9033263l-71.635-40.20663c-8.782-4.9289284-19.602-4.9289284-28.382 0l-71.635 40.20663C9.408 50.8302568 4 59.9358877 4 69.7987395v80.4072665c0 9.856858 5.408 18.964486 14.19 23.895413l71.635 40.202634c8.78 4.927929 19.6 4.927929 28.382 0l71.635-40.203633c8.78-4.931926 14.19-14.039554 14.19-23.895413V69.7987395c0-9.8618528-5.41-18.9674837-14.19-23.8954132z')
 			//- mask(maskUnits="objectBoundingBox", maskContentUnits="objectBoundingBox")#masking
 				path(d='M1045.6-242.4l-402-227.2a162.3,162.3,0,0,0-159.3,0L82.3-242.4C33-214.5,2.6-163.1,2.6-107.4V346.9c0,55.7,30.4,107.2,79.6,135l402,227.2a162.3,162.3,0,0,0,159.3,0l402-227.2c49.3-27.8,79.6-79.3,79.6-135V-107.4C1125.2-163.1,1094.9-214.5,1045.6-242.4Z')
-
+	+popup({
+						jsClass:'js-what-is-popup',
+						heading: 'Что такое',
+						strong: 'краудфандинг?',
+						type: 'what-is'
+	})
 
 	+b.header&attributes(attributes)
 		+e.inner
@@ -21,7 +26,7 @@ mixin header()
 				+e('h1').heading Улей — краудфандинговая площадка
 					small Самый легкий способ привлечения финансирования вашего проекта.
 				+like
-				+sticker-link().header__sticker-link
+				+sticker-link().header__sticker-link.js-open-what-is
 				+logo
 				+e('img')(src='./assets/images/header-hexagon-items.png',width='406',height='431').hexagon-items
 				+b.help-block
