@@ -1,0 +1,141 @@
+.history
+	background 	url(../images/grayish-blue_bg_pattern-unoptimised.jpg) center top repeat,
+							#4e5062
+
+	padding-top 70px
+	padding-bottom 80px
+
+	&__heading
+		margin-bottom 70px
+		font-weight light
+		font-size 42px
+		font-family openSans
+		text-align center
+		color #E6E7F2
+		strong
+			font-weight semibold
+
+	&__stories-cards
+	&__stories-text
+		font-size 0
+
+
+	&__stories-cards
+		.slick-track
+			display flex
+			flex-direction row
+			justify-content space-between
+			flex-wrap nowrap
+			align-items center
+			align-content center
+
+	&__stories-text
+		margin-top 50px
+		white-space nowrap
+		overflow hidden
+
+.story-card
+	width 290px
+	height 540px
+	background-color #FFF
+	border-radius 3px
+	display inline-block
+	text-align center
+	position relative
+	&+&
+		margin-left 40px
+	&.slick-current
+		transform translateY(20px)
+		&::after
+			content ''
+			position absolute
+			bottom -11px
+			left 50%
+			margin-left -11px
+			width 0
+			height 0
+			border-style solid
+			border-width 11px 11px 0 11px
+			border-color #FFF transparent transparent transparent
+
+	&__head
+		padding-top 20px
+		height 72px
+	&__title
+		font-size 18px
+		font-weight semibold
+		color #333
+		font-family openSans
+		small
+			display block
+			margin-top 8px
+			color #4E4E4E
+			font-weight regular
+			font-size 12px
+	&__img-wrap
+		width 100%
+		padding-bottom 100%
+		position relative
+	&__img
+		position absolute
+		top 0
+		right 0
+		bottom 0
+		left 0
+		max-width 100%
+		max-height 100%
+
+	&__price
+		display block
+		font-weight semibold
+		font-size 16px
+		color #333
+		margin-top 20px
+		margin-bottom 16px
+
+	&__author-img-wrap
+		display block
+		width 60px
+		height 60px
+		overflow hidden
+		border-radius 50%
+		margin 0 auto
+	&__author-name
+		font-size 14px
+		font-weight semibold
+		color #333
+		display block
+		margin-top 20px
+
+.story
+	color #E3E5F7
+	padding 30px 75px
+	font-size 16px
+	font-weight light
+	line-height 24px
+	text-align center
+	background-color rgba(0,0,0,.1)
+	white-space normal
+	border-radius 3px
+	display inline-block
+	position relative
+	&::before
+		content ''
+		retinaSprite $ldquot_group
+		position absolute
+		top 50%
+		margin-top -10px
+		left 25px
+	&::after
+		content ''
+		retinaSprite $rdquot_group
+		position absolute
+		top 50%
+		margin-top -10px
+		right 25px
+	&__more-link
+		color #A6ABDB
+		font-size 16px
+		text-decoration none
+		&:hover
+			text-decoration underline

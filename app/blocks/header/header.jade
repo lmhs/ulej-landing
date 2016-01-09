@@ -16,22 +16,22 @@ mixin header()
 
 	+b.header&attributes(attributes)
 		+e.inner
+			+e('img')(src='./assets/images/bg1.jpg', width="1120", height="747").bg-img
 			+e.bg-clip
-			+e('h1').heading Улей — краудфандинговая площадка
-				small Самый легкий способ привлечения финансирования вашего проекта.
-			+like
-			+sticker-link().header__sticker-link
-			+logo
-			+b.help-block
-				+e.text Звоните нам!
-				+e('a')(href='tel:+375291323123').phone +375 (29) 132-31-23
-				+e.text
-					| Вы также !{''}
-					a(href=jv0).link можете заказать звонок
-					|  от нашего консультанта.
+				+e('h1').heading Улей — краудфандинговая площадка
+					small Самый легкий способ привлечения финансирования вашего проекта.
+				+like
+				+sticker-link().header__sticker-link
+				+logo
+				+e('img')(src='./assets/images/header-hexagon-items.png',width='406',height='431').hexagon-items
+				+b.help-block
+					+e.text Звоните нам!
+					+e('a')(href='tel:+375291323123').phone +375 (29) 132-31-23
+					+e.text
+						| Вы также !{''}
+						a(href=jv0).link можете заказать звонок
+						|  от нашего консультанта.
 			+e.content
-				+box()
-					+e.honeycombs
 				+box()
 					+e.subheader
 						+e('h2').subheading
@@ -41,11 +41,12 @@ mixin header()
 							|  на сумму !{''}
 							strong 550 000 000
 							|  рублей.
-					+b.half-subsection
-						+e.strong 1 480
-						+e.description Умных инвесторов
-					+b.half-subsection
-						+e.strong 50%
-						+e.description Успешных проектов
+					+e.subsection
+						+b.half-subsection.half-subsection--left
+							+e.strong 1 480
+							+e.description Умных инвесторов
+						+b.half-subsection.half-subsection--right
+							+e.strong 50%
+							+e.description Успешных проектов
 
 

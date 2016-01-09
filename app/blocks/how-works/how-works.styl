@@ -1,0 +1,43 @@
+.how-works
+	padding-top 80px
+	text-align center
+	&__heading
+		margin-bottom 80px
+		font-size 42px
+		color #171717
+		font-family openSans
+
+		strong
+			font-weight semibold
+
+.how-item
+	width 240px
+	position relative
+	.col + .col &
+		&::before
+			content ''
+			retinaSprite $how_arrow_group
+			position absolute
+			left -130px
+			top 100px
+	&__icon
+		display inline-block
+		vertical-align top
+	&__heading
+		color #171717
+		font-size 18px
+		line-height 30px
+		font-family openSans
+		font-weight bold
+	&__caption
+		color #666
+		font-size 14px
+		line-height 20px
+
+
+.icon-how-1
+	retinaSprite $icon_how_1_group
+.icon-how-2
+	retinaSprite $icon_how_2_group
+.icon-how-3
+	retinaSprite $icon_how_3_group

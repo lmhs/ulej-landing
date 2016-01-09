@@ -4,44 +4,41 @@
 
 		// background-size 1207px 658px
 		position relative
-		max-width 1207px
+		max-width 1200px
 		// min-height 860px
 		margin-x auto
 
 
 
-	&__bg
-		background url(../images/bg1.jpg) top center no-repeat
-		height 1365px
+	&__bg-img
+		position absolute
+		z-index 0
+		left 40px
+		top -70px
+
 
 	&__bg-clip
 		position relative
-		left 0
-		right 0
-		top 0
-		z-index 0
+		z-index 1
 		// height 1365px
 		height 860px
-		background 	url(../images/header-background-big.png) 40px top no-repeat,
-							 	url(../images/bg1.jpg) 40px -70px no-repeat
-		background-size 	1162px 860px,
-											1123px 748px
+		background 	url(../images/header-background-big.png) 40px top no-repeat
+		background-size 1160px 858px
+		padding-top 260px
 
 	&__content
 		position relative
 		// padding-top 260px
 
-
+	&__hexagon-items
+		position absolute
+		bottom -37px
+		right 40px
+		z-index 1
 
 	&__heading
 		color #FFF
 		font-family openSans
-		position absolute
-		left 0
-		right 0
-		top 260px
-
-		// margin-top 258px
 
 		font-weight semibold
 		font-size 40px
@@ -57,6 +54,20 @@
 	&__subheader
 		position relative
 		text-align center
+		padding-top 70px
+		padding-bottom 80px
+		&::before
+			content ''
+			display block
+			height 1px
+			background-image linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+			position absolute
+			top -1px
+			left 0
+			right 0
+			z-index 0
+
+
 
 	&__subheading
 		font-size 42px
@@ -65,6 +76,49 @@
 		font-family openSans
 		strong
 			font-weight bold
+
+	&__subsection
+		font-size 0
+
+.half-subsection
+	width 50%
+	display inline-block
+	vertical-align top
+	font-family openSans
+	font-size 18px
+	line-height 21px
+	color #171717
+	text-transform uppercase
+	font-weight bold
+	position relative
+	padding-top 50px
+	padding-bottom 80px
+	&::before
+		content ''
+		position absolute
+		top -1px
+		height 1px
+		background-image linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+
+	&--left
+		padding-right 30px
+		padding-left 150px
+		&::before
+			left 75px
+			right 40px
+	&--right
+		padding-left 100px
+		padding-right 150px
+		&::before
+			left 40px
+			right 75px
+	&__strong
+		float left
+		font-size 48px
+		font-weight semibold
+		line-height 41px
+		margin-right 15px
+
 
 .bg1
 	clip-path url(#clipping)
@@ -99,3 +153,4 @@
 
 .social-link
 	position absolute
+	z-index 2
