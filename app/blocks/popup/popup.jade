@@ -4,6 +4,8 @@ mixin popup(args)
 			if (args.type === 'what-is')
 				+e('h2').heading !{args.heading} !{''}
 					strong !{args.strong}
+			else if (args.type === 'message')
+				+e('h3').heading--small !{args.heading}
 			else
 				+e('h2').heading
 					strong !{args.strong}
@@ -31,10 +33,32 @@ mixin popup(args)
 					+e('p')
 						strong Мы ждем вас!
 
+				else if (args.type === 'message')
+					+e('p').message-text
+						| !{args.message}
+					+button({type:'buttonSubmit'}).btn--green.popup__message-btn.js-close-message-popup
+						| Отлично!
+
 				else if (args.type === 'callback')
 					+e.form-wrap
 						+b('form').form
-							+e('input')(type='text',placeholder='Как вас зовут?').input.input
+							+e('input')(type='text',placeholder='Как вас зовут?').input.input.js-callback-name
 							+e('input')(type='text',placeholder='Контактный Email / Номер телефона').input.input
-							+button({type:'buttonSubmit'}).submit-btn
+							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-callback-submit
+								| Отправить
+				else if (args.type === 'send')
+					+e.form-wrap
+						+e('p')
+							| Все-таки у вас есть классный проект, который хочется реализовать. Мы ждем вас, отправляйте скорее! ;)
+						+e('p')
+							| Для того, чтобы начать, нужно всего лишь оставить заявку с кратким описанием проекта, после чего наш менеджер свяжется с вами и ответит на все вопросы.
+						+b('form').form
+							+e('input')(type='text',placeholder='Как вас зовут?').input.input.js-send-name
+							+e('input')(type='text',placeholder='Контактный Email / Номер телефона').input.input
+							+e('textarea')(placeholder='Несколько слов о проекте').textarea.textarea
+							+e('p')
+								strong Мы гарантируем конфиденциальность любой информации
+								|  и вашей идеи, о чем написано в нашем !{''}
+								a(href=jv0) соглашении.
+							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-send-submit
 								| Отправить

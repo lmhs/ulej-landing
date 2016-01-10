@@ -24,6 +24,24 @@ mixin header()
 						strong: 'Обратный',
 						type: 'callback'
 	}).popup--callback
+	+popup({
+						jsClass:'js-send-popup',
+						heading: 'о проекте',
+						strong: 'Рассказать',
+						type: 'send'
+	}).popup--send
+	+popup({
+						jsClass:'js-callback-message-popup',
+						heading: 'Спасибо!',
+						type: 'message',
+						message: 'Очень-очень скоро мы перезвоним вам! :)'
+	}).popup--message
+	+popup({
+						jsClass:'js-send-message-popup',
+						heading: 'Большое спасибо за уделeнное время!',
+						type: 'message',
+						message: 'Совсем скоро с вами свяжется наш менеджер, и мы начнем обсуждение проекта.'
+	}).popup--message
 
 	+b.header&attributes(attributes)
 		+e.inner

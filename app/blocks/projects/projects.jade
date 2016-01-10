@@ -2,45 +2,48 @@ include ../button/button
 
 mixin projects()
 	+b('section').projects
-		+e('section').tiles
-			+e.tiles-row.tiles-row-1
-				- var n = 0
-				while n < 7
-					+tile({count:n})
-					- n++
-			+e.tiles-row.tiles-row-2
-				- var n = 0
-				while n < 7
-					+tile({count:n})
-					- n++
-			+e.tiles-row.tiles-row-3
-				- var n = 0
-				while n < 4
-					+tile({count:n})
-					- n++
-			+e.tiles-row.tiles-row-4
-				- var n = 0
-				while n < 4
-					+tile({count:n})
-					- n++
-		+e('section').promo
-			+e.text
-				| Ваши проекты и
-				br
-				| идеи уже сейчас могут
-				br
-				| получить финансирование
-			+e.button-wrap
-				+button().btn--green
-					| Заявить о себе
-					+icon('mail').mail-icon
+		+content()
+			+box()
+				+e.inner
+					+e('section').tiles
+						+e.tiles-row.tiles-row-1
+							- var n = 0
+							while n < 7
+								+tile({count:n})
+								- n++
+						+e.tiles-row.tiles-row-2
+							- var n = 0
+							while n < 7
+								+tile({count:n})
+								- n++
+						+e.tiles-row.tiles-row-3
+							- var n = 0
+							while n < 4
+								+tile({count:n})
+								- n++
+						+e.tiles-row.tiles-row-4
+							- var n = 0
+							while n < 4
+								+tile({count:n})
+								- n++
+					+e('section').promo
+						+e.text
+							| Ваши проекты и
+							br
+							| идеи уже сейчас могут
+							br
+							| получить финансирование
+						+e.button-wrap
+							+button().btn--green
+								| Заявить о себе
+								+icon('mail').mail-icon
 
 
 mixin tile(args)
 	+b.tile(class='tile-'+args.count)
 		//- svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', preserveaspectratio='xMidYMid', clip-path='url(#clipping-tile)', viewbox='0 0 200 216').tile-element
 		svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', preserveaspectratio='xMidYMid',  viewbox='0 0 200 216').tile-element
-			a(xlink:href=jv0, target='_blank')
+			a(xlink:href=jv0, target='_blank').js-open-send
 				image(width='507', height='507', x='-130', y='-130' xlink:href='./assets/images/tile-baking.jpg')
 				rect(fill='#503012', width='200', height='216' opacity='.7').tile-element__fill
 				text(fill='currentColor', x='50%', y='50%', dy='0').tile-element__text

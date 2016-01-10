@@ -1,7 +1,7 @@
 import svg4everybody from 'svg4everybody';
+import './modernizr.custom.min.js';
 import $ from 'jquery';
 import './carousel.js';
-// import './Popup.js';
 import './jquery.magnific-popup.min.js';
 
 $(() => {
@@ -12,25 +12,56 @@ $(() => {
 		return iOS;
 	});
 
-	let openWhatIs = $('.js-open-what-is');
-	let whatIsPopup = $('.js-what-is-popup');
+	if ($('.js-open-what-is').length) {
+		$('.js-open-what-is').magnificPopup({
+			items: {
+					src: '.js-what-is-popup',
+					preloader: false,
+					type: 'inline'
+			}
+		});
+	}
 
-	// openWhatIs.on('click', () => {
-		// new Popup(whatIsPopup)
-	// })
+	if ($('.js-open-callback').length) {
+		$('.js-open-callback').magnificPopup({
+			items: {
+					src: '.js-callback-popup',
+					preloader: false,
+					type: 'inline',
+					focus: '.js-callback-name'
+			}
+		});
+	}
 
-	$('.js-open-what-is').magnificPopup({
-		items: {
-				src: '.js-what-is-popup',
-				preloader: false,
-				type: 'inline'
-		}
-	});
-	$('.js-open-callback').magnificPopup({
-		items: {
-				src: '.js-callback-popup',
-				preloader: false,
-				type: 'inline'
-		}
-	});
+	if ($('.js-callback-submit').length) {
+		$('.js-callback-submit').magnificPopup({
+			items: {
+					src: '.js-callback-message-popup',
+					preloader: false,
+					type: 'inline'
+			}
+		});
+	}
+
+	if ($('.js-open-send').length) {
+		$('.js-open-send').magnificPopup({
+			items: {
+					src: '.js-send-popup',
+					preloader: false,
+					type: 'inline',
+					focus: '.js-send-name'
+			}
+		});
+	}
+
+
+	if ($('.js-send-submit').length) {
+		$('.js-send-submit').magnificPopup({
+			items: {
+					src: '.js-send-message-popup',
+					preloader: false,
+					type: 'inline'
+			}
+		});
+	}
 });
