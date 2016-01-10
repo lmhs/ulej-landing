@@ -1,8 +1,13 @@
 mixin popup(args)
 	+b.popup.mfp-hide(class=args.jsClass)
 		+e('section').block
-			+e('h2').heading !{args.heading} !{''}
-				strong !{args.strong}
+			if (args.type === 'what-is')
+				+e('h2').heading !{args.heading} !{''}
+					strong !{args.strong}
+			else
+				+e('h2').heading
+					strong !{args.strong}
+					|  !{args.heading}
 			+e('article').article
 				if (args.type === 'what-is')
 					+e('p')
@@ -15,7 +20,7 @@ mixin popup(args)
 						em
 							| Сама суть краудфандинга сводится к коллективной помощи, когда большое количество людей поддерживают деньгами интересные идеи, просто потому, что ваша идея им близка.
 					+e('p')
-						| Получить средства может каждый, вне зависимости от возраста, социального статуса и сферы вашего проекта. Главное&nbsp;&mdash; это ваше желание и стремление реализовать свою мечту!
+						| Получить средства может каждый, вне зависимости от возраста, социального статуса и сферы вашего проекта. Главное – это ваше желание и стремление реализовать свою мечту!
 						| Кстати, если вы беспокоитесь за сохранность своей, мы полностью гарантируем конфиденциальность всей полученной от вас информации, о чем прописано в нашем !{''}
 						a(href=jv0).js-open-terms соглашении
 						| , ведь наша площадка заинтересована в реализации именно ВАШЕГО проекта не меньше, чем вы сами!
@@ -26,3 +31,10 @@ mixin popup(args)
 					+e('p')
 						strong Мы ждем вас!
 
+				else if (args.type === 'callback')
+					+e.form-wrap
+						+b('form').form
+							+e('input')(type='text',placeholder='Как вас зовут?').input.input
+							+e('input')(type='text',placeholder='Контактный Email / Номер телефона').input.input
+							+button({type:'buttonSubmit'}).submit-btn
+								| Отправить

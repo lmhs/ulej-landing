@@ -18,6 +18,12 @@ mixin header()
 						strong: 'краудфандинг?',
 						type: 'what-is'
 	})
+	+popup({
+						jsClass:'js-callback-popup',
+						heading: 'звонок',
+						strong: 'Обратный',
+						type: 'callback'
+	}).popup--callback
 
 	+b.header&attributes(attributes)
 		+e.inner
@@ -34,7 +40,7 @@ mixin header()
 					+e('a')(href='tel:+375291323123').phone +375 (29) 132-31-23
 					+e.text
 						| Вы также !{''}
-						a(href=jv0).link можете заказать звонок
+						a(href=jv0).link.js-open-callback можете заказать звонок
 						|  от нашего консультанта.
 			+e.content
 				+box()

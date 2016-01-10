@@ -26,4 +26,11 @@ $(() => {
 				type: 'inline'
 		}
 	});
+	$('.js-open-callback').magnificPopup({
+		items: {
+				src: '.js-callback-popup',
+				preloader: false,
+				type: 'inline'
+		}
+	});
 });
