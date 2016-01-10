@@ -6,10 +6,15 @@
 	text-align center
 	position relative
 	background-size 2560px 1600px
+	+below(1024px)
+		border-radius 0
+	+below(720px)
+		height auto
+		padding 40px 10px
 	&__link-main
 		width 0
 		height 0
-		&::after
+		&:after
 			content ''
 			position absolute
 			top 0
@@ -21,6 +26,9 @@
 		font-size 30px
 		line-height 90px
 		font-weight light
+		+below(720px)
+			font-size 20px
+			line-height 34px
 	&__underline
 		display inline-block
 		font-weight semibold

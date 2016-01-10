@@ -1,36 +1,34 @@
 mixin support()
 	+b('section').support.support-write
 		+box()
-			+content()
-				+e.head
-					+e('h2').heading.heading О наших проектах !{''}
-						strong пишут...
-				+e.body
-					+container()
-						+col()
-							+support-card
-						+col()
-							+support-card
-						+col()
-							+support-card
+			+e.head
+				+e('h2').heading.heading О наших проектах !{''}
+					strong пишут...
+			+e.body
+				+container-33()
+					+col-33()
+						+support-card
+					+col-33()
+						+support-card
+					+col-33()
+						+support-card
 
 	+b('section').support
 		+box()
-			+content()
-				+e.head
-					+e('h2').heading.heading ... наши проекты !{''}
-						strong поддерживают
-				+e.body
-					+container()
-						+col()
-							+support-card-small
-							+support-card-small
-						+col()
-							+support-card-small
-							+support-card-small
-						+col()
-							+support-card-small
-							+support-card-small
+			+e.head
+				+e('h2').heading.heading ... наши проекты !{''}
+					strong поддерживают
+			+e.body
+				+container-33()
+					+col-33()
+						+support-card-small
+						+support-card-small
+					+col-33()
+						+support-card-small
+						+support-card-small
+					+col-33()
+						+support-card-small
+						+support-card-small
 
 
 mixin support-card()

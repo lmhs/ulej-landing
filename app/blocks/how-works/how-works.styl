@@ -2,25 +2,37 @@
 	padding-top 80px
 	padding-bottom 90px
 	text-align center
+	+mobile()
+		padding-top 30px
+		padding-bottom 0
+
+	.content
+		+below(800px)
+			padding-x 0
+	.container
+		+below(780px)
+			display block
+
 	&__heading
 		margin-bottom 80px
-		font-size 42px
-		color #171717
-		font-family openSans
+		+mobile()
+			margin-bottom 30px
 
-		strong
-			font-weight semibold
 
 .how-item
 	width 240px
 	position relative
+	+below(780px)
+		margin-bottom 35px
 	.col + .col &
-		&::before
+		&:before
 			content ''
 			retinaSprite $how_arrow_group
 			position absolute
-			left -130px
+			left -40%
 			top 100px
+			+below(800px)
+				content none
 	&__icon
 		display inline-block
 		vertical-align top
@@ -32,6 +44,8 @@
 		font-weight bold
 		margin-top 65px
 		margin-bottom 15px
+		+mobile()
+			margin-top 30px
 	&__caption
 		color #666
 		font-size 14px

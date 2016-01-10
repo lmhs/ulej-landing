@@ -180,10 +180,26 @@ import $ from 'jquery';
 		centerMode: true,
 		centerPadding: '40px',
 		focusOnSelect: true,
+		infinite: false,
 		responsive: [
 		{
-			breakpoint: 990,
-			settings: 'unslick'
+			breakpoint: 1030,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 1,
+				centerMode: false,
+				arrows: false,
+				dots: true
+			}
+		},{
+			breakpoint: 700,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				centerMode: false,
+				arrows: false,
+				dots: true
+			}
 		}]
 	});
 	$('.js-stories-carousel').slick({
@@ -195,6 +211,10 @@ import $ from 'jquery';
 		fade: true,
 		centerMode: true,
 		centerPadding: '20px',
-		asNavFor: '.js-cards-carousel'
+		asNavFor: '.js-cards-carousel',
+		responsive: [{
+			breakpoint: 700,
+			settings: 'unslick'
+		}]
 	});
 }));

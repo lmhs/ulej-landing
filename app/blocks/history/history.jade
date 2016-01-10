@@ -1,23 +1,21 @@
 mixin history()
 	+b('section').history
-		+content()
-			+box()
-				+e('h1').heading Истории !{''}
-					strong успеха
-				+e.stories-cards.js-cards-carousel
-					+story-card()
-					+story-card()
-					+story-card()
-				+e.stories-text.js-stories-carousel
-					+story(1)
-					+story(2)
-					+story(3)
+		+e('h2').heading.heading Истории !{''}
+			strong успеха
+		+e.stories-cards.js-cards-carousel
+			+story-card(1)
+			+story-card(2)
+			+story-card(3)
+		+e.stories-text.js-stories-carousel
+			+story(1)
+			+story(2)
+			+story(3)
 
 
-mixin story-card()
+mixin story-card(number)
 	+b('section').story-card&attributes(attributes)
 		+e.head
-			+e('h3').title Картина на стене
+			+e('h3').title Картина на стене !{number}
 				small 278 Спонсоров
 		+e.body
 			+e.img-wrap

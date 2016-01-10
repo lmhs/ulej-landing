@@ -3,19 +3,18 @@ mixin footer()
 		+box()
 			+container()
 				+col()
-					+b('a')(href='http://ulej.by').link Ulej.by
-					+b('span').divider  /  !{''}
-					+b('span').caption ООО “Хайв Проджект” 220121, г.Минск
-						br
-						| ул. Ефросиньи Полоцкой 3, оф. 53
+					+b('a')(href='http://ulej.by').link.website-link Ulej.by
+					+b('span').divider.divider--is-hidden-mobile  /  !{''}
+					+b('span').caption ООО “Хайв Проджект” 220121, г.Минск !{''}
+					+b('span').caption.footer__address ул. Ефросиньи Полоцкой 3, оф. 53
 					+e.agreement
 						+b('a')(href=jv0).link Пользовательское соглашение
-				+col()
-					+e.phone
-						+e('a')(href='tel:+375172547045').phone-link +375 (17) 254 70 45
-					+e.phone
-						+e('a')(href='tel:+375291323123').phone-link +375 (29) 132 31 23
-				+col()
+				+col().footer__contact-col
+					+e.phones
+						+e.phone
+							+e('a')(href='tel:+375172547045').phone-link +375 (17) 254 70 45
+						+e.phone
+							+e('a')(href='tel:+375291323123').phone-link +375 (29) 132 31 23
 					+e.social
 						+e.social-row-1
 							+icon('honeycomb-30').honeycomb-30.honeycomb-order-1
@@ -39,7 +38,7 @@ mixin footer()
 									path(d='M29.734 8.164l-11.46-6.578c-1.405-.81-3.137-.81-4.54 0L2.274 8.164C.868 8.97.004 10.46.004 12.07v13.157c0 1.614.863 3.105 2.27 3.91l11.46 6.58c1.403.804 3.135.804 4.54 0l11.46-6.58c1.403-.807 2.27-2.296 2.27-3.91V12.07c0-1.613-.867-3.104-2.27-3.91v.004z', fill='#fff')
 									path(d='M27.87 6.798L17.127.578c-1.316-.764-2.94-.764-4.256 0L2.13 6.798C.81 7.56 0 8.97 0 10.495v12.442c0 1.526.81 2.935 2.128 3.698l10.743 6.22c1.32.764 2.94.764 4.26 0l10.743-6.22c1.318-.763 2.13-2.172 2.13-3.698v-12.44c0-1.527-.81-2.936-2.13-3.7z', fill='currentColor')
 							+icon('honeycomb-30').honeycomb-60.honeycomb-order-13
-				+col()
+				+col().footer__partner-col
 					+e.partner-logo-wrap
 						+icon('belgazprombank').footer__partner-logo
 					+b.footer__partner-text

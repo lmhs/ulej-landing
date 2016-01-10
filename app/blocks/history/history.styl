@@ -5,48 +5,66 @@
 	padding-top 70px
 	padding-bottom 80px
 
+	+mobile()
+		padding-top 40px
+		padding-bottom 40px
+
 	&__heading
 		margin-bottom 70px
 		font-weight light
-		font-size 42px
-		font-family openSans
 		text-align center
 		color #E6E7F2
-		strong
-			font-weight semibold
+		+mobile()
+			margin-bottom 25px
 
 	&__stories-cards
 	&__stories-text
 		font-size 0
 
+		margin-x auto
+
 
 	&__stories-cards
-		.slick-track
-			display flex
-			flex-direction row
-			justify-content space-between
-			flex-wrap nowrap
-			align-items center
-			align-content center
+		width 1030px
+		+below(1060px)
+			width 100%
+
+		// +below(1024px)
+		// 	padding-x 40px
+		// 	margin-x 40px
+		// .slick-track
+		// 	display flex
+		// 	flex-direction row
+		// 	justify-content space-between
+		// 	flex-wrap nowrap
+		// 	align-items center
+		// 	align-content center
 
 	&__stories-text
+		width 950px
 		margin-top 50px
 		white-space nowrap
 		overflow hidden
+		+below(950px)
+			width 100%
+		+below(700px)
+			display none
 
 .story-card
 	width 290px
-	height 540px
+	min-height 540px
+	padding-bottom 33px
 	background-color #FFF
 	border-radius 3px
 	display inline-block
 	text-align center
 	position relative
-	&+&
-		margin-left 40px
+	margin-x 20px
 	&.slick-current
 		transform translateY(20px)
-		&::after
+		+below(1030px)
+			transform translateY(0)
+		&:after
 			content ''
 			position absolute
 			bottom -11px
@@ -84,6 +102,8 @@
 		left 0
 		max-width 100%
 		max-height 100%
+		margin auto
+		transform translateZ(0)
 
 	&__price
 		display block
@@ -119,14 +139,14 @@
 	border-radius 3px
 	display inline-block
 	position relative
-	&::before
+	&:before
 		content ''
 		retinaSprite $ldquot_group
 		position absolute
 		top 50%
 		margin-top -10px
 		left 25px
-	&::after
+	&:after
 		content ''
 		retinaSprite $rdquot_group
 		position absolute
@@ -139,3 +159,115 @@
 		text-decoration none
 		&:hover
 			text-decoration underline
+
+.slick-dots
+	text-align center
+	font-size 0
+	margin-top 20px
+	li
+		display inline-block
+		button
+			border-radius 50%
+			width 8px
+			height 8px
+			background-color rgba(0,0,0,.3)
+			border none
+
+
+		& + li
+			margin-left 8px
+
+		&.slick-active
+			button
+				background-color #06b7c5
+
+
+
+.slick-slider
+	position relative
+	display block
+	box-sizing border-box
+	user-select none
+	touch-callout none
+	touch-action pan-y
+	tap-highlight-color transparent
+
+.slick-list
+	position relative
+	display block
+	overflow hidden
+	margin 0
+	padding 0
+	&:focus
+		outline none
+	&.dragging
+		cursor pointer
+		cursor hand
+
+.slick-slider .slick-track,
+.slick-slider .slick-list
+	transform translate3d(0, 0, 0)
+
+.slick-track
+	position relative
+	top 0
+	left 0
+	display block
+	&:after
+		clear both
+
+.slick-track:before,
+.slick-track:after
+	display table
+	content ''
+
+.slick-loading
+	.slick-track
+		visibility hidden
+	.slick-slide
+		visibility hidden
+
+.slick-slide
+	display none
+	float left
+	height 100%
+	min-height 1px
+	img
+		display block
+	&.slick-loading
+		img
+			display none
+	&.dragging
+		img
+			pointer-events none
+
+[dir='rtl']
+	.slick-slide
+		float right
+
+.slick-initialized
+	.slick-slide
+		display block
+
+.slick-vertical
+	.slick-slide
+		display block
+		height auto
+		border 1px solid transparent
+	.slick-prev
+	.slick-next
+		background none
+		margin-top auto
+		width 120px
+
+	.slick-prev
+		top -50px
+		left auto
+	.slick-next
+		right auto
+		bottom -50px
+
+.slick-arrow
+	&.slick-hidden
+		display none
+

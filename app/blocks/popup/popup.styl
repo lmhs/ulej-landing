@@ -9,24 +9,34 @@
 	border 1px solid rgba(204, 204, 204, .2)
 	border-radius 3px
 	padding 50px
+	+mobile()
+		padding 60px 20px
 	&--callback
 		max-width 560px
 		padding-x 60px
+		+mobile()
+			padding 60px 20px
 	&--message
 		max-width 560px
 		padding 70px 60px
+		+mobile()
+			padding 60px 20px
 	&--send
 		max-width 560px
 		padding 60px 60px 75px
-	&::before
-	&::after
+		+mobile()
+			padding 60px 20px
+	&:before
+	&:after
 		content ''
 		position absolute
-	&::before
+		+mobile()
+			content none
+	&:before
 		top -23px
 		left -18px
 		retinaSprite $popup_top_group
-	&::after
+	&:after
 		bottom -21px
 		right -21px
 		retinaSprite $popup_bottom_group
@@ -38,6 +48,9 @@
 		font-family openSans
 		color #171717
 		margin-bottom 40px
+		+mobile()
+			font-size 24px
+			margin-bottom 20px
 		strong
 			font-weight semibold
 
@@ -60,6 +73,8 @@
 		margin 40px auto 0
 		width 300px
 		display block
+		+mobile()
+			width 100%
 
 	&__article
 		font-size 14px
@@ -67,6 +82,8 @@
 		color #333
 		p
 			margin-bottom 28px
+			+mobile()
+				margin-bottom 20px
 		em
 			font-style italic
 			font-size 16px
@@ -90,6 +107,8 @@
 		width 300px
 		margin 30px auto 0
 		display block
+		+mobile()
+			width 100%
 
 
 
@@ -114,7 +133,7 @@
 	line-height 20px
 	font-size 14px
 	color #333
-	padding 16px
+	padding 13px 16px
 	&::placeholder
 		color #999
 		font-size 14px
@@ -503,3 +522,17 @@ img
 		right 0
 		padding-top 0
 
+
+
+.mfp-close-btn-in .mfp-close
+	color #666
+
+.mfp-close
+	width 56px
+	height 56px
+	line-height 56px
+	font-size 20px
+
+.mfp-container
+	+below(900px)
+		padding-x 10px

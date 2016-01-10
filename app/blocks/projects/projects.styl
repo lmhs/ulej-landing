@@ -5,8 +5,9 @@
 
 	position relative
 	padding-top 80px
+	overflow hidden
 
-	&::before
+	&:before
 		content ''
 		position absolute
 		height 1px
@@ -77,15 +78,12 @@
 	& + &
 		margin-left 10px
 
-	&-clip
-		clip-path url(#clipping-tile)
-
 	&-element
 		color #FFF
-		clip-path polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
+		// clip-path polygon(50% 0%, 165% 25%, 100% 75%, 50% 100%, 0% 165%, 0% 25%)
 		// mask url(#masking)
 		// box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.22)
-		// clip-path url(#clipping-tile)
+		clip-path url(#clipping-tile)
 		// clip-path polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
 		a
 			color #FFF

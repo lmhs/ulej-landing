@@ -2,7 +2,7 @@
 	position relative
 	padding-top 20px
 	padding-bottom 27px
-	&::before
+	&:before
 		content ''
 		position absolute
 		left 0
@@ -11,14 +11,38 @@
 		height 1px
 		background linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
 
+	+below(1024px)
+		padding 30px 25px 90px
 
+	.footer__address
+		display block
+		+below(1024px)
+			display inline
+
+	.container
+		+mobile()
+			display block
+	.col
+		+mobile()
+			display block
+
+	.website-link
+	.divider--is-hidden-mobile
+		+mobile()
+			display none
 
 	&__partner
+		&-col
+			+mobile()
+				margin-top 50px
 		&-logo
 			width 190px
 			height 54px
+			display inline-block
+			vertical-align top
 		&-logo-wrap
 			color #21518f
+			text-align center
 		&-text
 			text-transform uppercase
 			color #666
@@ -30,6 +54,23 @@
 
 	&__agreement
 		line-height 30px
+	&__contact-col
+		position relative
+		+mobile()
+			margin-top 20px
+	&__phones
+		display inline-block
+		vertical-align top
+	&__social
+		width 208px
+		display inline-block
+		vertical-align top
+		+mobile()
+			position absolute
+			top -45px
+			right -83px
+
+
 
 	&__social-row
 
@@ -113,3 +154,15 @@
 	opacity 0.5
 .honeycomb-60
 	opacity 0.6
+
+
+.phone-col
+	+mobile()
+		width 50%
+		display inline-block
+		margin 0
+
+.social-col
+	+mobile()
+		position absolute
+

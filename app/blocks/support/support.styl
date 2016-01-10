@@ -1,10 +1,35 @@
 .support
+	padding-top 30px
 	padding-bottom 60px
+	position relative
+
+	+mobile()
+		padding-bottom 30px
+
+	&-write
+		padding-top 40px
+		+mobile()
+			padding-bottom 0
+		&:before
+			content ''
+			display block
+			height 1px
+			position absolute
+			left 50%
+			width 1000px
+			margin-left -500px
+			top -1px
+			background-image linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+
 
 	&__heading
 		text-align center
-		margin-top 50px
+		margin-top 20px
 		margin-bottom 70px
+		+mobile()
+			line-height 1.2
+			margin-top 0
+			margin-bottom 25px
 
 	&__body
 		font-size 0
@@ -14,11 +39,15 @@
 
 .support-card
 	display inline-block
+	vertical-align top
 	font-size 14px
 	border-radius 6px
 	border 1px solid rgb(204, 204, 204)
-	width 288px
+	max-width 290px
 	height 278px
+	+mobile()
+		margin-bottom 10px
+
 
 	&__head
 	&__body
@@ -42,7 +71,7 @@
 		position relative
 		padding 25px
 		text-align center
-		&::before
+		&:before
 			content ''
 			position absolute
 			top -1px
@@ -75,11 +104,15 @@
 
 .support-card-small
 	display inline-block
+	vertical-align top
 	border-radius 6px
 	border 1px solid rgb(204, 204, 204)
 	margin-bottom 40px
-	width 288px
+	max-width 290px
+	width 100%
 	height 138px
+	+mobile()
+		margin-bottom 10px
 
 	&__logo
 		position relative
