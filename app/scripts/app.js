@@ -3,6 +3,7 @@ import './modernizr.custom.min.js';
 import $ from 'jquery';
 import './carousel.js';
 import './jquery.magnific-popup.min.js';
+import './jquery.placeholder-enhanced.min.js';
 
 $(() => {
 	svg4everybody();
