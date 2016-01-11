@@ -20,20 +20,20 @@
 			display inline
 
 	.container
-		+mobile()
+		+mobile(density: retina)
 			display block
 	.col
-		+mobile()
+		+mobile(density: retina)
 			display block
 
 	.website-link
 	.divider--is-hidden-mobile
-		+mobile()
+		+mobile(density: retina)
 			display none
 
 	&__partner
 		&-col
-			+mobile()
+			+mobile(density: retina)
 				margin-top 50px
 		&-logo
 			width 190px
@@ -56,7 +56,7 @@
 		line-height 30px
 	&__contact-col
 		position relative
-		+mobile()
+		+mobile(density: retina)
 			margin-top 20px
 	&__phones
 		display inline-block
@@ -65,7 +65,7 @@
 		width 254px
 		display inline-block
 		vertical-align top
-		+mobile()
+		+mobile(density: retina)
 			position absolute
 			top -45px
 			right -83px
@@ -157,12 +157,12 @@
 
 
 .phone-col
-	+mobile()
+	+mobile(density: retina)
 		width 50%
 		display inline-block
 		margin 0
 
 .social-col
-	+mobile()
+	+mobile(density: retina)
 		position absolute
 

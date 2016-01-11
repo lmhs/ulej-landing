@@ -19,7 +19,7 @@
 		top -70px
 		left 50%
 		margin-left -560px
-		+mobile()
+		+mobile(density: retina)
 			margin-left 0
 			left auto
 			top auto
@@ -49,7 +49,7 @@
 			margin-left auto
 			left 0
 			right 0
-		+mobile()
+		+mobile(density: retina)
 			padding-top 170px
 			height 650px
 			background-position-y -200px
@@ -73,7 +73,7 @@
 	&__content
 		position relative
 		// top 860px
-		+mobile()
+		+mobile(density: retina)
 			// top 650px
 
 	&__hexagon-items
@@ -82,7 +82,7 @@
 		right 40px
 		+below(1160px)
 			right -90px
-		+mobile()
+		+mobile(density: retina)
 			display none
 
 	&__heading
@@ -93,7 +93,7 @@
 		font-size 40px
 		text-align center
 		text-shadow 0px 1px 48.02px rgba(0, 0, 0, 0.88)
-		+mobile()
+		+mobile(density: retina)
 			font-size 24px
 			line-height 30px
 		small
@@ -102,7 +102,7 @@
 			margin-top 14px
 			font-size 19px
 			color #DDD
-			+mobile()
+			+mobile(density: retina)
 				font-size 14px
 				line-height 20px
 
@@ -112,7 +112,7 @@
 		padding-top 70px
 		padding-bottom 80px
 		z-index 0
-		+mobile()
+		+mobile(density: retina)
 			padding 30px 25px
 
 		&:before
@@ -126,14 +126,14 @@
 			left 50%
 			margin-left -500px
 			z-index -1
-			+mobile()
+			+mobile(density: retina)
 				left 20px
 				right 20px
 
 
 
 	&__subheading
-		+mobile()
+		+mobile(density: retina)
 			font-size 24px
 			line-height 1.2
 		strong
@@ -152,7 +152,7 @@
 	position relative
 	padding-top 50px
 	padding-bottom 80px
-	+mobile()
+	+mobile(density: retina)
 		width 100%
 		padding 25px 60px
 
@@ -166,23 +166,23 @@
 	&--left
 		padding-right 30px
 		padding-left 150px
-		+mobile()
+		+mobile(density: retina)
 			padding-x 60px
 		&:before
 			left 75px
 			right 40px
-			+mobile()
+			+mobile(density: retina)
 				left 20px
 				right 20px
 	&--right
 		padding-left 100px
 		padding-right 150px
-		+mobile()
+		+mobile(density: retina)
 			padding-x 80px
 		&:before
 			left 40px
 			right 75px
-			+mobile()
+			+mobile(density: retina)
 				left 20px
 				right 20px
 
@@ -193,7 +193,7 @@
 		text-transform uppercase
 		font-weight bold
 		text-align left
-		+mobile()
+		+mobile(density: retina)
 			width 200px
 			font-size 12px
 			line-height 16px
@@ -206,7 +206,7 @@
 		font-weight semibold
 		line-height 41px
 		margin-right 15px
-		+mobile()
+		+mobile(density: retina)
 			font-size 34px
 			line-height 32px
 
@@ -229,7 +229,7 @@
 	color #333
 	+below(1160px)
 		top 600px
-	+mobile()
+	+mobile(density: retina)
 		bottom 37px
 		top auto
 		left 20px

@@ -7,10 +7,10 @@
 	&__inner
 		position relative
 		padding-top 70px
-		+mobile()
+		+mobile(density: retina)
 			padding-top 40px
 
-	+mobile()
+	+mobile(density: retina)
 		padding-bottom 40px
 
 	&__heading
@@ -18,7 +18,7 @@
 		font-weight light
 		text-align center
 		color #E6E7F2
-		+mobile()
+		+mobile(density: retina)
 			margin-bottom 25px
 
 	&__stories-cards
@@ -283,7 +283,7 @@
 	retinaSprite $bottom_left_hexagon_group
 	left 75px
 	top -90px
-	+mobile()
+	+mobile(density: retina)
 		display none
 
 .project-hexagon
@@ -291,6 +291,6 @@
 	retinaSprite $project_hexagon_group
 	right 64px
 	top -54px
-	+mobile()
+	+mobile(density: retina)
 		display none
 

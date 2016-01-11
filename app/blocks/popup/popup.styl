@@ -9,28 +9,28 @@
 	border 1px solid rgba(204, 204, 204, .2)
 	border-radius 3px
 	padding 50px
-	+mobile()
+	+mobile(density: retina)
 		padding 60px 20px
 	&--callback
 		max-width 560px
 		padding-x 60px
-		+mobile()
+		+mobile(density: retina)
 			padding 60px 20px
 	&--message
 		max-width 560px
 		padding 70px 60px
-		+mobile()
+		+mobile(density: retina)
 			padding 60px 20px
 	&--send
 		max-width 560px
 		padding 60px 60px 75px
-		+mobile()
+		+mobile(density: retina)
 			padding 60px 20px
 	&:before
 	&:after
 		content ''
 		position absolute
-		+mobile()
+		+mobile(density: retina)
 			content none
 	&:before
 		top -23px
@@ -48,7 +48,7 @@
 		font-family openSans
 		color #171717
 		margin-bottom 40px
-		+mobile()
+		+mobile(density: retina)
 			font-size 24px
 			margin-bottom 20px
 		strong
@@ -73,7 +73,7 @@
 		margin 40px auto 0
 		width 300px
 		display block
-		+mobile()
+		+mobile(density: retina)
 			width 100%
 
 	&__article
@@ -82,7 +82,7 @@
 		color #333
 		p
 			margin-bottom 28px
-			+mobile()
+			+mobile(density: retina)
 				margin-bottom 20px
 		em
 			font-style italic
@@ -107,7 +107,7 @@
 		width 300px
 		margin 30px auto 0
 		display block
-		+mobile()
+		+mobile(density: retina)
 			width 100%
 
 

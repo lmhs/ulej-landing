@@ -3,12 +3,12 @@
 	padding-bottom 60px
 	position relative
 
-	+mobile()
+	+mobile(density: retina)
 		padding-bottom 30px
 
 	&-write
 		padding-top 40px
-		+mobile()
+		+mobile(density: retina)
 			padding-bottom 0
 		&:before
 			content ''
@@ -28,7 +28,7 @@
 		text-align center
 		margin-top 20px
 		margin-bottom 70px
-		+mobile()
+		+mobile(density: retina)
 			line-height 1.2
 			margin-top 0
 			margin-bottom 25px
@@ -47,7 +47,7 @@
 	border 1px solid rgb(204, 204, 204)
 	max-width 290px
 	height 278px
-	+mobile()
+	+mobile(density: retina)
 		margin-bottom 10px
 
 
@@ -113,7 +113,7 @@
 	max-width 290px
 	width 100%
 	height 138px
-	+mobile()
+	+mobile(density: retina)
 		margin-bottom 10px
 
 	&__logo
