@@ -5,7 +5,9 @@
 
 	position relative
 	padding-top 80px
-	overflow hidden
+	overflow visible
+	overflow-x hidden
+
 
 	&:before
 		content ''
@@ -41,6 +43,7 @@
 	&__tiles-row
 		font-size 0
 		position relative
+		overflow visible
 
 	&__tiles
 		position absolute
@@ -58,6 +61,18 @@
 		top -80px
 	&-4
 		top -120px
+
+.projects-top-hexagon
+	retinaSprite $projects_top_hexagon_group
+	position absolute
+	top -58px
+	left 159px
+
+.projects-right-hexagon
+	retinaSprite $projects_right_hexagon_group
+	position absolute
+	top 40px
+	right 60px
 
 .mail-icon
 	width 18px

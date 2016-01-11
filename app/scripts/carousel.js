@@ -177,7 +177,6 @@ import $ from 'jquery';
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		asNavFor: '.js-stories-carousel',
-		centerMode: true,
 		centerPadding: '40px',
 		focusOnSelect: true,
 		infinite: false,
@@ -187,7 +186,6 @@ import $ from 'jquery';
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
-				centerMode: false,
 				arrows: false,
 				dots: true
 			}
@@ -196,7 +194,6 @@ import $ from 'jquery';
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				centerMode: false,
 				arrows: false,
 				dots: true
 			}

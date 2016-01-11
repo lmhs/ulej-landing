@@ -2,11 +2,15 @@
 	background 	url(../images/grayish-blue_bg_pattern-unoptimised.jpg) center top repeat,
 							#4e5062
 
-	padding-top 70px
+
 	padding-bottom 80px
+	&__inner
+		position relative
+		padding-top 70px
+		+mobile()
+			padding-top 40px
 
 	+mobile()
-		padding-top 40px
 		padding-bottom 40px
 
 	&__heading
@@ -28,6 +32,9 @@
 		width 1030px
 		+below(1060px)
 			width 100%
+
+		.slick-track
+			padding-bottom 30px
 
 		// +below(1024px)
 		// 	padding-x 40px
@@ -269,5 +276,21 @@
 
 .slick-arrow
 	&.slick-hidden
+		display none
+
+.bottom-left-hexagon
+	position absolute
+	retinaSprite $bottom_left_hexagon_group
+	left 75px
+	top -90px
+	+mobile()
+		display none
+
+.project-hexagon
+	position absolute
+	retinaSprite $project_hexagon_group
+	right 64px
+	top -54px
+	+mobile()
 		display none
 

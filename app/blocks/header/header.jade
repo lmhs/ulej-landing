@@ -9,8 +9,8 @@ mixin header()
 	svg.svg-defs
 		defs
 			clippath#clipping-tile(clippathunits='objectBoundingBox')
-				path(d='M.41.02h.18l.32.14.09.17v.33L.91.83.59.98H.41L.09.83 0 .66V.33L.09.16')
-				//- polygon(points='.41,.02 .59,.02 \
+				//- path(d='M.41.02h.18l.32.14.09.17v.33L.91.83.59.98H.41L.09.83 0 .66V.33L.09.16')
+				polygon(points='.41,.02 .59,.02 \
 					.91,.16 1,.33 \
 					1,.66 .91,.83 \
 					.59,.98 .41,.98 \
@@ -68,7 +68,6 @@ mixin header()
 				+like
 				+sticker-link().header__sticker-link.js-open-what-is
 				+logo
-				+e('img')(src='./assets/images/header-hexagon-items.png',width='406',height='431').hexagon-items
 				+b.help-block
 					+e.text Звоните нам!
 					+e('a')(href='tel:+375291323123').phone +375 (29) 132-31-23
@@ -86,6 +85,7 @@ mixin header()
 							|  на сумму !{''}
 							strong 550 000 000
 							|  рублей.
+					+e('img')(src='./assets/images/header-hexagon-items.png',width='406',height='431').hexagon-items
 					+e.subsection
 						+b.half-subsection.half-subsection--left
 							+e.content

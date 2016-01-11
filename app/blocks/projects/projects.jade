@@ -7,11 +7,13 @@ mixin projects()
 				+e.inner
 					+e('section').tiles
 						+e.tiles-row.tiles-row-1
+							i.projects-top-hexagon
 							- var n = 0
 							while n < 7
 								+tile({count:n})
 								- n++
 						+e.tiles-row.tiles-row-2
+							i.projects-right-hexagon
 							- var n = 0
 							while n < 7
 								+tile({count:n})

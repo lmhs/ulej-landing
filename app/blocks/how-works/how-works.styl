@@ -18,21 +18,25 @@
 		+mobile()
 			margin-bottom 30px
 
-
-.how-item
-	width 240px
+.how-col-33
 	position relative
-	+below(780px)
-		margin-bottom 35px
-	.col + .col &
+	& + &
 		&:before
 			content ''
 			retinaSprite $how_arrow_group
 			position absolute
-			left -40%
+			left 0
+			margin-left -83px
 			top 100px
-			+below(800px)
+			+below(970px)
 				content none
+
+.how-item
+	width 240px
+	display inline-block
+	+below(780px)
+		margin-bottom 35px
+
 	&__icon
 		display inline-block
 		vertical-align top

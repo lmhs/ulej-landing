@@ -8,8 +8,8 @@ mixin how-works()
 			+box()
 				+e('h2').heading.heading Как работает !{''}
 					strong Улей
-				+container()
-					+col()
+				+container-33()
+					+col-33().how-col-33
 						+b.how-item
 							+e('i').icon.icon-how-1
 								//- +icon('icon-how-1')
@@ -18,7 +18,7 @@ mixin how-works()
 								| Проект
 							+e('p').caption
 								| Sit voluptatem accusantium laudantium, rem aperiam, eaque ipsa  inventore veritatis et.
-					+col()
+					+col-33().how-col-33
 						+b.how-item
 							+e('i').icon.icon-how-2
 								//- +icon('icon-how-2')
@@ -27,7 +27,7 @@ mixin how-works()
 								| Размещение в улье
 							+e('p').caption
 								| Sit voluptatem accusantium laudantium, rem aperiam, eaque ipsa  inventore veritatis et.
-					+col()
+					+col-33().how-col-33
 						+b.how-item
 							+e('i').icon.icon-how-3
 								//- +icon('icon-how-3')
