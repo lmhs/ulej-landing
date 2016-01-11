@@ -13,6 +13,10 @@ $(() => {
 		return iOS;
 	});
 
+	$('.js-toggle-social').on('click', function(){
+		$(this).closest('.social').toggleClass('social--is-opened');
+	});
+
 	if ($('.js-open-what-is').length) {
 		$('.js-open-what-is').magnificPopup({
 			items: {

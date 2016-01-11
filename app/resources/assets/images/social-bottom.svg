@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="118" height="44" viewBox="0 0 118 44">
+	<defs>
+    <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+      <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+      <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+      <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+      <feMerge>
+        <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+</defs>
+  <path fill="#FFF" filter="url(#filter-1)" fill-rule="evenodd" d="M102.202 18.04L62.807 40.007c-4.83 2.693-10.78 2.693-15.61 0L7.805 18.04C2.975 15.346 0 10.37 0 4.982v-195.936c0-5.388 2.974-10.363 7.804-13.057l39.394-21.97c4.83-2.694 10.78-2.694 15.61 0l39.394 21.97c4.83 2.692 7.803 7.667 7.803 13.055V4.983c0 5.386-2.974 10.363-7.803 13.057z"/>
+</svg>

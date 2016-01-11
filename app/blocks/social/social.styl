@@ -1,0 +1,141 @@
+.social
+	width 110px
+	padding-x 5px
+	background-color #FFF
+	position absolute
+	top 444px
+	left 138px
+	text-align center
+	z-index 2
+	box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.22)
+	+mobile()
+		top 404px
+		left 10px
+	+above(4)
+		width auto
+		background none
+		box-shadow none
+
+	&:before
+	&:after
+		display block
+		position absolute
+		left 0
+		width 110px
+		height 43px
+		z-index 1
+	&:before
+		background url(../images/social-top.svg) center top no-repeat
+		top -43px
+	&:after
+		width 118px
+		height 44px
+		background url(../images/social-bottom.svg) center top no-repeat
+		bottom -43px
+		+above(4)
+			bottom -6px
+			z-index 3
+			width 90px
+			left 10px
+			background-position-x -10px
+	&__content
+		display none
+		margin-top 60px
+		+above(4)
+			margin-top 0
+			position relative
+			top -18px
+			background #FFF
+			border-radius 5px
+			padding-x 9px
+			box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.22)
+			margin-left -104px
+			z-index 2
+	&--is-opened
+		&:before
+		&:after
+			content ''
+		.social__content
+			display block
+	&__block
+		display inline-block
+		border-radius 5px
+		width 100px
+		height 40px
+		line-height 40px
+		font-family roboto
+		font-size 0
+		color #FFF
+		margin-bottom 4px
+		+above(4)
+			margin-top 9px
+			margin-bottom 9px
+			position relative
+			margin-right 4px
+		&--vk
+			background-color #5d89b2
+			+above(4)
+				margin-right 86px
+		&--fb
+			background-color #4d6fa8
+		&--tw
+			background-color #55acee
+			+above(4)
+				margin-right 0
+		&-icon-wrap
+			display inline-block
+			vertical-align top
+			width 50%
+			text-align center
+		&-counter
+			font-size 17px
+			position relative
+			display inline-block
+			vertical-align top
+			text-align center
+			width 50%
+			&:before
+				content ''
+				display block
+				width 1px
+				background-color rgba(255, 255, 255, .2)
+				position absolute
+				top 0
+				bottom 0
+				left -1px
+
+
+.social-link
+	color #F04
+	cursor pointer
+	display inline-block
+	position absolute
+	top -31px
+	left 18px
+	z-index 4
+	text
+		font-family openSans
+		font-size 14px
+		text-anchor middle
+
+
+.social__vk
+	width 25px
+	height 15px
+	display inline-block
+	vertical-align top
+	margin-top 13px
+
+.social__fb
+	width 11px
+	height 22px
+	display inline-block
+	vertical-align top
+	margin-top 9px
+
+.social__tw
+	width 20px
+	height 16px
+	display inline-block
+	vertical-align top
+	margin-top 12px
