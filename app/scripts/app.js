@@ -4,6 +4,7 @@ import $ from 'jquery';
 import './carousel.js';
 import './jquery.magnific-popup.min.js';
 import './jquery.placeholder-enhanced.min.js';
+import './jquery.adaptive.background.js';
 
 $(() => {
 	svg4everybody();
@@ -69,4 +70,23 @@ $(() => {
 			}
 		});
 	}
+
+	$('.js-tile a').on('mouseenter', function(){
+		let tile = $(this).closest('.js-tile');
+		tile.find('.js-tile-fill').show();
+		tile.find('.js-tile-text').removeClass('is-hidden');
+	});
+	$('.js-tile-text').on('mouseenter',function(){
+		let tile = $(this).closest('.js-tile');
+		tile.find('.js-tile-fill').show();
+	});
+	$('.js-tile a').on('mouseleave', function(){
+		let tile = $(this).closest('.js-tile');
+		tile.find('.js-tile-fill').hide();
+		tile.find('.js-tile-text').addClass('is-hidden');
+	});
+
+	$.adaptiveBackground.run({
+  	parent: '.js-tile'
+	});
 });

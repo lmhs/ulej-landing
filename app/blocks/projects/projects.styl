@@ -5,6 +5,8 @@
 
 	position relative
 	padding-top 80px
+	width 100%
+	overflow hidden
 
 
 	&:before
@@ -21,6 +23,7 @@
 
 	&__inner
 		position relative
+
 
 	&__promo
 		position absolute
@@ -53,35 +56,37 @@
 	&__tiles-row
 		font-size 0
 		position relative
-		overflow hidden
-		&__inner
-			transform translateX(-380px)
 
 	&__tiles
 		white-space nowrap
+		margin-left -525px
+		margin-right -525px
 
 .tiles-row
 	&-1
-		margin-left 315px
+		margin-left 380px
 	&-2
-		margin-left 211px
+		margin-left 274px
 		top -40px
 	&-3
-		margin-left 106px
+		margin-left 171px
 		top -80px
 	&-4
+		margin-left 66px
 		top -120px
 
 .projects-top-hexagon
 	retinaSprite $projects_top_hexagon_group
 	position absolute
 	top -58px
-	left 94px
+	left 17px
 
 .projects-right-hexagon
 	retinaSprite $projects_right_hexagon_group
 	display inline-block
 	vertical-align top
+	margin-left 10px
+	margin-top 40px
 
 .mail-icon
 	width 18px
@@ -92,39 +97,51 @@
 
 .tile
 	width 200px
-	height 216px
+	height 218px
 
 	display inline-block
 	vertical-align top
-
-	// overflow hidden
+	position relative
+	white-space normal
 
 	& + &
 		margin-left 10px
 
-	&-element
+	&__link
+		clip-path url(#clipping-tile)
+		cursor pointer
+
+	&__fill
+		display none
+
+	&__text
+		position absolute
+		top 0
+		left 0
+		// display flex
+		// align-items center
+		// align-content center
+		display table
+		width 200px
+		height 218px
+		line-height 1.2
 		color #FFF
-		// clip-path polygon(50% 0%, 165% 25%, 100% 75%, 50% 100%, 0% 165%, 0% 25%)
-		// mask url(#masking)
-		// box-shadow 0px 2px 4px 0px rgba(0, 0, 0, 0.22)
-		// clip-path url(#clipping-tile)
-		// clip-path polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
-		a
-			color #FFF
-		&__fill
-		&__text
-		&__mail
+		text-align center
+		padding-right 10px
+		padding-left 10px
+		font-size 20px
+		font-family robotoCond
+		text-decoration none
+		&-inner-wrap
+			display table-cell
+			vertical-align middle
+		&-inner
+			text-align center
+		&.is-hidden
 			display none
 
-		&__text
-			text-anchor middle
-			font-size 20px
-			font-weight bold
-			font-family robotoCond
-
-		&:hover
-			cursor pointer
-			.tile-element__fill
-			.tile-element__text
-			.tile-element__mail
-				display block
+	&__mail-icon
+		position absolute
+		left 50%
+		margin-left -9px
+		bottom 30px

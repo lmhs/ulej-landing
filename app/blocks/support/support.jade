@@ -6,12 +6,13 @@ mixin support()
 					strong пишут...
 			+e.body
 				+container-33()
-					+col-33()
-						+support-card
-					+col-33()
-						+support-card
-					+col-33()
-						+support-card
+					- var data=getData('support')
+					- var length = data.length
+					- var n = 0
+						while n < length
+							+col-33()
+								+support-card(data[n])
+								- n++
 
 	+b('section').support
 		+box()
@@ -31,19 +32,19 @@ mixin support()
 						+support-card-small
 
 
-mixin support-card()
+mixin support-card(item)
 	+b('section').support-card
 		+e.head
 			+e.logo
 				+e('img')(src="http://dummyimage.com/180x40/4d494d/686a82.gif&text=placeholder+image",width="180",height="40", alt="placeholder+image").logo-img
 		+e.body
 			+e('p').text.link
-				| Lorem ipsum dolor sit amet, consectetur adipisicing elit
+				| !{item.title}
 			+e.comment
 				+e('a')(href=jv0).comment-link.link
 					+icon('comment').comment-icon
 					+e.comment-count.js-count
-						| 342
+						| !{item.comments}
 
 mixin support-card-small()
 	+b('section').support-card-small
