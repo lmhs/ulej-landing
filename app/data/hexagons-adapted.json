@@ -3,177 +3,177 @@
 		"id": "1",
 		"href": "01.jpg",
 		"text": "Реализуй спортивные амбиции",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(202,84,38)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "2",
 		"href": "02.jpg",
 		"text": "Организуй особенную выставку",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(162,5,9)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "3",
 		"href": "03.jpg",
 		"text": "Создай невероятный стартап",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(61,43,33)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "4",
 		"href": "04.jpg",
 		"text": "Помогай беззащитным существам",
-		"bgColor": "#000",
-		"width" : "218",
+		"bgColor": "rgb(51,55,64)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "5",
 		"href": "05.jpg",
 		"text": "Выпусти инновационное устройство",
-		"bgColor": "#000",
-		"width" : "381",
+		"bgColor": "rgb(1,21,28)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "6",
 		"href": "06.jpg",
 		"text": "Издай свою книгу",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(40,29,13)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "7",
 		"href": "07.jpg",
 		"text": "Сделай мир ярче",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(146,62,0)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "8",
 		"href": "08.jpg",
 		"text": "Начни работу над научным проектом",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(2,12,24)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "9",
 		"href": "09.jpg",
 		"text": "Издай захватывающую игру",
-		"bgColor": "#000",
-		"width" : "300",
+		"bgColor": "rgb(0,102,199)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "10",
 		"href": "10.jpg",
-		"text": "Запиши альбом, проведи концерт",
-		"bgColor": "#000",
-		"width" : "395",
+		"text": "Запиши альбом или проведи концерт",
+		"bgColor": "rgb(3,3,3)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "11",
 		"href": "11.jpg",
 		"text": "Запусти проект своей мечты",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(172,46,21)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "12",
 		"href": "12.jpg",
 		"text": "Измени свой город",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(0,14,55)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "13",
 		"href": "13.jpg",
 		"text": "Разработай полезное приложение",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(19,9,8)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "14",
 		"href": "14.jpg",
 		"text": "Поставь уникальный спектакль",
-		"bgColor": "#000",
-		"width" : "327",
+		"bgColor": "rgb(1,10,43)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "15",
 		"href": "15.jpg",
 		"text": "Сделай что-нибудь особенное",
-		"bgColor": "#000",
-		"width" : "476",
+		"bgColor": "rgb(104,3,25)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "16",
 		"href": "16.jpg",
 		"text": "Помогай слабым",
-		"bgColor": "#000",
-		"width" : "240",
+		"bgColor": "rgb(19,19,19)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "17",
 		"href": "17.jpg",
 		"text": "Выпусти свою дизайнерскую коллекцию",
-		"bgColor": "#000",
+		"bgColor": "rgb(1,1,1)",
 		"width" : "200",
-		"height" : "261",
+		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "18",
 		"href": "18.jpg",
 		"text": "Достигай новых высот",
-		"bgColor": "#000",
+		"bgColor": "rgb(25,34,93)",
 		"width" : "200",
-		"height" : "300",
+		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "19",
 		"href": "19.jpg",
 		"text": "Дай волю творчеству",
-		"bgColor": "#000",
-		"width" : "290",
+		"bgColor": "rgb(13,12,20)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "20",
 		"href": "20.jpg",
 		"text": "Стань вторым Гауди",
-		"bgColor": "#000",
-		"width" : "360",
+		"bgColor": "rgb(110,26,0)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "21",
 		"href": "21.jpg",
 		"text": "Сними особенный фильм",
-		"bgColor": "#000",
-		"width" : "360",
+		"bgColor": "rgb(135,70,0)",
+		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
 		"id": "22",
 		"href": "22.jpg",
 		"text": "Проведи интересное мероприятие",
-		"bgColor": "#000",
+		"bgColor": "rgb(247,34,90)",
 		"width" : "200",
-		"height" : "275",
+		"height" : "218",
 		"color": "#FFF"
 	}
 ]

@@ -39,3 +39,15 @@ equal($value = 0)
 	right $value
 	bottom $value
 	left $value
+
+
+retinaSprite2($normal_sprite, $retina_group)
+	$retina_sprite-normal = $retina_group[1]
+	$retina_sprite = $retina_group[2]
+	sprite($normal_sprite)
+
+	+mobile(density: retina)
+		spriteImage($retina_sprite)
+		spritePosition($retina_sprite-normal)
+		spriteBackgroundSize($retina_sprite-normal)
+

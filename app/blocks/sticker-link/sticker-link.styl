@@ -5,9 +5,7 @@
 	text-align center
 	text-decoration none
 
-	retinaSprite $section_green_mobile_group
-
-	sprite $section_green_mobile
+	retinaSprite2($section_green, $section_green_mobile_group)
 
 	&:before
 		display inline-block
@@ -24,7 +22,7 @@
 		font-family robotoCond
 		display inline-block
 		vertical-align middle
-		+mobile(density: retina)
+		+mobile()
 			display none
 		small
 			font-family openSans
@@ -40,9 +38,9 @@
 	top 416px
 	z-index 2
 
-	+below(1160px,density: retina)
+	+below(1160px)
 		right 127px
 
-	+mobile(density: retina)
+	+mobile()
 		right 20px
 		top 370px

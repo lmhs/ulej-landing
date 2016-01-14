@@ -7,10 +7,10 @@
 	&__inner
 		position relative
 		padding-top 70px
-		+mobile(density: retina)
+		+mobile()
 			padding-top 40px
 
-	+mobile(density: retina)
+	+mobile()
 		padding-bottom 40px
 
 	&__heading
@@ -18,7 +18,7 @@
 		font-weight light
 		text-align center
 		color #E6E7F2
-		+mobile(density: retina)
+		+mobile()
 			margin-bottom 25px
 
 	&__stories-cards
@@ -30,6 +30,7 @@
 
 	&__stories-cards
 		width 1030px
+		padding-x 20px
 		+below(1060px)
 			width 100%
 
@@ -99,7 +100,8 @@
 			font-size 12px
 	&__img-wrap
 		width 100%
-		padding-bottom 100%
+		// padding-bottom 100%
+		height 200px
 		position relative
 	&__img
 		position absolute
@@ -117,8 +119,9 @@
 		font-weight semibold
 		font-size 16px
 		color #333
-		margin-top 20px
-		margin-bottom 16px
+		background-color #F6F6F6
+		padding-top 20px
+		padding-bottom 46px
 
 	&__author-img-wrap
 		display block
@@ -126,7 +129,10 @@
 		height 60px
 		overflow hidden
 		border-radius 50%
-		margin 0 auto
+		margin -30px auto 0
+		img
+			width 60px
+			height 60px
 	&__author-name
 		font-size 14px
 		font-weight semibold
@@ -283,7 +289,7 @@
 	retinaSprite $bottom_left_hexagon_group
 	left 75px
 	top -90px
-	+mobile(density: retina)
+	+mobile()
 		display none
 
 .project-hexagon
@@ -291,6 +297,6 @@
 	retinaSprite $project_hexagon_group
 	right 64px
 	top -54px
-	+mobile(density: retina)
+	+mobile()
 		display none
 

@@ -33,7 +33,7 @@
 		padding-right 60px
 		padding-bottom 160px
 		text-align right
-		+mobile(density: retina)
+		+mobile()
 			position static
 			text-align center
 			width 100%
@@ -47,7 +47,7 @@
 		font-weight bold
 		margin-bottom 36px
 		text-align right
-		+mobile(density: retina)
+		+mobile()
 			text-align center
 			font-size 18px
 			line-height 20px
@@ -67,13 +67,16 @@
 		margin-left 380px
 	&-2
 		margin-left 274px
-		top -40px
+		.tile a
+			transform translate3d(0,-40px,0)
 	&-3
 		margin-left 171px
-		top -80px
+		.tile a
+			transform translate3d(0,-80px,0)
 	&-4
 		margin-left 66px
-		top -120px
+		.tile a
+			transform translate3d(0,-120px,0)
 
 .projects-top-hexagon
 	retinaSprite $projects_top_hexagon_group
@@ -103,11 +106,25 @@
 	vertical-align top
 	position relative
 	white-space normal
+	filter drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.22))
+
+	// &:hover
+	// 	.tile__text
+	// 		display table
+	// 	.tile__fill
+	// 		display block
+
+
+	svg&__element
+		overflow visible
+		// filter url(#f1)
+
 
 	& + &
 		margin-left 10px
 
 	&__link
+		/* autoprefixer: off */
 		clip-path url(#clipping-tile)
 		cursor pointer
 
@@ -132,6 +149,9 @@
 		font-size 20px
 		font-family robotoCond
 		text-decoration none
+		// display none
+		// &:hover
+		// 	display table
 		&-inner-wrap
 			display table-cell
 			vertical-align middle

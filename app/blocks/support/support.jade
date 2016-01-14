@@ -34,6 +34,7 @@ mixin support()
 
 mixin support-card(item)
 	+b('section').support-card
+		+e('a')(href=item.href).link
 		+e.head
 			+e.logo
 				+e('img')(src="http://dummyimage.com/180x40/4d494d/686a82.gif&text=placeholder+image",width="180",height="40", alt="placeholder+image").logo-img
@@ -41,7 +42,7 @@ mixin support-card(item)
 			+e('p').text.link
 				| !{item.title}
 			+e.comment
-				+e('a')(href=jv0).comment-link.link
+				+e('span').comment-link
 					+icon('comment').comment-icon
 					+e.comment-count.js-count
 						| !{item.comments}

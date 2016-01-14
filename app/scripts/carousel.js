@@ -25,7 +25,7 @@ import $ from 'jquery';
 		infinite: false,
 		responsive: [
 		{
-			breakpoint: 1030,
+			breakpoint: 600,
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
@@ -33,7 +33,7 @@ import $ from 'jquery';
 				dots: true
 			}
 		},{
-			breakpoint: 700,
+			breakpoint: 480,
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
@@ -53,7 +53,7 @@ import $ from 'jquery';
 		centerPadding: '20px',
 		asNavFor: '.js-cards-carousel',
 		responsive: [{
-			breakpoint: 700,
+			breakpoint: 370,
 			settings: 'unslick'
 		}]
 	});

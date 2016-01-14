@@ -2,6 +2,8 @@
 	position relative
 	padding-top 20px
 	padding-bottom 27px
+	+mobile()
+		overflow hidden
 	&:before
 		content ''
 		position absolute
@@ -20,20 +22,21 @@
 			display inline
 
 	.container
-		+mobile(density: retina)
+		+mobile()
 			display block
 	.col
-		+mobile(density: retina)
+		+mobile()
 			display block
 
 	.website-link
 	.divider--is-hidden-mobile
-		+mobile(density: retina)
+		+mobile()
 			display none
 
 	&__partner
 		&-col
-			+mobile(density: retina)
+			text-align center
+			+mobile()
 				margin-top 50px
 		&-logo
 			width 190px
@@ -56,7 +59,7 @@
 		line-height 30px
 	&__contact-col
 		position relative
-		+mobile(density: retina)
+		+mobile()
 			margin-top 20px
 	&__phones
 		display inline-block
@@ -65,7 +68,7 @@
 		width 254px
 		display inline-block
 		vertical-align top
-		+mobile(density: retina)
+		+mobile()
 			position absolute
 			top -45px
 			right -83px
@@ -117,10 +120,14 @@
 	&
 	a
 		color #4f71a6
+		&:hover
+			color #476595
 .honeycomb-vk
 	&
 	a
 		color #587ea3
+		&:hover
+			color #4f7091
 
 .honeycomb-vk
 .honeycomb-fb
@@ -157,12 +164,12 @@
 
 
 .phone-col
-	+mobile(density: retina)
+	+mobile()
 		width 50%
 		display inline-block
 		margin 0
 
 .social-col
-	+mobile(density: retina)
+	+mobile()
 		position absolute
 
