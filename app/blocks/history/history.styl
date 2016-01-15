@@ -27,12 +27,16 @@
 
 		margin-x auto
 
+	&__story-card-wrap
+		text-align center
+
 
 	&__stories-cards
 		width 1030px
 		padding-x 20px
 		+below(1060px)
 			width 100%
+			padding-x 0
 
 		.slick-track
 			padding-bottom 30px
@@ -53,22 +57,24 @@
 		margin-top 50px
 		white-space nowrap
 		overflow hidden
-		+below(950px)
+		+below(1000px)
 			width 100%
-		+below(700px)
+		+below(720px)
 			display none
 
 .story-card
 	width 290px
-	min-height 540px
-	padding-bottom 33px
+	min-height 450px
 	background-color #FFF
 	border-radius 3px
 	display inline-block
 	text-align center
 	position relative
 	margin-x 20px
-	&.slick-current
+	+mobile()
+		margin-x 15px
+
+	.slick-current &
 		transform translateY(20px)
 		+below(1030px)
 			transform translateY(0)
@@ -170,6 +176,7 @@
 		color #A6ABDB
 		font-size 16px
 		text-decoration none
+		margin-left 10px
 		&:hover
 			text-decoration underline
 

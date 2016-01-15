@@ -20,6 +20,11 @@
 
 .how-col-33
 	position relative
+	+below(950px)
+		width 50%
+		margin-bottom 35px
+	+below(600px)
+		width 100%
 	& + &
 		&:before
 			content ''
@@ -34,8 +39,6 @@
 .how-item
 	width 240px
 	display inline-block
-	+below(780px)
-		margin-bottom 35px
 
 	&__icon
 		display inline-block

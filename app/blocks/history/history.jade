@@ -1,5 +1,6 @@
 mixin history()
 	+b('section').history
+		-var stories = getData('stories')
 		+box()
 			+e().inner
 				i.bottom-left-hexagon
@@ -7,30 +8,37 @@ mixin history()
 		+e('h2').heading.heading Истории !{''}
 			strong успеха
 		+e.stories-cards.js-cards-carousel
-			+story-card(1)
-			+story-card(2)
-			+story-card(3)
+			each item in stories
+				+e.story-card-wrap
+					+story-card(item)
+					+popup({
+						jsClass:'js-about-project-popup-'+item.id,
+						heading: item.title,
+						type: 'about-project',
+						message: item.bigText,
+						author: item.author
+					})
+
 		+e.stories-text.js-stories-carousel
-			+story(1)
-			+story(2)
-			+story(3)
+			each item in stories
+				+story(item)
 
 
-mixin story-card(number)
+mixin story-card(item)
 	+b('section').story-card&attributes(attributes)
 		+e.head
-			+e('h3').title Картина на стене !{number}
-				small 278 Спонсоров
+			+e('h3').title !{item.title}
+				small !{item.sponsors}
 		+e.body
 			+e.img-wrap
-				+e('img')(src="http://dummyimage.com/290x200/4d494d/686a82.gif&text=Картина на стене", width='290', height='200', alt="Картина на стене").img
-			+e('strong').price 431 300 300 руб.
+				+e('img')(src="./assets/images/"+ item.project, width='290', height='200', alt=item.title).img
+			+e('strong').price !{item.sum}
 		+e.foot
 			+e.author-img-wrap
-				+e('img')(src="http://dummyimage.com/290x290/4d494d/686a82.gif&text=Картина на стене", width='290', height='290', alt="Картина на стене").author-img
-			+e.author-name Митя Писляк
+				+e('img')(src="./assets/images/"+ item.avatar, width='60', height='60', alt=item.author).author-img
+			+e.author-name !{item.author}
 
-mixin story(number)
+mixin story(item)
 	+b('section').story&attributes(attributes)
-		+e.text !{number} Проект «Картина на стене» завершился успешно: его поддержали 108 человек. Кроме того, во время кампании у меня появился крупный спонсор (ОАО «Приорбанк»), который выразил желание также поддерживать мои будущие проекты. Чему я несказанно рад, ведь они обязательно будут :).
-			+e('a')(href=jv0).more-link Ещё...
+		+e.text !{item.text}
+			+e('a')(class='more-link js-open-about-project-popup-'+item.id, href=jv0) Ещё...

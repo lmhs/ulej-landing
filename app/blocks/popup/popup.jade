@@ -32,12 +32,22 @@ mixin popup(args)
 						|  и наш менеджер свяжется с вами и подробно расскажет про все дальнейшие действия.
 					+e('p')
 						strong Мы ждем вас!
+					+button({type:'button'}).btn--green.popup__message-btn.js-close-message-popup
+						| Закрыть
 
 				else if (args.type === 'message')
 					+e('p').message-text
 						| !{args.message}
-					+button({type:'buttonSubmit'}).btn--green.popup__message-btn.js-close-message-popup
+					+button({type:'button'}).btn--green.popup__message-btn.js-close-message-popup
 						| Отлично!
+
+				else if (args.type === 'about-project')
+					+e('p')
+						| !{args.message}
+					+e('p')
+						strong !{args.author}
+					+button({type:'button'}).btn--green.popup__message-btn.js-close-message-popup
+						| Закрыть
 
 				else if (args.type === 'callback')
 					+e.form-wrap

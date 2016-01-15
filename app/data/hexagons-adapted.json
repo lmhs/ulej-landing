@@ -3,7 +3,7 @@
 		"id": "1",
 		"href": "01.jpg",
 		"text": "Реализуй спортивные амбиции",
-		"bgColor": "rgb(202,84,38)",
+		"bgColor": "rgb(234,176,30)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
@@ -51,7 +51,7 @@
 		"id": "7",
 		"href": "07.jpg",
 		"text": "Сделай мир ярче",
-		"bgColor": "rgb(146,62,0)",
+		"bgColor": "rgb(234,160,0)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
@@ -83,7 +83,7 @@
 		"id": "11",
 		"href": "11.jpg",
 		"text": "Запусти проект своей мечты",
-		"bgColor": "rgb(172,46,21)",
+		"bgColor": "rgb(21,95,132)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
@@ -91,7 +91,7 @@
 		"id": "12",
 		"href": "12.jpg",
 		"text": "Измени свой город",
-		"bgColor": "rgb(0,14,55)",
+		"bgColor": "rgb(7,35,83)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
@@ -163,7 +163,7 @@
 		"id": "21",
 		"href": "21.jpg",
 		"text": "Сними особенный фильм",
-		"bgColor": "rgb(135,70,0)",
+		"bgColor": "rgb(7,35,83)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
@@ -171,7 +171,7 @@
 		"id": "22",
 		"href": "22.jpg",
 		"text": "Проведи интересное мероприятие",
-		"bgColor": "rgb(247,34,90)",
+		"bgColor": "rgb(234,176,30)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
