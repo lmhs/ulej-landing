@@ -37,7 +37,7 @@ mixin support-card(item)
 		+e('a')(href=item.href).link
 		+e.head
 			+e.logo
-				+e('img')(src="http://dummyimage.com/180x40/4d494d/686a82.gif&text=placeholder+image",width="180",height="40", alt="placeholder+image").logo-img
+				+e('img')(src='./assets/images/'+item.author+'.png').logo-img
 		+e.body
 			+e('p').text.link
 				| !{item.title}
