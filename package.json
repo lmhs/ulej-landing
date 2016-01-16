@@ -102,5 +102,8 @@
     "ios": 7,
     "opera": 12,
     "safari": 5
+  },
+  "dependencies": {
+    "jquery-placeholder": "^2.3.1"
   }
 }

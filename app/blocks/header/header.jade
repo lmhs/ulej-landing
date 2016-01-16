@@ -66,8 +66,9 @@ mixin header()
 		+e.inner
 			//- +e('img')(src='./assets/images/bg2.jpg', width="1120", height="640").bg-img
 			+e.bg-clip
-				+e('svg')(width='1160', height='750').bg-img-clip
-					image(width='1120', height='640', x="0", y="0", xlink:href='./assets/images/bg2.jpg', clip-path='url(#clipping-bg)').tile__image
+				+icon('green').bg-green
+				+e('svg')(width='1120', height='640').bg-img-clip
+					image(width='1120', height='640', x="0", y="0", xlink:href='./assets/images/bg3.jpg', clip-path='url(#clipping-bg)').tile__image
 				+e('h1').heading Финансирование проектов в Улье
 					small Ulej.by&nbsp;&mdash; первая в Беларуси краудфандинговая площадка.
 				+social()

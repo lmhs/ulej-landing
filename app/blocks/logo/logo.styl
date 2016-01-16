@@ -1,13 +1,18 @@
 .logo
 	position absolute
 	top 13px
-	left -67px
+	left -47px
 	display block
 	width 94px
 	height 103px
-	color #06B7C5
+	&
+	a
+		color #06B7C5
+		cursor pointer
+		&:hover
+			color #09a4b3
 
-	+below(1247px)
+	+below(1276px)
 		left 25px
 
 	+mobile()

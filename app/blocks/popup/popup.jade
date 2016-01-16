@@ -24,11 +24,11 @@ mixin popup(args)
 					+e('p')
 						| Получить средства может каждый, вне зависимости от возраста, социального статуса и сферы вашего проекта. Главное – это ваше желание и стремление реализовать свою мечту!
 						| Кстати, если вы беспокоитесь за сохранность своей, мы полностью гарантируем конфиденциальность всей полученной от вас информации, о чем прописано в нашем !{''}
-						a(href=jv0).js-open-terms соглашении
+						a(href='http://ulej.by/agreement', target='_blank') соглашении
 						| , ведь наша площадка заинтересована в реализации именно ВАШЕГО проекта не меньше, чем вы сами!
 						| Хотите попробовать? Еще бы! Ведь вы абсолютно ничего не теряете!
 						br
-						a(href=jv0).js-open-application Оставляйте вашу заявку
+						a(href=jv0).js-open-send Оставляйте вашу заявку
 						|  и наш менеджер свяжется с вами и подробно расскажет про все дальнейшие действия.
 					+e('p')
 						strong Мы ждем вас!
@@ -53,7 +53,7 @@ mixin popup(args)
 					+e.form-wrap
 						+b('form').form
 							+e('input')(type='text',placeholder='Как вас зовут?').input.input.js-callback-name
-							+e('input')(type='text',placeholder='Контактный Email / Номер телефона').input.input
+							+e('input')(type='text',placeholder='Номер телефона').input.input
 							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-callback-submit
 								| Отправить
 				else if (args.type === 'send')
@@ -69,6 +69,6 @@ mixin popup(args)
 							+e('p')
 								strong Мы гарантируем конфиденциальность любой информации
 								|  и вашей идеи, о чем написано в нашем !{''}
-								a(href=jv0) соглашении.
+								a(href='http://ulej.by/agreement', target='_blank') соглашении.
 							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-send-submit
 								| Отправить

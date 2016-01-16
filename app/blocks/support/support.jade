@@ -21,23 +21,34 @@ mixin support()
 					strong поддерживают
 			+e.body
 				+container-33()
-					+col-33()
-						+support-card-small
-						+support-card-small
-					+col-33()
-						+support-card-small
-						+support-card-small
-					+col-33()
-						+support-card-small
-						+support-card-small
+					- var data=getData('support-companies')
+					- var length = data.length
+					- var n = 0
+						+col-33()
+							while n < 2
+								+support-card-small(data[n])
+								- n++
+						+col-33()
+							while n < 4
+								+support-card-small(data[n])
+								- n++
+						+col-33()
+							while n < 6
+								+support-card-small(data[n])
+								- n++
 
 
 mixin support-card(item)
 	+b('section').support-card
-		+e('a')(href=item.href).link
+		+e('a')(href=item.href, target='_blank').link
 		+e.head
 			+e.logo
-				+e('img')(src='./assets/images/'+item.author+'.png').logo-img
+				if item.author === 'kyky'
+					+icon('kyky').support-card__logo-img.support-card__logo-img-icon
+				else
+					+e('img')(src='./assets/images/'+item.author+'.png',
+										srcset='./assets/images/'+item.author+'@2x.png 2x, ./assets/images/'+item.author+'.png 1x'
+										).logo-img
 		+e.body
 			+e('p').text.link
 				| !{item.title}
@@ -47,7 +58,19 @@ mixin support-card(item)
 					+e.comment-count.js-count
 						| !{item.comments}
 
-mixin support-card-small()
+mixin support-card-small(item)
 	+b('section').support-card-small
-		+e.logo
-			+e('img')(src="http://dummyimage.com/180x40/4d494d/686a82.gif&text=placeholder+image",width="180",height="40", alt="placeholder+image").logo-img
+		if item.company === 'belgazprombank'
+			+e.logo
+				+icon('belgazprombank').support__icon-bgpb.support-card-small__logo-img
+		else if item.company === 'epam'
+			+e.logo.support-card-small__logo--epam
+				+icon('epam').support__icon-epam.support-card-small__logo-img
+		else if item.company === 'lwo'
+			+e.logo.support-card-small__logo--lwo
+				+icon('lwo').support__icon-lwo.support-card-small__logo-img
+		else
+			+e.logo
+				+e('img')(src='./assets/images/'+item.company+'.png',
+								srcset='./assets/images/'+item.company+'@2x.png 2x, ./assets/images/'+item.company+'.png 1x'
+								).logo-img

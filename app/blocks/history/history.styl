@@ -71,12 +71,19 @@
 	text-align center
 	position relative
 	margin-x 20px
+	cursor pointer
+	transition transform .2s ease-in
 	+mobile()
 		margin-x 15px
 
+	&:hover
+		transform translateY(20px)
+		+mobile()
+			transform translateY(0)
+
 	.slick-current &
 		transform translateY(20px)
-		+below(1030px)
+		+mobile()
 			transform translateY(0)
 		&:after
 			content ''

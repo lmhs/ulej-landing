@@ -2,9 +2,7 @@ mixin icon(iconName)
 	+b('svg')&attributes(attributes)
 		use(xlink:href='./assets/images/icon.svg#icon_#{iconName}')
 
-mixin link-icon(iconName)
+mixin link-icon(iconName,href)
 	+b('svg')&attributes(attributes)
-		svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='32', height='38', viewbox='0 0 32 38')
-			a(xlink:href='https://www.facebook.com/ulejby', target='_blank')
-				g(fill='none', fill-rule='evenodd')
-
+		a(xlink:href=href, target='_blank')
+			use(xlink:href='./assets/images/icon.svg#icon_#{iconName}')
