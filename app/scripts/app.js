@@ -4,7 +4,7 @@ import $ from 'jquery';
 import './carousel.js';
 import './jquery.magnific-popup.min.js';
 import './jquery.placeholder.js';
-// import './jquery.adaptive.background.js';
+import './jquery.validate.js';
 
 $(() => {
 	svg4everybody();
@@ -102,6 +102,20 @@ $(() => {
 					preloader: false,
 					type: 'inline',
 					focus: '.js-send-name'
+			}
+		});
+	}
+
+	if ($('form').length) {
+		$('form').validate({
+			rules: {
+				field: {
+					required: true,
+					email: true
+				}
+			},
+			submitHandler: function(form) {
+				form.submit();
 			}
 		});
 	}

@@ -43,14 +43,15 @@ function runWebpack(watch = false) {
 		},
 		plugins: gutil.env.debug ? [] : [
 			new webpack.optimize.DedupePlugin(),
-			new webpack.optimize.UglifyJsPlugin({
-				compress: {
-					warnings: false
-				},
-				output: {
-					comments: false
-				}
-			})
+			// new webpack.optimize.UglifyJsPlugin({
+			// 	compress: {
+			// 		warnings: false
+			// 	},
+			// 	output: {
+			// 		comments: false
+			// 	}
+			// })
+
 		],
 		eslint: {
 			configFile: path.join(__dirname, '../.eslintrc'),

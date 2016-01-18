@@ -52,8 +52,10 @@ mixin popup(args)
 				else if (args.type === 'callback')
 					+e.form-wrap
 						+b('form').form
-							+e('input')(type='text',placeholder='Как вас зовут?').input.input.js-callback-name
-							+e('input')(type='text',placeholder='Номер телефона').input.input
+							+e.field-wrap.field-wrap
+								+e('input')(type='text',placeholder='Как вас зовут?',required='required').input.input.field.js-callback-name
+							+e.field-wrap.field-wrap
+								+e('input')(type='text',placeholder='Номер телефона',required='required').input.input.field.js-callback-phone
 							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-callback-submit
 								| Отправить
 				else if (args.type === 'send')
@@ -63,12 +65,16 @@ mixin popup(args)
 						+e('p')
 							| Для того, чтобы начать, нужно всего лишь оставить заявку с кратким описанием проекта, после чего наш менеджер свяжется с вами и ответит на все вопросы.
 						+b('form').form
-							+e('input')(type='text',placeholder='Как вас зовут?').input.input.js-send-name
-							+e('input')(type='text',placeholder='Контактный Email / Номер телефона').input.input
-							+e('textarea')(placeholder='Несколько слов о проекте').textarea.textarea
+							+e.field-wrap.field-wrap
+								+e('input')(type='text',placeholder='Как вас зовут?',required='required').input.input.field.js-send-name
+							+e.field-wrap.field-wrap
+								+e('input')(type='text',placeholder='Контактный Email / Номер телефона',required='required').input.input.field.js-send-contacts
+							+e.field-wrap.field-wrap
+								+e('textarea')(placeholder='Несколько слов о проекте',required='required').textarea.textarea.field.js-send-project-info
 							+e('p')
 								strong Мы гарантируем конфиденциальность любой информации
 								|  и вашей идеи, о чем написано в нашем !{''}
 								a(href='http://ulej.by/agreement', target='_blank') соглашении.
-							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-send-submit
+							//- +button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-send-submit
+							+button({type:'buttonSubmit'}).btn--green.form__submit-btn
 								| Отправить

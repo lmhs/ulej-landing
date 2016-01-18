@@ -97,8 +97,7 @@
 
 
 .form
-	&__input
-	&__textarea
+	&__field-wrap
 		margin-bottom 10px
 		width 100%
 
@@ -110,32 +109,58 @@
 		+mobile()
 			width 100%
 
+.field-wrap
+	position relative
+	&.field--is-invalid
+		.field
+			padding-right 40px
 
+			border-color #e00073
+			&:focus
+				border-color #e00073
+		&:after
+			z-index 1
+
+			width 0
+			height 0
+
+			content ''
+			-webkit-transform rotate(360deg)
+
+			border-width 0 6.5px 10px 6.5px
+			border-style solid
+			border-color transparent transparent #e00073 transparent
+
+			position absolute
+			top 15px
+			right 17px
 
 .input
 	height 42px
 	line-height 40px
 	padding-x 16px
+	width 100%
 
 .textarea
 	height 120px
 	line-height 20px
 	padding 13px 16px
 
-.input
-.textarea
+.field
 	border 1px solid rgb(223, 223, 223)
 	border-radius 3px
 	background-color rgba(249,249,249,1)
 	font-size 14px
 	color #333
+	width 100%
 	&.placeholder
 		color #999
 		font-size 14px
 	&::placeholder
 		color #999
 		font-size 14px
-
+	&:invalid
+		border-color #e00073
 
 
 .mfp-bg
@@ -278,7 +303,7 @@ button
 		top 1px
 
 .mfp-close:hover,
-  .mfp-close:focus
+	.mfp-close:focus
 	opacity 1
 
 .mfp-close-btn-in
@@ -316,13 +341,13 @@ button
 		margin-top -54px
 
 .mfp-arrow:hover,
-  .mfp-arrow:focus
+	.mfp-arrow:focus
 	opacity 1
 
 .mfp-arrow:before,
-  .mfp-arrow:after,
-  .mfp-arrow .mfp-b,
-  .mfp-arrow .mfp-a
+	.mfp-arrow:after,
+	.mfp-arrow .mfp-b,
+	.mfp-arrow .mfp-a
 	content ''
 	display block
 	width 0
@@ -335,13 +360,13 @@ button
 	border medium inset transparent
 
 .mfp-arrow:after,
-  .mfp-arrow .mfp-a
+	.mfp-arrow .mfp-a
 	border-top-width 13px
 	border-bottom-width 13px
 	top 8px
 
 .mfp-arrow:before,
-  .mfp-arrow .mfp-b
+	.mfp-arrow .mfp-b
 	border-top-width 21px
 	border-bottom-width 21px
 	opacity 0.7
@@ -350,12 +375,12 @@ button
 	left 0
 
 .mfp-arrow-left:after,
-  .mfp-arrow-left .mfp-a
+	.mfp-arrow-left .mfp-a
 	border-right 17px solid #FFF
 	margin-left 31px
 
 .mfp-arrow-left:before,
-  .mfp-arrow-left .mfp-b
+	.mfp-arrow-left .mfp-b
 	margin-left 25px
 	border-right 27px solid #3F3F3F
 
@@ -363,12 +388,12 @@ button
 	right 0
 
 .mfp-arrow-right:after,
-  .mfp-arrow-right .mfp-a
+	.mfp-arrow-right .mfp-a
 	border-left 17px solid #FFF
 	margin-left 39px
 
 .mfp-arrow-right:before,
-  .mfp-arrow-right .mfp-b
+	.mfp-arrow-right .mfp-b
 	border-left 27px solid #3F3F3F
 
 .mfp-iframe-holder

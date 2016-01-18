@@ -1,6 +1,8 @@
 mixin sticker-link()
 
 	+b('a')(href=jv0).sticker-link&attributes(attributes)
+		+icon('green-hexagon').sticker-link__bg
+		+icon('green-hexagon-mobile').sticker-link__bg.sticker-link__bg-mobile
 		+e.inner
 			+e('h3').heading Что такое краудфандинг?
 				small Узнайте сейчас!

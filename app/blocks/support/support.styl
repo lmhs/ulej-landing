@@ -101,12 +101,16 @@
 			background linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
 
 	&__text
+		display block
 		line-height 22px
 		height 44px
 		overflow hidden
 		margin-bottom 22px
 		font-weight semibold
-		.support-card:hover &
+		position relative
+		z-index 2
+		text-decoration none
+		&:hover
 			text-decoration underline
 
 	.comment-icon
