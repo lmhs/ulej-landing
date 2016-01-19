@@ -179,7 +179,8 @@
 	width 100%
 	height 100%
 	z-index 1043
-	position fixed
+	position fixed !important
+	overflow scroll
 	outline none !important
 	-webkit-backface-visibility hidden
 
@@ -560,3 +561,21 @@ img
 .mfp-container
 	+below(900px)
 		padding-x 10px
+
+
+.mfp-wrap
+	-webkit-overflow-scrolling touch
+	-webkit-transform translateZ(0)
+
+html.mfp-helper
+	height 100%
+
+	body
+		overflow hidden
+		overflow-y scroll
+		position fixed
+		equal(0)
+		position relative
+		height 100%
+		-webkit-transform translateZ(0)
+

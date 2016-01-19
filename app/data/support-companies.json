@@ -5,23 +5,23 @@
 		"href" : ""
 		},
 	{
-		"company": "beltelecom",
-		"title" : "Белтелеком",
-		"href" : ""
-		},
-	{
 		"company": "epam",
 		"title" : "Епам",
 		"href" : ""
 		},
 	{
-		"company": "lwo",
-		"title" : "LWO",
+		"company": "priorbank",
+		"title" : "Приорбанк",
 		"href" : ""
 		},
 	{
-		"company": "priorbank",
-		"title" : "Приорбанк",
+		"company": "beltelecom",
+		"title" : "Белтелеком",
+		"href" : ""
+		},
+	{
+		"company": "lwo",
+		"title" : "LWO",
 		"href" : ""
 		},
 	{

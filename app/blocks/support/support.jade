@@ -20,22 +20,21 @@ mixin support()
 				+e('h2').heading.heading ... наши проекты !{''}
 					strong поддерживают
 			+e.body
-				+container-33()
-					- var data=getData('support-companies')
-					- var length = data.length
-					- var n = 0
-						+col-33()
-							while n < 2
+				.container-33
+					.row-33
+						- var data=getData('support-companies')
+						- var length = data.length
+						- var n = 0
+							while n < 3
+								+col-33()
+									+support-card-small(data[n])
+									- n++
+					.row-33
+						while n < 6
+							+col-33()
 								+support-card-small(data[n])
 								- n++
-						+col-33()
-							while n < 4
-								+support-card-small(data[n])
-								- n++
-						+col-33()
-							while n < 6
-								+support-card-small(data[n])
-								- n++
+
 
 
 mixin support-card(item)

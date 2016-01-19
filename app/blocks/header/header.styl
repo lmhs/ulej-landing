@@ -11,6 +11,7 @@
 		top 0
 		left 50%
 		margin-left -580px
+
 		filter drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.22))
 		+mobile()
 			top -200px
@@ -173,7 +174,7 @@
 		// padding-right 30px
 		// padding-left 150px
 		+mobile()
-			padding-x 60px
+			padding-x 0
 		&:before
 			left 0
 			right 40px
@@ -184,7 +185,7 @@
 		// padding-left 100px
 		// padding-right 150px
 		+mobile()
-			padding-x 80px
+			padding-x 0
 		&:before
 			left 40px
 			right 0
@@ -204,6 +205,7 @@
 			// width 200px
 			font-size 12px
 			line-height 16px
+			display block
 
 	&__strong
 		display inline-block
@@ -215,6 +217,8 @@
 		+mobile()
 			font-size 34px
 			line-height 32px
+			width 40%
+			text-align right
 
 	&__description
 		display inline-block
@@ -229,6 +233,7 @@
 
 .help-block
 	position absolute
+	z-index 1
 	top 560px
 	left 30px
 	padding 16px 20px
@@ -274,5 +279,19 @@
 		top -200px
 
 
-// .tile__image
-// filter drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.22))
+.tile__image
+	background #333
+	// +mobile()
+	// 	width 770px
+	// 	height 440px
+		// transform translate(-350px,-120px)
+
+.tile__gradient
+	+mobile()
+		width 770px
+		height 440px
+		transform translate(-350px,-120px)
+
+.clipping-bg
+	+mobile()
+		transform translate(350px,120px)
