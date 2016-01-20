@@ -77,7 +77,6 @@
     "gulp.spritesmith-multi": "^2.2.0",
     "jade-get-data": "^1.0.0",
     "jquery": "^2.1.4",
-    "magnific-popup": "^1.0.1",
     "merge-stream": "^1.0.0",
     "node-notifier": "^4.3.1",
     "postcss-color-rgba-fallback": "^2.1.0",
@@ -105,6 +104,7 @@
   },
   "dependencies": {
     "jquery-placeholder": "^2.3.1",
-    "jquery-validation": "^1.14.0"
+    "jquery-validation": "^1.14.0",
+    "magnific-popup": "^1.0.1"
   }
 }

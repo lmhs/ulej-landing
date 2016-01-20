@@ -1,32 +1,26 @@
 [
 	{
 		"company": "belgazprombank",
-		"title" : "Белгазпромбанк",
-		"href" : ""
+		"title" : "Белгазпромбанк"
 		},
 	{
 		"company": "epam",
-		"title" : "Епам",
-		"href" : ""
+		"title" : "Епам"
 		},
 	{
 		"company": "priorbank",
-		"title" : "Приорбанк",
-		"href" : ""
+		"title" : "Приорбанк"
 		},
 	{
 		"company": "beltelecom",
-		"title" : "Белтелеком",
-		"href" : ""
+		"title" : "Белтелеком"
 		},
 	{
 		"company": "lwo",
-		"title" : "LWO",
-		"href" : ""
+		"title" : "LWO"
 		},
 	{
 		"company": "unistar",
-		"title" : "Unistar radio",
-		"href" : ""
+		"title" : "Unistar radio"
 		}
 ]

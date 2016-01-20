@@ -1,10 +1,8 @@
 body
 	position relative
-
 	font-family openSans
 
 html
-	// overflow hidden
 	overflow-y scroll
 
 
@@ -15,7 +13,6 @@ h2
 h3
 h4
 	margin 0
-
 	font-family robotoCond
 
 
@@ -31,7 +28,7 @@ h4
 	color #171717
 	font-family openSans
 	font-weight regular
-	+mobile(density: retina)
+	+mobile()
 		font-size 20px
 		line-height 1.2
 	strong
@@ -59,6 +56,6 @@ h4
 a
 button
 .link
-	transition all 0.2s ease-in
+	transition color 0.2s ease-in
 	&:hover
-		transition all 0s
+		transition color 0s

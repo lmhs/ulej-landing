@@ -27,8 +27,6 @@ gulp.task('styles', () => (
 		.pipe(stylus({
 			use: [
 				rupture()
-				// ,
-				// autoprefixer()
 			],
 			sourcemap: !!gutil.env.debug && {
 				comment: false,
@@ -50,7 +48,7 @@ gulp.task('styles', () => (
 			]
 		))
 		.pipe(gulpif(!gutil.env.debug, gcmq()))
-		.pipe(gulpif(!gutil.env.debug, minifyCss()))
+		// .pipe(gulpif(!gutil.env.debug, minifyCss()))
 		.pipe(gulpif(gutil.env.csscomb, csscomb()))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(gulp.dest('dist/assets/styles'))
