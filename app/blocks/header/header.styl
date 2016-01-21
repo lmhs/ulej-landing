@@ -278,12 +278,17 @@
 		top -200px
 
 
-.tile__image
+.tile-header__image
 	background #333
-	// +mobile()
-	// 	width 770px
-	// 	height 440px
-		// transform translate(-350px,-120px)
+	opacity 0
+	transition opacity 1s linear
+	&--is-loaded
+		opacity 1
+		transition opacity 2s linear
+	&--small
+		filter blur(20px)
+		filter url(#blurry)
+		filter unquote('progid:DXImageTransform.Microsoft.Blur(PixelRadius=50)')
 
 .tile__gradient
 	+mobile()

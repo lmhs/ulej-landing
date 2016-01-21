@@ -1,3 +1,4 @@
+import svg4everybody from 'svg4everybody';
 import './modernizr.custom.min.js';
 import $ from 'jquery';
 import './carousel.js';
@@ -9,8 +10,15 @@ var images = [
 							'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
 							'Main-06.jpg','Main-07.jpg','Main-08.jpg','Main-09.jpg','Main-10.jpg','Main-11.jpg',
 							'Main-12.jpg','Main-13.jpg','Main-14.jpg'];
+// массив маленьких картинок
+var imagesSmall = [
+							'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
+							'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
+							'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
 
 $(() => {
+	// плагин для svg иконок в IE
+	svg4everybody();
 
 	// сохранение позиции скролла
 	window.Utils = {
@@ -42,22 +50,60 @@ $(() => {
 	}
 
 	// скорость fade 300ms
-	// интервал смены картинок 40s
-	var bgImage = $('.js-main-bg-image'), i = 0, speed = 300;
-	setInterval(displayNextImage(), 40000);
+	// интервал смены картинок 4s
+	var bgImage = $('.js-main-bg-image');
+	var bgImageSmall = $('.js-main-bg-image-small');
+	var i = 0;
+	var speed = 300;
 
-	function displayNextImage() {
-		var downloadingImage = new Image();
+	// при загрузке страницы загрузить большой фон и отобразить его (0 — индекс первой картинки в массиве, поскольку загружается по умолчанию она)
+	$(window).on('load', function() {
+		loadLargeImage(0);
+		// каждые 10 секунд менять фон
+		setInterval(displayNextImage, 10000);
+	});
+
+
+
+	// загрузить маленькую картинку-превью (заблуренная)
+	function loadSmallImage(i) {
+		var smallImage = new Image();
+
 
 		// для смены картинки используется замена содержимого атрибута xlink:href, поскольку используется элемент image в svg вместо обычного img
 		// картинка меняется только после загрузки
-		downloadingImage.onload = function(){
-			bgImage.attr('xlink:href', this.src).fadeIn(speed);
+		smallImage.onload = function(){
+			bgImageSmall.attr('xlink:href', this.src).fadeIn(speed);
+			// у большой картинки класс убирается — становится прозрачной
+			bgImage.removeClass('tile-header__image--is-loaded');
+			// загрузить большую картинку с таким же индексом, как у маленькой
+			loadLargeImage(i);
+			// у маленькой картинки если она загружена убирается прозрачность (при помощи класса css)
+			bgImageSmall.addClass('tile-header__image--is-loaded');
 		};
 
-		bgImage.fadeOut(speed, function(){
-			downloadingImage.src = './assets/images/' + images[(++i % images.length)];
-		});
+		smallImage.src = '/assets/images/' + imagesSmall[i];
+		// вставить путь к загруженной картинке (отобразить загруженную маленькую картинку-превью)
+	}
+
+	// загрузить большую картинку
+	function loadLargeImage(i) {
+		var largeImage = new Image();
+
+		largeImage.onload = function(){
+			bgImage.attr('xlink:href', this.src).fadeIn(speed);
+			bgImageSmall.removeClass('tile-header__image--is-loaded');
+			bgImage.addClass('tile-header__image--is-loaded');
+		};
+
+		// отобразить большую картинку
+		largeImage.src = '/assets/images/' + images[i];
+	}
+
+	// отображение новых картинок в массиве
+	function displayNextImage() {
+		// проходим по массиву маленьких картинок и загружаем при каждом вызове новую
+		loadSmallImage((++i % imagesSmall.length));
 	}
 
 	// при смене размера экрана и загрузке происходит проверка на превышение ширины 720px:
@@ -66,10 +112,12 @@ $(() => {
 	$( window ).on('load resize', function() {
 		if ($( window ).width() < 720) {
 			bgImage.attr('width','770').attr('height','440').attr('transform','translate(-350,-120)').attr('x','50%').attr('y','50%');
+			bgImageSmall.attr('width','770').attr('height','440').attr('transform','translate(-350,-120)').attr('x','50%').attr('y','50%');
 			$('.tile__gradient').attr('width','770').attr('height','440').attr('transform','translate(-350,-120)').attr('x','50%').attr('y','50%');
 			$('.clipping-bg').attr('transform','translate(350,120)').attr('x','50%').attr('y','50%');
 		} else {
 			bgImage.attr('width','1120').attr('height','640').attr('transform','translate(-560,-320)').attr('x','50%').attr('y','50%');
+			bgImageSmall.attr('width','1120').attr('height','640').attr('transform','translate(-560,-320)').attr('x','50%').attr('y','50%');
 			$('.tile__gradient').attr('width','1120').attr('height','640').attr('transform','translate(-560,-320)').attr('x','50%').attr('y','50%');
 			$('.clipping-bg').attr('transform','translate(560,320)').attr('x','50%').attr('y','50%');
 		}
