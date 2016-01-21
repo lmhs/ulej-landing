@@ -42,7 +42,7 @@
 		<title>Улей — краудфандинговая площадка</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
-		<link href="./assets/styles/app.min.css?t=1453300457520" rel="stylesheet">
+		<link href="./assets/styles/app.min.css?t=1453381151704" rel="stylesheet">
 		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300%7CRoboto:500%7COpen+Sans:400,300,600,700,800&amp;subset=cyrillic-ext,latin,cyrillic,latin-ext" rel="stylesheet" type="text/css">
 	</head>
 
@@ -87,11 +87,13 @@
 				<article class="popup__article">
 					<div class="popup__form-wrap">
 						<form class="form">
-							<div class="field-wrap form__field-wrap">
+							<!-- .field-wrap — обычное состояние-->
+							<!-- .field-wrap.field--is-invalid — невалидное-->
+							<div class="field--is-invalid field-wrap form__field-wrap">
 								<input type="text" placeholder="Как вас зовут?" required="required" class="field form__input input js-callback-name" />
 							</div>
-							<div class="field-wrap form__field-wrap">
-								<input type="text" placeholder="Номер телефона" required="required" class="field form__input input js-callback-phone" />
+							<div class="field--is-invalid field-wrap form__field-wrap">
+								<input type="phone" placeholder="Номер телефона" required="required" class="field form__input input js-callback-phone" />
 							</div>
 							<button type="submit" class="btn btn--green form__submit-btn js-callback-submit">Отправить</button>
 						</form>
@@ -118,7 +120,7 @@
 							</div>
 							<p><strong>Мы гарантируем конфиденциальность любой информации</strong> и вашей идеи, о чем написано в нашем <a href="http://ulej.by/agreement" target="_blank">соглашении.</a>
 							</p>
-							<button type="submit" class="btn btn--green form__submit-btn">Отправить</button>
+							<button type="submit" class="btn btn--green form__submit-btn js-send-submit">Отправить</button>
 						</form>
 					</div>
 				</article>
@@ -190,7 +192,7 @@
 						<div class="header__subheader">
 							<h2 class="header__subheading heading">За полгода активной работы Улья<br>общая сумма финансирования составила <strong>700&nbsp;000&nbsp;000</strong>&nbsp;рублей.</h2>
 						</div>
-						<img src="./assets/images/header-hexagon-items.png" width="406" height="431" class="header__hexagon-items" alt="" />
+						<img src="./assets/images/header-hexagon-items.png" srcset="./assets/images/header-hexagon-items@2x.png 2x, ./assets/images/header-hexagon-items.png 1x" class="header__hexagon-items" alt="" />
 						<div class="header__subsection">
 							<div class="half-subsection half-subsection--left">
 								<div class="half-subsection__content">
@@ -365,7 +367,7 @@
 								</div>
 								<div class="col col-33 how-col-33">
 									<div class="how-item"><i class="how-item__icon icon-how-2"></i>
-										<h3 class="how-item__heading">Размещение в улье</h3>
+										<h3 class="how-item__heading">Размещение в Улье</h3>
 										<p class="how-item__caption">Подайте заявку на размещение проекта в Улье – наши менеджеры обязательно свяжутся с вами.</p>
 									</div>
 								</div>
@@ -737,7 +739,7 @@
 				</div>
 			</section>
 			<div class="box">
-				<section class="banner"><a href="http://ulej.by" target="_blank" class="banner__text"><span class="banner__link">www.<span class="banner__underline">Ulej.by</span></span>&nbsp;— заходите к нам на кофе&nbsp;;)</a>
+				<section class="banner"><a href="http://ulej.by" target="_blank" class="banner__text"><span class="banner__link">www.<span class="banner__underline">Ulej.by</span></span>&nbsp;— мы с нетерпением ждём вас&nbsp;;)</a>
 				</section>
 			</div>
 		</div>
