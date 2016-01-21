@@ -2,16 +2,19 @@
 	border-radius 3px
 	height 90px
 	overflow hidden
-	background url(../images/bg-beans.jpg) top center repeat-x
+	background url(../images/cookies.jpg) top center no-repeat
 	text-align center
 	position relative
-	background-size 2560px 1600px
+	background-size cover
+	+retina()
+		background-image url(../images/cookies@2x.jpg)
+
+
 
 	+below(1024px)
 		border-radius 0
-	+below(720px)
+	+mobile()
 		height auto
-
 
 
 

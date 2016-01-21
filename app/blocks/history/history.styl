@@ -41,16 +41,6 @@
 		.slick-track
 			padding-bottom 30px
 
-		// +below(1024px)
-		// 	padding-x 40px
-		// 	margin-x 40px
-		// .slick-track
-		// 	display flex
-		// 	flex-direction row
-		// 	justify-content space-between
-		// 	flex-wrap nowrap
-		// 	align-items center
-		// 	align-content center
 
 	&__stories-text
 		width 950px
@@ -60,7 +50,8 @@
 		+below(1000px)
 			width 100%
 		+below(720px)
-			display none
+			&.slick-slider
+				display none
 
 .story-card
 	width 290px

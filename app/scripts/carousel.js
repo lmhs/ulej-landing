@@ -52,10 +52,6 @@ import $ from 'jquery';
 		fade: true,
 		centerMode: true,
 		centerPadding: '20px',
-		asNavFor: '.js-cards-carousel',
-		responsive: [{
-			breakpoint: 720,
-			settings: 'unslick'
-		}]
+		asNavFor: '.js-cards-carousel'
 	});
 }));

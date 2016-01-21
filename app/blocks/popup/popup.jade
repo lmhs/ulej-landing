@@ -52,10 +52,12 @@ mixin popup(args)
 				else if (args.type === 'callback')
 					+e.form-wrap
 						+b('form').form
-							+e.field-wrap.field-wrap
+							// .field-wrap — обычное состояние
+							// .field-wrap.field--is-invalid — невалидное
+							+e.field-wrap.field-wrap.field--is-invalid
 								+e('input')(type='text',placeholder='Как вас зовут?',required='required').input.input.field.js-callback-name
-							+e.field-wrap.field-wrap
-								+e('input')(type='text',placeholder='Номер телефона',required='required').input.input.field.js-callback-phone
+							+e.field-wrap.field-wrap.field--is-invalid
+								+e('input')(type='phone',placeholder='Номер телефона',required='required').input.input.field.js-callback-phone
 							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-callback-submit
 								| Отправить
 				else if (args.type === 'send')
@@ -75,6 +77,6 @@ mixin popup(args)
 								strong Мы гарантируем конфиденциальность любой информации
 								|  и вашей идеи, о чем написано в нашем !{''}
 								a(href='http://ulej.by/agreement', target='_blank') соглашении.
-							//- +button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-send-submit
-							+button({type:'buttonSubmit'}).btn--green.form__submit-btn
+							//- +button({type:'buttonSubmit'}).btn--green.form__submit-btn
+							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-send-submit
 								| Отправить

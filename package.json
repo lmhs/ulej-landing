@@ -76,7 +76,6 @@
     "gulp-zip": "^3.0.0",
     "gulp.spritesmith-multi": "^2.2.0",
     "jade-get-data": "^1.0.0",
-    "jquery": "^2.1.4",
     "merge-stream": "^1.0.0",
     "node-notifier": "^4.3.1",
     "postcss-color-rgba-fallback": "^2.1.0",
@@ -85,7 +84,6 @@
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.4",
     "rupture": "^0.6.1",
-    "slick-carousel": "^1.5.9",
     "source-map-loader": "^0.1.5",
     "spritesheet-templates": "^10.0.0",
     "stylus-svg-size-template": "^1.0.0",
@@ -103,8 +101,10 @@
     "safari": 5
   },
   "dependencies": {
+    "jquery": "^2.1.4",
     "jquery-placeholder": "^2.3.1",
     "jquery-validation": "^1.14.0",
+    "slick-carousel": "^1.5.9",
     "magnific-popup": "^1.0.1"
   }
 }

@@ -47,7 +47,6 @@ $(() => {
 	setInterval(displayNextImage(), 40000);
 
 	function displayNextImage() {
-		console.log(i + ' ' + images.length);
 		var downloadingImage = new Image();
 
 		// для смены картинки используется замена содержимого атрибута xlink:href, поскольку используется элемент image в svg вместо обычного img

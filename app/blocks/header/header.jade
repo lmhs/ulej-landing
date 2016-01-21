@@ -77,7 +77,9 @@ mixin header()
 							| общая сумма финансирования составила !{''}
 							strong 700&nbsp;000&nbsp;000
 							| &nbsp;рублей.
-					+e('img')(src='./assets/images/header-hexagon-items.png',width='406',height='431').hexagon-items
+					+e('img')(src='./assets/images/header-hexagon-items.png',
+								srcset='./assets/images/header-hexagon-items@2x.png 2x, ./assets/images/header-hexagon-items.png 1x'
+								).hexagon-items
 					+e.subsection
 						+b.half-subsection.half-subsection--left
 							+e.content
