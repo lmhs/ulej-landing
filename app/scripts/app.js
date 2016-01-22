@@ -16,6 +16,8 @@ var imagesSmall = [
 							'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
 							'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
 
+
+
 $(() => {
 	// плагин для svg иконок в IE
 	svg4everybody();
@@ -53,6 +55,9 @@ $(() => {
 	// интервал смены картинок 4s
 	var bgImage = $('.js-main-bg-image');
 	var bgImageSmall = $('.js-main-bg-image-small');
+	var img = document.querySelectorAll('.js-main-bg-image')[0];
+	var imgSmall = document.querySelectorAll('.js-main-bg-image-small')[0];
+	var svgPosition = $('.js-change-svg-position');
 	var i = 0;
 	var speed = 300;
 
@@ -73,16 +78,16 @@ $(() => {
 		// для смены картинки используется замена содержимого атрибута xlink:href, поскольку используется элемент image в svg вместо обычного img
 		// картинка меняется только после загрузки
 		smallImage.onload = function(){
-			bgImageSmall.attr('xlink:href', this.src).fadeIn(speed);
+			bgImageSmall.attr('xlink:href', this.src);
 			// у большой картинки класс убирается — становится прозрачной
-			bgImage.removeClass('tile-header__image--is-loaded');
+			img.classList.remove('tile-header__image--is-loaded');
 			// загрузить большую картинку с таким же индексом, как у маленькой
 			loadLargeImage(i);
 			// у маленькой картинки если она загружена убирается прозрачность (при помощи класса css)
-			bgImageSmall.addClass('tile-header__image--is-loaded');
+			imgSmall.classList.add('tile-header__image--is-loaded');
 		};
 
-		smallImage.src = '/assets/images/' + imagesSmall[i];
+		smallImage.src = './assets/images/' + imagesSmall[i];
 		// вставить путь к загруженной картинке (отобразить загруженную маленькую картинку-превью)
 	}
 
@@ -91,13 +96,13 @@ $(() => {
 		var largeImage = new Image();
 
 		largeImage.onload = function(){
-			bgImage.attr('xlink:href', this.src).fadeIn(speed);
-			bgImageSmall.removeClass('tile-header__image--is-loaded');
-			bgImage.addClass('tile-header__image--is-loaded');
+			bgImage.attr('xlink:href', this.src);
+			imgSmall.classList.remove('tile-header__image--is-loaded');
+			img.classList.add('tile-header__image--is-loaded');
 		};
 
 		// отобразить большую картинку
-		largeImage.src = '/assets/images/' + images[i];
+		largeImage.src = './assets/images/' + images[i];
 	}
 
 	// отображение новых картинок в массиве
@@ -109,17 +114,13 @@ $(() => {
 	// при смене размера экрана и загрузке происходит проверка на превышение ширины 720px:
 	// если меньше — меняются атрибуты у фона на новые,
 	// если больше — меняются атрибуты у фона на первоначальные
-	$( window ).on('load resize', function() {
+	$( window ).on('resize', function() {
 		if ($( window ).width() < 720) {
-			bgImage.attr('width','770').attr('height','440').attr('transform','translate(-350,-120)').attr('x','50%').attr('y','50%');
-			bgImageSmall.attr('width','770').attr('height','440').attr('transform','translate(-350,-120)').attr('x','50%').attr('y','50%');
-			$('.tile__gradient').attr('width','770').attr('height','440').attr('transform','translate(-350,-120)').attr('x','50%').attr('y','50%');
-			$('.clipping-bg').attr('transform','translate(350,120)').attr('x','50%').attr('y','50%');
+			svgPosition.attr('width','770').attr('height','440').attr('transform','translate(-350, -120)').attr('x','50%').attr('y','50%');
+			$('.clipping-bg').attr('transform','translate(350, 120)').attr('x','50%').attr('y','50%');
 		} else {
-			bgImage.attr('width','1120').attr('height','640').attr('transform','translate(-560,-320)').attr('x','50%').attr('y','50%');
-			bgImageSmall.attr('width','1120').attr('height','640').attr('transform','translate(-560,-320)').attr('x','50%').attr('y','50%');
-			$('.tile__gradient').attr('width','1120').attr('height','640').attr('transform','translate(-560,-320)').attr('x','50%').attr('y','50%');
-			$('.clipping-bg').attr('transform','translate(560,320)').attr('x','50%').attr('y','50%');
+			svgPosition.attr('width','1120').attr('height','640').attr('transform','translate(-560, -320)').attr('x','50%').attr('y','50%');
+			$('.clipping-bg').attr('transform','translate(560, 320)').attr('x','50%').attr('y','50%');
 		}
 	});
 
