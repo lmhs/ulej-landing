@@ -99,6 +99,19 @@ $(() => {
 			bgImage.attr('xlink:href', this.src);
 			imgSmall.classList.remove('tile-header__image--is-loaded');
 			img.classList.add('tile-header__image--is-loaded');
+			loadNextImage(i++);
+		};
+
+		// отобразить большую картинку
+		largeImage.src = './assets/images/' + images[i];
+	}
+
+	// загрузить следующую картинку
+	function loadNextImage(i) {
+		var largeImage = new Image();
+
+		largeImage.onload = function(){
+			loadNextImage(i++);
 		};
 
 		// отобразить большую картинку
