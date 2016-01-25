@@ -68,7 +68,7 @@ mixin tile(args)
 	+b.tile(class='tile-'+args.count).js-tile
 		+e('svg')(width='200', height='218', xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink").element
 			+e('a')(width='200', height='218', x='0', y='0', xlink:href=jv0, clip-path="url(#clipping-tile)").link.js-open-send
-				image(width=args.data.width, height=args.data.height, x="0", y="0" xlink:href='./assets/images/'+args.data.href).tile__image
+				//- image(width=args.data.width, height=args.data.height, x="0", y="0" xlink:href='./assets/images/'+args.data.href).tile__image
 				rect(fill=args.data.bgColor, width='200', height='218', opacity='.7').tile__fill.js-tile-fill
 		+e('a')(href=jv0).text.is-hidden.js-tile-text.js-open-send
 			+e.text-inner-wrap

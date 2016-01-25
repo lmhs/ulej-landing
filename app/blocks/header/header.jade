@@ -11,7 +11,6 @@ include ../svg-defs/svg-defs
 mixin header()
 	+svg-defs()
 
-
 	+popup({
 						jsClass:'js-what-is-popup',
 						heading: 'Что такое',
@@ -48,10 +47,37 @@ mixin header()
 			+e.bg-clip
 				+icon('green').bg-green
 				+e('svg')(width='1120', height='640').bg-img-clip
-					rect(width='1120',height='640',x='50%',y='50%',transform='translate(-560,-320)', fill='url(#gradient2)', clip-path='url(#clipping-bg)').tile__gradient
-					image(width='1120', height='640', x='50%', y='50%', xlink:href='./assets/images/Main-01.jpg', transform='translate(-560,-320)', clip-path='url(#clipping-bg)').tile-header__image.js-main-bg-image
-					image(width='1120', height='640', x='50%', y='50%', xlink:href='./assets/images/Main-01-small.jpg', transform='translate(-560,-320)', clip-path='url(#clipping-bg)').tile-header__image.tile-header__image--small.tile-header__image--is-loaded.js-main-bg-image-small
-					rect(width='1120',height='640',x='50%',y='50%',transform='translate(-560,-320)', fill='url(#gradient)', clip-path='url(#clipping-bg)').tile__gradient
+					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient2)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
+					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01-small.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.tile-header__image--small.tile-header__image--is-loaded.js-main-bg-image-small.js-change-svg-position
+					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-bg-image.js-change-svg-position
+					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
+				script(type='text/javascript').
+					(function(){
+						var d = document,
+								e = d.documentElement,
+								g = d.getElementsByTagName('body')[0],
+								x = e.clientWidth || g.clientWidth,
+								y = e.clientHeight|| g.clientHeight,
+								svgPos = d.querySelectorAll('.js-change-svg-position'),
+								clip = d.querySelectorAll('.clipping-bg')[0],
+								svgElement = d.querySelectorAll('.header__bg-img-clip')[0];
+
+						if (x >= 720) {
+							for (var i=0; i < svgPos.length; i++) {
+								svgPos[i].setAttribute('width', '1120');
+								svgPos[i].setAttribute('height', '640');
+								svgPos[i].setAttribute('transform', 'translate(-560,-320)');
+								svgPos[i].setAttribute('x', '50%');
+								svgPos[i].setAttribute('y', '50%');
+								}
+							clip.setAttribute('transform', 'translate(560,320)');
+							clip.setAttribute('x', '50%');
+							clip.setAttribute('y', '50%');
+						}
+						svgElement.classList.add('bg-img-clip--is-visible');
+						svgElement.style.willChange = 'auto';
+
+					})()
 				+e('h1').heading Финансирование проектов в Улье
 					small Ulej.by&nbsp;&mdash; первая в Беларуси краудфандинговая площадка.
 				+social()
