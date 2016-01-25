@@ -1,4 +1,5 @@
 import svg4everybody from 'svg4everybody';
+import validate from 'jquery-validation';
 import './modernizr.custom.min.js';
 import $ from 'jquery';
 import './carousel.js';
@@ -10,6 +11,7 @@ var images = [
 							'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
 							'Main-06.jpg','Main-07.jpg','Main-08.jpg','Main-09.jpg','Main-10.jpg','Main-11.jpg',
 							'Main-12.jpg','Main-13.jpg','Main-14.jpg'];
+
 // массив маленьких картинок
 var imagesSmall = [
 							'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
@@ -21,6 +23,74 @@ var imagesSmall = [
 $(() => {
 	// плагин для svg иконок в IE
 	svg4everybody();
+
+	$.validator.setDefaults({
+		errorClass: 'field--is-invalid',
+		debug: true,
+		success: 'valid',
+		onfocusout: false,
+		onkeyup: false,
+		errorPlacement: function(error, element){
+			$(element).closest('.field-wrap').addClass('field--is-invalid');
+		},
+		highlight: function(element, errorClass, validClass) {
+			$(element).closest('.field-wrap').addClass(errorClass);
+		},
+		unhighlight: function(element, errorClass, validClass) {
+			$(element).closest('.field-wrap').removeClass(errorClass);
+		},
+		messages: {
+			required: ''
+		},
+		rules: {
+			email: {
+				required: true,
+				email: true
+			},
+			phone: {
+				required: true,
+				phoneUS: true
+			},
+			name: {
+				required: true
+			}
+		}
+	});
+
+	$.validator.addMethod("phoneUS", function(phone_number, element) {
+			phone_number = phone_number.replace(/\s+/g, "");
+			return this.optional(element) || phone_number.length > 12 &&
+				phone_number.match(/(^\+375\s*\(?(15|16|17|21|22|23|25|29|33|44)\)?\s*[0-9]{3}(\s*|\-)[0-9]{2}(\s*|\-)[0-9]{2}$)/);
+	}, "Please specify a valid phone number");
+
+
+
+
+	$('#callback-form').validate({
+		submitHandler: function(form) {
+			$.magnificPopup.open({
+				items: {
+					src: '.js-callback-message-popup',
+						preloader: false,
+					type: 'inline'
+				},
+				callbacks: Utils.magnificPopupConfiguration()
+			});
+		}
+	});
+
+	$('#send-form').validate({
+		submitHandler: function(form) {
+			$.magnificPopup.open({
+				items: {
+						src: '.js-send-message-popup',
+						preloader: false,
+						type: 'inline'
+				},
+				callbacks: Utils.magnificPopupConfiguration()
+			});
+		}
+	});
 
 	// сохранение позиции скролла
 	window.Utils = {
@@ -221,14 +291,6 @@ $(() => {
 
 	// открытие попапа "информация для того, чтобы вам перезвонили принята"
 	if ($('.js-callback-submit').length) {
-		$('.js-callback-submit').magnificPopup({
-			items: {
-					src: '.js-callback-message-popup',
-					preloader: false,
-					type: 'inline'
-			},
-			callbacks: Utils.magnificPopupConfiguration()
-		});
 		$('.js-callback-message-popup').on('click', '.js-close-message-popup', function(){
 			$.magnificPopup.close();
 		});
@@ -250,14 +312,6 @@ $(() => {
 
 	// открытие попапа "спасибо за проект"
 	if ($('.js-send-submit').length) {
-		$('.js-send-submit').magnificPopup({
-			items: {
-					src: '.js-send-message-popup',
-					preloader: false,
-					type: 'inline'
-			},
-			callbacks: Utils.magnificPopupConfiguration()
-		});
 		$('.js-send-message-popup').on('click', '.js-close-message-popup', function(){
 			$.magnificPopup.close();
 		});
