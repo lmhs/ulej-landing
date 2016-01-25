@@ -51,13 +51,13 @@ mixin popup(args)
 
 				else if (args.type === 'callback')
 					+e.form-wrap
-						+b('form').form
+						+b('form')(method='post', action='', autocomplete='off').form#callback-form
 							// .field-wrap — обычное состояние
 							// .field-wrap.field--is-invalid — невалидное
-							+e.field-wrap.field-wrap.field--is-invalid
-								+e('input')(type='text',placeholder='Как вас зовут?',required='required').input.input.field.js-callback-name
-							+e.field-wrap.field-wrap.field--is-invalid
-								+e('input')(type='phone',placeholder='Номер телефона',required='required').input.input.field.js-callback-phone
+							+e.field-wrap.field-wrap
+								+e('input')(type='text', name='name', required, placeholder='Как вас зовут?').input.input.field.js-callback-name
+							+e.field-wrap.field-wrap
+								+e('input')(type='phone', name='phone', required, placeholder='Номер телефона').input.input.field.js-callback-phone
 							+button({type:'buttonSubmit'}).btn--green.form__submit-btn.js-callback-submit
 								| Отправить
 				else if (args.type === 'send')
@@ -66,13 +66,13 @@ mixin popup(args)
 							| Все-таки у вас есть классный проект, который хочется реализовать. Мы ждем вас, отправляйте скорее! ;)
 						+e('p')
 							| Для того, чтобы начать, нужно всего лишь оставить заявку с кратким описанием проекта, после чего наш менеджер свяжется с вами и ответит на все вопросы.
-						+b('form').form
+						+b('form')(method='post', action='', autocomplete='off').form#send-form
 							+e.field-wrap.field-wrap
-								+e('input')(type='text',placeholder='Как вас зовут?',required='required').input.input.field.js-send-name
+								+e('input')(type='text', name='name', required, placeholder='Как вас зовут?').input.input.field.js-send-name
 							+e.field-wrap.field-wrap
-								+e('input')(type='text',placeholder='Контактный Email / Номер телефона',required='required').input.input.field.js-send-contacts
+								+e('input')(type='text', name='contact', required, placeholder='Контактный Email / Номер телефона').input.input.field.js-send-contacts
 							+e.field-wrap.field-wrap
-								+e('textarea')(placeholder='Несколько слов о проекте',required='required').textarea.textarea.field.js-send-project-info
+								+e('textarea')(name='description', required, placeholder='Несколько слов о проекте').textarea.textarea.field.js-send-project-info
 							+e('p')
 								strong Мы гарантируем конфиденциальность любой информации
 								|  и вашей идеи, о чем написано в нашем !{''}
