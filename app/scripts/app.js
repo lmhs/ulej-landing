@@ -24,9 +24,11 @@ $(() => {
 	// плагин для svg иконок в IE
 	svg4everybody();
 
+
+	// настройки для валидации
 	$.validator.setDefaults({
 		errorClass: 'field--is-invalid',
-		debug: true,
+		debug: true, // debug убрать
 		success: 'valid',
 		onfocusout: false,
 		onkeyup: false,
@@ -57,6 +59,8 @@ $(() => {
 		}
 	});
 
+
+	// переопределение телефонного номера с US на белорусский
 	$.validator.addMethod("phoneUS", function(phone_number, element) {
 			phone_number = phone_number.replace(/\s+/g, "");
 			return this.optional(element) || phone_number.length > 12 &&
@@ -65,7 +69,7 @@ $(() => {
 
 
 
-
+	// при сабмите формы открывается попап "спасибо, мы вам перезвоним"
 	$('#callback-form').validate({
 		submitHandler: function(form) {
 			$.magnificPopup.open({
@@ -79,6 +83,7 @@ $(() => {
 		}
 	});
 
+	// при сабмите формы открывается попап спасибо за информацию о проекте
 	$('#send-form').validate({
 		submitHandler: function(form) {
 			$.magnificPopup.open({
@@ -111,6 +116,7 @@ $(() => {
 		}
 	}
 
+	// проверка на то, является ли устройство ios
 	Modernizr.addTest('isios', function(){
 		var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
 		return iOS;
@@ -125,7 +131,9 @@ $(() => {
 	// интервал смены картинок 4s
 	var bgImage = $('.js-main-bg-image');
 	var bgImageSmall = $('.js-main-bg-image-small');
+	var bgImageTemp = $('.js-temp-bg-image');
 	var img = document.querySelectorAll('.js-main-bg-image')[0];
+	var imgTemp = document.querySelectorAll('.js-temp-bg-image')[0];
 	var imgSmall = document.querySelectorAll('.js-main-bg-image-small')[0];
 	var svgPosition = $('.js-change-svg-position');
 	var i = 0;
@@ -134,8 +142,6 @@ $(() => {
 	// при загрузке страницы загрузить большой фон и отобразить его (0 — индекс первой картинки в массиве, поскольку загружается по умолчанию она)
 	$(window).on('load', function() {
 		loadLargeImage(0);
-		// каждые 10 секунд менять фон
-		setInterval(displayNextImage, 10000);
 	});
 
 
