@@ -140,31 +140,50 @@ $(() => {
 	var speed = 300;
 
 	// при загрузке страницы загрузить большой фон и отобразить его (0 — индекс первой картинки в массиве, поскольку загружается по умолчанию она)
-	$(window).on('load', function() {
-		loadLargeImage(0);
-	});
+	// $(window).on('load', function() {
+	// displayNextImage();
+	// });
 
 
+	// отображение новых картинок в массиве
+	function displayNextImage() {
+		// проходим по массиву маленьких картинок и загружаем при каждом вызове новую
+		console.log('initial call small load ' + i);
+		loadSmallImage(i);
+	}
 
 	// загрузить маленькую картинку-превью (заблуренная)
 	function loadSmallImage(i) {
 		var smallImage = new Image();
 
-
 		// для смены картинки используется замена содержимого атрибута xlink:href, поскольку используется элемент image в svg вместо обычного img
 		// картинка меняется только после загрузки
 		smallImage.onload = function(){
-			bgImageSmall.attr('xlink:href', this.src);
-			// у большой картинки класс убирается — становится прозрачной
-			img.classList.remove('tile-header__image--is-loaded');
-			// загрузить большую картинку с таким же индексом, как у маленькой
-			loadLargeImage(i);
-			// у маленькой картинки если она загружена убирается прозрачность (при помощи класса css)
-			imgSmall.classList.add('tile-header__image--is-loaded');
+			console.log('small image ' + i + ' is loaded');
+			showSmallImage(i, this);
+			// window.setTimeout(showSmallImage(i),5000);
 		};
 
+		console.log('start loading small image ' + i);
 		smallImage.src = './assets/images/' + imagesSmall[i];
+		console.log('small ' + i + ' is inserted');
+		// загрузить большую картинку с таким же индексом, как у маленькой
+		console.log('call large load ' + i);
+		loadLargeImage(i);
 		// вставить путь к загруженной картинке (отобразить загруженную маленькую картинку-превью)
+	}
+
+	function showSmallImage(i, self) {
+		console.log('start small ' + i + ' to show');
+
+		bgImageSmall.attr('xlink:href', self.src);
+
+		// у большой картинки класс убирается — становится прозрачной
+		img.classList.remove('tile-header__image--is-loaded');
+		// у маленькой картинки если она загружена убирается прозрачность (при помощи класса css)
+		imgSmall.classList.add('tile-header__image--is-loaded');
+
+		console.log('finish small ' + i + ' to show');
 	}
 
 	// загрузить большую картинку
@@ -172,32 +191,29 @@ $(() => {
 		var largeImage = new Image();
 
 		largeImage.onload = function(){
-			bgImage.attr('xlink:href', this.src);
-			imgSmall.classList.remove('tile-header__image--is-loaded');
-			img.classList.add('tile-header__image--is-loaded');
-			loadNextImage(i++);
+			console.log('large image ' + i + ' is loaded');
+			showLargeImage(i, this);
+
 		};
 
+		console.log('start large load ' + i);
 		// отобразить большую картинку
 		largeImage.src = './assets/images/' + images[i];
+		console.log('large ' + i + ' is inserted');
 	}
 
-	// загрузить следующую картинку
-	function loadNextImage(i) {
-		var largeImage = new Image();
+	function showLargeImage(i, self) {
+		console.log('start large ' + i + ' to show');
 
-		largeImage.onload = function(){
-			loadNextImage(i++);
-		};
+		bgImage.attr('xlink:href', self.src);
+		imgSmall.classList.remove('tile-header__image--is-loaded');
+		img.classList.add('tile-header__image--is-loaded');
+		console.log('finish large ' + i + ' to show');
 
-		// отобразить большую картинку
-		largeImage.src = './assets/images/' + images[i];
-	}
+		console.log('call next small load ' + i);
+		// loadSmallImage((++i % imagesSmall.length));
 
-	// отображение новых картинок в массиве
-	function displayNextImage() {
-		// проходим по массиву маленьких картинок и загружаем при каждом вызове новую
-		loadSmallImage((++i % imagesSmall.length));
+		window.setTimeout(loadSmallImage((++i % imagesSmall.length)),15000);
 	}
 
 	// при смене размера экрана и загрузке происходит проверка на превышение ширины 720px:
