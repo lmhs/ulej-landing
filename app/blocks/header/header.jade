@@ -49,10 +49,10 @@ mixin header()
 				+e('svg')(width='1120', height='640').bg-img-clip
 					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient2)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
 					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01-small.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.tile-header__image--small.tile-header__image--is-loaded.js-main-bg-image-small.js-change-svg-position
-					image(width='770', height='440', x='50%', y='50%', xlink:href=jv0, transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-temp-image.js-change-svg-position
-					image(width='770', height='440', x='50%', y='50%', xlink:href=jv0, transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-bg-image.js-change-svg-position
+					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-02.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-temp-image.js-change-svg-position
+					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-bg-image.js-change-svg-position
 					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
-				script(type='text/javascript', defer).
+				script(type='text/javascript').
 					(function(){
 						var d = document;
 						var e = d.documentElement;
@@ -62,28 +62,26 @@ mixin header()
 						var svgPos = d.querySelectorAll('.js-change-svg-position');
 						var clip = d.querySelectorAll('.clipping-bg')[0];
 						var svgElement = d.querySelectorAll('.header__bg-img-clip')[0];
-						var img = d.querySelectorAll('.js-main-bg-image')[0];
-						var imgTemp = d.querySelectorAll('.js-main-temp-image')[0];
-						var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
-						var n = 0;
-						var next = false;
-						var currentImage = img;
-						var nextImage = imgTemp;
-						var current = -1;
-						var imgO = new Array();
-						// массив картинок
+
+						// массив фоновых картинок
 						var images = [
 													'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
 													'Main-06.jpg','Main-07.jpg','Main-08.jpg','Main-09.jpg','Main-10.jpg','Main-11.jpg',
 													'Main-12.jpg','Main-13.jpg','Main-14.jpg'];
 
-						// массив маленьких картинок
+						// массив маленьких фоновых картинок
 						var imagesSmall = [
 													'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
 													'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
 													'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
 
+						// массив шестигранников
+						var tiles = ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg',
+													'06.jpg','07.jpg','08.jpg','09.jpg','10.jpg','11.jpg',
+													'12.jpg','13.jpg','14.jpg','15.jpg',
+													'16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg'];
 
+						// в ios safari появлялись артефакты при смене ширины
 						if (x >= 720) {
 							for (var i = 0; i < svgPos.length; i++) {
 								svgPos[i].setAttribute('width', '1120');
@@ -99,27 +97,68 @@ mixin header()
 						svgElement.classList.add('bg-img-clip--is-visible');
 						svgElement.style.willChange = 'auto';
 
-						var image = new Image();
 
-						image.onload = function () {
-							console.log('image ' + n + ' is loaded');
-							console.log('start ' + n + ' to show');
+						var img = d.querySelectorAll('.js-main-bg-image')[0];
+						var imgTemp = d.querySelectorAll('.js-main-temp-image')[0];
+						var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
 
-							img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
+						// отображение большой картинки после загрузки замыленной маленькой
+						(function(){
+							var image = new Image();
 
-							img.classList.add('tile-header__image--is-loaded');
-							imgSmall.classList.remove('tile-header__image--is-loaded');
-						};
+							image.onload = function () {
+
+								img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
+
+								img.classList.add('tile-header__image--is-loaded');
+								imgSmall.classList.remove('tile-header__image--is-loaded');
+							};
+
+							image.src = './assets/images/' + images[0];
+						})()
 
 
-						image.src = './assets/images/' + images[n];
 
-						for(n = 0; n < images.length; n++) {
-								imgO[n] = new Image();
-								imgO[n].src = './assets/images/' + images[n];
+						var imgO = new Array();
+
+						// предзагрузка фоновых изображений и сохранение объектов в массив
+						function preload(imageArray, index) {
+							index = index || 0;
+							if (imageArray && imageArray.length > index) {
+
+								imgO[index] = new Image ();
+								imgO[index].onload = function() {
+									preload(imageArray, index + 1);
+								}
+								imgO[index].src = './assets/images/' + imageArray[index];
+							}
 						}
 
+						// предзагрузка изображений в шестигранниках
+						function preloadTiles(tilesArray, index) {
+							index = index || 0;
+							if (tilesArray && tilesArray.length > index) {
+
+								var tileO = new Image ();
+								tileO.onload = function() {
+									preload(tilesArray, index + 1);
+								}
+								tileO.src = './assets/images/' + tilesArray[index];
+							}
+						}
+
+						preloadTiles(tiles);
+						preload(images);
+
+						// чередование
+						var current = -1;
+						var next = false;
+						var currentImage = img;
+						var nextImage = imgTemp;
+						var speed = 5000;
+
 						function swapImage() {
+							current = (++current > images.length - 1) ? 0 : current;
 							if (next) {
 								nextImage = img;
 								currentImage = imgTemp;
@@ -127,53 +166,16 @@ mixin header()
 								nextImage = imgTemp;
 								currentImage = img;
 							}
-							console.log(current + ' is loaded');
-							nextImage.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
+							nextImage.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO[current].src);
 							nextImage.classList.add('tile-header__image--is-loaded');
 							currentImage.classList.remove('tile-header__image--is-loaded');
-
-							current = (++current > images.length - 1) ? 0 : current;
-
-							imageNext.src = imgO[current];
-
 							next = !next;
-
-							setTimeout(swapImage,5000);
+							setTimeout(swapImage, speed);
 						}
 
-						window.onload = function() {
+						window.onload = function () {
 							swapImage();
 						}
-
-						//- while(n <= images.length) {
-						//- 	if (next) {
-						//- 		nextImage = img;
-						//- 		currentImage = imgTemp;
-						//- 	} else {
-						//- 		nextImage = imgTemp;
-						//- 		currentImage = img;
-						//- 	}
-						//- 	loadLargeImage (currentImage, nextImage, n);
-						//- 	console.log('current: ' + n);
-						//- 	++n;
-						//- 	//- if (n === images.length) n = 0;
-						//- 	next = !next;
-						//- 	console.log('next: ' + n);
-						//- }
-
-						//- function loadLargeImage (currentImage, nextImage, n) {
-						//- 	var imageNext = new Image();
-
-						//- 	imageNext.onload = function () {
-						//- 		console.log(n + ' is loaded');
-						//- 		nextImage.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
-						//- 		nextImage.classList.add('tile-header__image--is-loaded');
-						//- 		currentImage.classList.remove('tile-header__image--is-loaded');
-						//- 	}
-
-						//- 	window.setTimeout(imageNext.src = './assets/images/' + images[n], 5000);
-						//- }
-
 					})()
 				+e('h1').heading Финансирование проектов в Улье
 					small Ulej.by&nbsp;&mdash; первая в Беларуси краудфандинговая площадка.
