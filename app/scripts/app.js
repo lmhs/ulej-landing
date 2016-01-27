@@ -24,9 +24,11 @@ $(() => {
 	// плагин для svg иконок в IE
 	svg4everybody();
 
+
+	// настройки для валидации
 	$.validator.setDefaults({
 		errorClass: 'field--is-invalid',
-		debug: true,
+		debug: true, // debug убрать
 		success: 'valid',
 		onfocusout: false,
 		onkeyup: false,
@@ -57,6 +59,8 @@ $(() => {
 		}
 	});
 
+
+	// переопределение телефонного номера с US на белорусский
 	$.validator.addMethod("phoneUS", function(phone_number, element) {
 			phone_number = phone_number.replace(/\s+/g, "");
 			return this.optional(element) || phone_number.length > 12 &&
@@ -65,7 +69,7 @@ $(() => {
 
 
 
-
+	// при сабмите формы открывается попап "спасибо, мы вам перезвоним"
 	$('#callback-form').validate({
 		submitHandler: function(form) {
 			$.magnificPopup.open({
@@ -79,6 +83,7 @@ $(() => {
 		}
 	});
 
+	// при сабмите формы открывается попап спасибо за информацию о проекте
 	$('#send-form').validate({
 		submitHandler: function(form) {
 			$.magnificPopup.open({
@@ -111,6 +116,7 @@ $(() => {
 		}
 	}
 
+	// проверка на то, является ли устройство ios
 	Modernizr.addTest('isios', function(){
 		var iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
 		return iOS;
@@ -119,79 +125,6 @@ $(() => {
 	// placeholder polyfill — если не поддерживается, используется плагин
 	if(!Modernizr.input.placeholder) {
 		$('input[placeholder], textarea[placeholder]').placeholder();
-	}
-
-	// скорость fade 300ms
-	// интервал смены картинок 4s
-	var bgImage = $('.js-main-bg-image');
-	var bgImageSmall = $('.js-main-bg-image-small');
-	var img = document.querySelectorAll('.js-main-bg-image')[0];
-	var imgSmall = document.querySelectorAll('.js-main-bg-image-small')[0];
-	var svgPosition = $('.js-change-svg-position');
-	var i = 0;
-	var speed = 300;
-
-	// при загрузке страницы загрузить большой фон и отобразить его (0 — индекс первой картинки в массиве, поскольку загружается по умолчанию она)
-	$(window).on('load', function() {
-		loadLargeImage(0);
-		// каждые 10 секунд менять фон
-		setInterval(displayNextImage, 10000);
-	});
-
-
-
-	// загрузить маленькую картинку-превью (заблуренная)
-	function loadSmallImage(i) {
-		var smallImage = new Image();
-
-
-		// для смены картинки используется замена содержимого атрибута xlink:href, поскольку используется элемент image в svg вместо обычного img
-		// картинка меняется только после загрузки
-		smallImage.onload = function(){
-			bgImageSmall.attr('xlink:href', this.src);
-			// у большой картинки класс убирается — становится прозрачной
-			img.classList.remove('tile-header__image--is-loaded');
-			// загрузить большую картинку с таким же индексом, как у маленькой
-			loadLargeImage(i);
-			// у маленькой картинки если она загружена убирается прозрачность (при помощи класса css)
-			imgSmall.classList.add('tile-header__image--is-loaded');
-		};
-
-		smallImage.src = './assets/images/' + imagesSmall[i];
-		// вставить путь к загруженной картинке (отобразить загруженную маленькую картинку-превью)
-	}
-
-	// загрузить большую картинку
-	function loadLargeImage(i) {
-		var largeImage = new Image();
-
-		largeImage.onload = function(){
-			bgImage.attr('xlink:href', this.src);
-			imgSmall.classList.remove('tile-header__image--is-loaded');
-			img.classList.add('tile-header__image--is-loaded');
-			loadNextImage(i++);
-		};
-
-		// отобразить большую картинку
-		largeImage.src = './assets/images/' + images[i];
-	}
-
-	// загрузить следующую картинку
-	function loadNextImage(i) {
-		var largeImage = new Image();
-
-		largeImage.onload = function(){
-			loadNextImage(i++);
-		};
-
-		// отобразить большую картинку
-		largeImage.src = './assets/images/' + images[i];
-	}
-
-	// отображение новых картинок в массиве
-	function displayNextImage() {
-		// проходим по массиву маленьких картинок и загружаем при каждом вызове новую
-		loadSmallImage((++i % imagesSmall.length));
 	}
 
 	// при смене размера экрана и загрузке происходит проверка на превышение ширины 720px:
