@@ -42,7 +42,7 @@
 		<title>Улей — краудфандинговая площадка</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
-		<link href="./assets/styles/app.min.css?t=1453856243697" rel="stylesheet">
+		<link href="./assets/styles/app.min.css?t=1453858610801" rel="stylesheet">
 		<!--[if IE]><link href='./assets/styles/all-ie-only.css' rel='stylesheet' type='text/css'/><![endif]-->
 		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300%7CRoboto:500%7COpen+Sans:400,300,600,700,800&amp;subset=cyrillic-ext,latin,cyrillic,latin-ext" rel="stylesheet" type="text/css">
 	</head>
@@ -188,12 +188,6 @@
 														'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
 														'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
 						
-							// массив шестигранников
-							var tiles = ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg',
-														'06.jpg','07.jpg','08.jpg','09.jpg','10.jpg','11.jpg',
-														'12.jpg','13.jpg','14.jpg','15.jpg',
-														'16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg'];
-						
 							// в ios safari появлялись артефакты при смене ширины
 							if (x >= 720) {
 								for (var i = 0; i < svgPos.length; i++) {
@@ -247,20 +241,6 @@
 								}
 							}
 						
-							// предзагрузка изображений в шестигранниках
-							function preloadTiles(tilesArray, index) {
-								index = index || 0;
-								if (tilesArray && tilesArray.length > index) {
-						
-									var tileO = new Image ();
-									tileO.onload = function() {
-										preload(tilesArray, index + 1);
-									}
-									tileO.src = './assets/images/' + tilesArray[index];
-								}
-							}
-						
-							preloadTiles(tiles);
 							preload(images);
 						
 							// чередование
