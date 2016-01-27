@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui, ya-title=#06b7c5, ya-dock=fade">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no, minimal-ui, ya-title=#06b7c5, ya-dock=fade">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="imagetoolbar" content="no">
 		<meta name="msthemecompatible" content="no">
@@ -42,8 +42,8 @@
 		<title>Улей — краудфандинговая площадка</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
-		<link href="./assets/styles/app.min.css" rel="stylesheet">
-		<!--[if IE]><link href="./assets/styles/all-ie-only.css" rel="stylesheet" type="text/css"/><![endif]-->
+		<link href="./assets/styles/app.min.css?t=1453856243697" rel="stylesheet">
+		<!--[if IE]><link href='./assets/styles/all-ie-only.css' rel='stylesheet' type='text/css'/><![endif]-->
 		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300%7CRoboto:500%7COpen+Sans:400,300,600,700,800&amp;subset=cyrillic-ext,latin,cyrillic,latin-ext" rel="stylesheet" type="text/css">
 	</head>
 
@@ -54,7 +54,7 @@
 					<path fill="none" stroke="#979797" d="M115.207 4.697c-8.782-4.93-19.6-4.93-28.38 0L15.19 44.9C6.408 49.83 1 58.937 1 68.797v80.408c0 9.858 5.408 18.966 14.19 23.895l71.636 40.204c8.78 4.928 19.6 4.928 28.38 0l71.637-40.205c8.78-4.93 14.19-14.04 14.19-23.898V68.796c0-9.86-5.41-18.967-14.19-23.895L115.207 4.7z"></path>
 				</clippath>
 				<clipPath id="clipping-bg">
-					<path fill="#06B7C5" fill-rule="evenodd" transform="translate(560,320)" d="M1040.558 389.724l-401.093 227.37c-49.17 27.875-109.746 27.875-158.907 0L79.465 389.724C30.295 361.85.01 310.336.01 254.588V0h1120v254.588c0 55.748-30.29 107.26-79.452 135.136z"
+					<path fill="#06B7C5" x="50%" y="50%" transform="translate(350,120)" fill-rule="evenodd" d="M1040.558 389.724l-401.093 227.37c-49.17 27.875-109.746 27.875-158.907 0L79.465 389.724C30.295 361.85.01 310.336.01 254.588V0h1120v254.588c0 55.748-30.29 107.26-79.452 135.136z"
 					class="clipping-bg"></path>
 				</clipPath>
 				<linearGradient id="gradient" x1="92%" y1="0%" x2="8%" y2="100%">
@@ -94,14 +94,14 @@
 				<h2 class="popup__heading"><strong>Обратный</strong> звонок</h2>
 				<article class="popup__article">
 					<div class="popup__form-wrap">
-						<form class="form">
+						<form method="post" action="" autocomplete="off" id="callback-form" class="form">
 							<!-- .field-wrap — обычное состояние-->
 							<!-- .field-wrap.field--is-invalid — невалидное-->
-							<div class="field--is-invalid field-wrap form__field-wrap">
-								<input type="text" placeholder="Как вас зовут?" required="required" class="field form__input input js-callback-name" />
+							<div class="field-wrap form__field-wrap">
+								<input type="text" name="name" required="required" placeholder="Как вас зовут?" class="field form__input input js-callback-name" />
 							</div>
-							<div class="field--is-invalid field-wrap form__field-wrap">
-								<input type="phone" placeholder="Номер телефона" required="required" class="field form__input input js-callback-phone" />
+							<div class="field-wrap form__field-wrap">
+								<input type="phone" name="phone" required="required" placeholder="Номер телефона" class="field form__input input js-callback-phone" />
 							</div>
 							<button type="submit" class="btn btn--green form__submit-btn js-callback-submit">Отправить</button>
 						</form>
@@ -116,15 +116,15 @@
 					<div class="popup__form-wrap">
 						<p>Все-таки у вас есть классный проект, который хочется реализовать. Мы ждем вас, отправляйте скорее! ;)</p>
 						<p>Для того, чтобы начать, нужно всего лишь оставить заявку с кратким описанием проекта, после чего наш менеджер свяжется с вами и ответит на все вопросы.</p>
-						<form class="form">
+						<form method="post" action="" autocomplete="off" id="send-form" class="form">
 							<div class="field-wrap form__field-wrap">
-								<input type="text" placeholder="Как вас зовут?" required="required" class="field form__input input js-send-name" />
+								<input type="text" name="name" required="required" placeholder="Как вас зовут?" class="field form__input input js-send-name" />
 							</div>
 							<div class="field-wrap form__field-wrap">
-								<input type="text" placeholder="Контактный Email / Номер телефона" required="required" class="field form__input input js-send-contacts" />
+								<input type="text" name="contact" required="required" placeholder="Контактный Email / Номер телефона" class="field form__input input js-send-contacts" />
 							</div>
 							<div class="field-wrap form__field-wrap">
-								<textarea placeholder="Несколько слов о проекте" required="required" class="field form__textarea js-send-project-info textarea"></textarea>
+								<textarea name="description" required="required" placeholder="Несколько слов о проекте" class="field form__textarea js-send-project-info textarea"></textarea>
 							</div>
 							<p><strong>Мы гарантируем конфиденциальность любой информации</strong> и вашей идеи, о чем написано в нашем <a href="http://ulej.by/agreement" target="_blank">соглашении.</a>
 							</p>
@@ -159,11 +159,138 @@
 						<use xlink:href="./assets/images/icon.svg#icon_green"></use>
 					</svg>
 					<svg width="1120" height="640" class="header__bg-img-clip">
-						<rect width="1120" height="640" x="50%" y="50%" transform="translate(-560,-320)" fill="url(#gradient2)" clip-path="url(#clipping-bg)" class="tile__gradient"></rect>
-						<image width="1120" height="640" x="50%" y="50%" xlink:href="./assets/images/Main-01.jpg" transform="translate(-560,-320)" clip-path="url(#clipping-bg)" class="tile-header__image js-main-bg-image"></image>
-						<image width="1120" height="640" x="50%" y="50%" xlink:href="./assets/images/Main-01-small.jpg" transform="translate(-560,-320)" clip-path="url(#clipping-bg)" class="tile-header__image tile-header__image--small tile-header__image--is-loaded js-main-bg-image-small"></image>
-						<rect width="1120" height="640" x="50%" y="50%" transform="translate(-560,-320)" fill="url(#gradient)" clip-path="url(#clipping-bg)" class="tile__gradient"></rect>
+						<rect width="770" height="440" x="50%" y="50%" transform="translate(-350,-120)" fill="url(#gradient2)" clip-path="url(#clipping-bg)" class="tile__gradient js-change-svg-position"></rect>
+						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01-small.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image tile-header__image--small tile-header__image--is-loaded js-main-bg-image-small js-change-svg-position"></image>
+						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-02.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image js-main-temp-image js-change-svg-position"></image>
+						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image js-main-bg-image js-change-svg-position"></image>
+						<rect width="770" height="440" x="50%" y="50%" transform="translate(-350,-120)" fill="url(#gradient)" clip-path="url(#clipping-bg)" class="tile__gradient js-change-svg-position"></rect>
 					</svg>
+					<script type="text/javascript">
+						(function(){
+							var d = document;
+							var e = d.documentElement;
+							var g = d.getElementsByTagName('body')[0];
+							var x = e.clientWidth || g.clientWidth;
+							var y = e.clientHeight|| g.clientHeight;
+							var svgPos = d.querySelectorAll('.js-change-svg-position');
+							var clip = d.querySelectorAll('.clipping-bg')[0];
+							var svgElement = d.querySelectorAll('.header__bg-img-clip')[0];
+						
+							// массив фоновых картинок
+							var images = [
+														'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
+														'Main-06.jpg','Main-07.jpg','Main-08.jpg','Main-09.jpg','Main-10.jpg','Main-11.jpg',
+														'Main-12.jpg','Main-13.jpg','Main-14.jpg'];
+						
+							// массив маленьких фоновых картинок
+							var imagesSmall = [
+														'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
+														'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
+														'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
+						
+							// массив шестигранников
+							var tiles = ['01.jpg','02.jpg','03.jpg','04.jpg','05.jpg',
+														'06.jpg','07.jpg','08.jpg','09.jpg','10.jpg','11.jpg',
+														'12.jpg','13.jpg','14.jpg','15.jpg',
+														'16.jpg','17.jpg','18.jpg','19.jpg','20.jpg','21.jpg','22.jpg'];
+						
+							// в ios safari появлялись артефакты при смене ширины
+							if (x >= 720) {
+								for (var i = 0; i < svgPos.length; i++) {
+									svgPos[i].setAttribute('width', '1120');
+									svgPos[i].setAttribute('height', '640');
+									svgPos[i].setAttribute('transform', 'translate(-560,-320)');
+									svgPos[i].setAttribute('x', '50%');
+									svgPos[i].setAttribute('y', '50%');
+								}
+								clip.setAttribute('transform', 'translate(560,320)');
+								clip.setAttribute('x', '50%');
+								clip.setAttribute('y', '50%');
+							}
+							svgElement.classList.add('bg-img-clip--is-visible');
+							svgElement.style.willChange = 'auto';
+						
+						
+							var img = d.querySelectorAll('.js-main-bg-image')[0];
+							var imgTemp = d.querySelectorAll('.js-main-temp-image')[0];
+							var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
+						
+							// отображение большой картинки после загрузки замыленной маленькой
+							(function(){
+								var image = new Image();
+						
+								image.onload = function () {
+						
+									img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
+						
+									img.classList.add('tile-header__image--is-loaded');
+									imgSmall.classList.remove('tile-header__image--is-loaded');
+								};
+						
+								image.src = './assets/images/' + images[0];
+							})()
+						
+						
+						
+							var imgO = new Array();
+						
+							// предзагрузка фоновых изображений и сохранение объектов в массив
+							function preload(imageArray, index) {
+								index = index || 0;
+								if (imageArray && imageArray.length > index) {
+						
+									imgO[index] = new Image ();
+									imgO[index].onload = function() {
+										preload(imageArray, index + 1);
+									}
+									imgO[index].src = './assets/images/' + imageArray[index];
+								}
+							}
+						
+							// предзагрузка изображений в шестигранниках
+							function preloadTiles(tilesArray, index) {
+								index = index || 0;
+								if (tilesArray && tilesArray.length > index) {
+						
+									var tileO = new Image ();
+									tileO.onload = function() {
+										preload(tilesArray, index + 1);
+									}
+									tileO.src = './assets/images/' + tilesArray[index];
+								}
+							}
+						
+							preloadTiles(tiles);
+							preload(images);
+						
+							// чередование
+							var current = -1;
+							var next = false;
+							var currentImage = img;
+							var nextImage = imgTemp;
+							var speed = 5000;
+						
+							function swapImage() {
+								current = (++current > images.length - 1) ? 0 : current;
+								if (next) {
+									nextImage = img;
+									currentImage = imgTemp;
+								} else {
+									nextImage = imgTemp;
+									currentImage = img;
+								}
+								nextImage.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO[current].src);
+								nextImage.classList.add('tile-header__image--is-loaded');
+								currentImage.classList.remove('tile-header__image--is-loaded');
+								next = !next;
+								setTimeout(swapImage, speed);
+							}
+						
+							window.onload = function () {
+								swapImage();
+							}
+						})()
+					</script>
 					<h1 class="header__heading">Финансирование проектов в Улье<small>Ulej.by&nbsp;&mdash; первая в Беларуси краудфандинговая площадка.</small></h1>
 					<section class="js-social-section social">
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74" height="82" preserveaspectratio="xMidYMid" viewbox="0 0 74 82" class="social-link">

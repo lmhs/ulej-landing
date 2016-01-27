@@ -911,13 +911,22 @@ button:hover,
   z-index: 0;
   top: 0;
   left: 50%;
+  -webkit-backface-visibility: hidden;
   margin-left: -580px;
+  opacity: 0;
+  will-change: opacity;
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  transition: opacity 2s linear;
   -webkit-filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.22));
           filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.22));
 }
 @media only screen and (max-width: 719px) {
   .header__bg-img-clip {
-    top: -200px;
+    -webkit-transform: translate3d(0, -200px, 0);
+       -moz-transform: translate3d(0, -200px, 0);
+            transform: translate3d(0, -200px, 0);
   }
 }
 .header__bg-img {
@@ -1258,23 +1267,25 @@ button:hover,
 .tile-header__image {
   background: #333;
   opacity: 0;
-  -webkit-transition: opacity 1s linear;
-  -moz-transition: opacity 1s linear;
-  -o-transition: opacity 1s linear;
-  transition: opacity 1s linear;
+  will-change: opacity;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
+  -webkit-filter: opacity(0.99999);
 }
 .tile-header__image--is-loaded {
   opacity: 1;
-  -webkit-transition: opacity 2s linear;
-  -moz-transition: opacity 2s linear;
-  -o-transition: opacity 2s linear;
-  transition: opacity 2s linear;
+  -webkit-transition: opacity 2s ease-in-out;
+  -moz-transition: opacity 2s ease-in-out;
+  -o-transition: opacity 2s ease-in-out;
+  transition: opacity 2s ease-in-out;
 }
 .tile-header__image--small {
-  -webkit-filter: blur(20px);
-          filter: blur(20px);
   -webkit-filter: url("#blurry");
           filter: url("#blurry");
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
   filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=50);
 }
 @media only screen and (max-width: 719px) {
@@ -1296,6 +1307,9 @@ button:hover,
          -o-transform: translate(350px, 120px);
             transform: translate(350px, 120px);
   }
+}
+.bg-img-clip--is-visible {
+  opacity: 1;
 }
 .history {
   background: url("../images/grayish-blue_bg_pattern-unoptimised.jpg") center top repeat, #4e5062;
@@ -2109,6 +2123,10 @@ button:hover,
   line-height: 20px;
   color: #333;
   width: 100%;
+}
+.field:focus {
+  border-color: #06b7c5;
+  outline: none;
 }
 .field.placeholder {
   color: #999;
