@@ -10,8 +10,6 @@
 		z-index 0
 		top 0
 		left 50%
-		// transform translate3d(-580px, 0, 0)
-		-webkit-backface-visibility hidden
 		margin-left -580px
 		opacity 0
 		will-change opacity
@@ -19,7 +17,6 @@
 
 		filter drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.22))
 		+mobile()
-			// top -200px
 			transform translate3d(0,-200px,0)
 
 
@@ -289,13 +286,11 @@
 	opacity 0
 	will-change opacity
 	transition opacity 2s ease-in-out
-	-webkit-filter opacity(0.99999)
 	&--is-loaded
 		opacity 1
-		transition opacity 2s ease-in-out
 	&--small
-		filter url(#blurry)
-		filter blur(50px)
+		filter url(index.html#blurry)
+		filter blur(40px)
 		filter unquote('progid:DXImageTransform.Microsoft.Blur(PixelRadius=50)')
 
 .tile__gradient

@@ -122,20 +122,27 @@ $(() => {
 		return iOS;
 	});
 
+	Modernizr.addTest('isie', function(){
+		var ua = /(MSIE|Trident|Edge)/g.test( navigator.userAgent );
+		return ua;
+	})
+
 	// placeholder polyfill — если не поддерживается, используется плагин
 	if(!Modernizr.input.placeholder) {
 		$('input[placeholder], textarea[placeholder]').placeholder();
 	}
+
+	var svgPos = $('.js-change-svg-position');
 
 	// при смене размера экрана и загрузке происходит проверка на превышение ширины 720px:
 	// если меньше — меняются атрибуты у фона на новые,
 	// если больше — меняются атрибуты у фона на первоначальные
 	$( window ).on('resize', function() {
 		if ($( window ).width() < 720) {
-			svgPosition.attr('width','770').attr('height','440').attr('transform','translate(-350, -120)').attr('x','50%').attr('y','50%');
+			svgPos.attr('width','770').attr('height','440').attr('transform','translate(-350, -120)').attr('x','50%').attr('y','50%');
 			$('.clipping-bg').attr('transform','translate(350, 120)').attr('x','50%').attr('y','50%');
 		} else {
-			svgPosition.attr('width','1120').attr('height','640').attr('transform','translate(-560, -320)').attr('x','50%').attr('y','50%');
+			svgPos.attr('width','1120').attr('height','640').attr('transform','translate(-560, -320)').attr('x','50%').attr('y','50%');
 			$('.clipping-bg').attr('transform','translate(560, 320)').attr('x','50%').attr('y','50%');
 		}
 	});
