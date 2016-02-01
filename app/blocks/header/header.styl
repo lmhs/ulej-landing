@@ -19,25 +19,6 @@
 		+mobile()
 			transform translate3d(0,-200px,0)
 
-
-	&__bg-img
-		position absolute
-		z-index 0
-		top 0
-		left 50%
-		margin-left -560px
-		+mobile()
-			margin-left 0
-			left auto
-			top auto
-		+below(660px)
-			width 660px
-			height 440px
-		+below(480px)
-			margin-left -420px
-			left 50%
-
-
 	&__bg-clip
 		position relative
 		top 0
@@ -173,8 +154,6 @@
 		background-image linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
 
 	&--left
-		// padding-right 30px
-		// padding-left 150px
 		+mobile()
 			padding-x 0
 		&:before
@@ -184,8 +163,6 @@
 				right 20px
 				left 20px
 	&--right
-		// padding-left 100px
-		// padding-right 150px
 		+mobile()
 			padding-x 0
 		&:before
@@ -204,7 +181,6 @@
 		vertical-align top
 		white-space nowrap
 		+mobile()
-			// width 200px
 			font-size 12px
 			line-height 16px
 			display block
@@ -285,13 +261,9 @@
 	background #333
 	opacity 0
 	will-change opacity
-	transition opacity 2s ease-in-out
 	&--is-loaded
 		opacity 1
-	&--small
-		filter url(index.html#blurry)
-		filter blur(40px)
-		filter unquote('progid:DXImageTransform.Microsoft.Blur(PixelRadius=50)')
+		will-change auto
 
 .tile__gradient
 	+mobile()

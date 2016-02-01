@@ -11,5 +11,7 @@ mixin svg-defs()
 			linearGradient#gradient2(x1='92%', y1='0%', x2='8%', y2='100%')
 				stop(offset='0%', style='stop-color:rgb(255,255,255);stop-opacity:1')
 				stop(offset='100%', style='stop-color:rgb(19,8,6);stop-opacity:1')
+			filter#blurry
+				feGaussianBlur(stdDeviation='50')
 
 

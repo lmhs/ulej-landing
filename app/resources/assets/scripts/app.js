@@ -6264,9 +6264,9 @@ $(function() {
 		return IE;
 	});
 
-	// placeholder polyfill — если не поддерживается, используется плагин
+	// placeholder polyfill — если не поддерживается, загружается и используется плагин
 	if(!Modernizr.input.placeholder) {
-		$.getScript( "./assets/scripts/jquery.placeholder.js" )
+		$.getScript( './assets/scripts/jquery.placeholder.js' )
 			.done(function( script, textStatus ) {
 				$('input[placeholder], textarea[placeholder]').placeholder();
 			})
@@ -6277,6 +6277,7 @@ $(function() {
 	}
 
 	var svgPos = $('.js-change-svg-position');
+	var imgSmall = $('.js-main-bg-image-small');
 
 	// при смене размера экрана и загрузке происходит проверка на превышение ширины 720px:
 	// если меньше — меняются атрибуты у фона на новые,
@@ -6287,6 +6288,7 @@ $(function() {
 			$('.clipping-bg').attr('transform','translate(350, 120)').attr('x','50%').attr('y','50%');
 		} else {
 			svgPos.attr('width','1120').attr('height','640').attr('transform','translate(-560, -320)').attr('x','50%').attr('y','50%');
+			imgSmall.attr('width','1120').attr('height','644').attr('transform','translate(-560, -322)').attr('x','50%').attr('y','50%');
 			$('.clipping-bg').attr('transform','translate(560, 320)').attr('x','50%').attr('y','50%');
 		}
 	});
