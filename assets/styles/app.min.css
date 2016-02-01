@@ -1092,14 +1092,6 @@ button:hover,
 	opacity: 1;
 }
 
-.tile-header__image--small {
-	-webkit-filter: url("index.html#blurry");
-	filter: url("index.html#blurry");
-	-webkit-filter: blur(40px);
-	filter: blur(40px);
-	filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=50);
-}
-
 .bg-img-clip--is-visible {
 	opacity: 1;
 }
