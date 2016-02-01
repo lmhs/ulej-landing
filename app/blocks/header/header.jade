@@ -61,6 +61,7 @@ mixin header()
 						var svgPos = d.querySelectorAll('.js-change-svg-position');
 						var clip = d.querySelectorAll('.clipping-bg')[0];
 						var svgElement = d.querySelectorAll('.header__bg-img-clip')[0];
+						var smallImage = d.querySelectorAll('.js-main-bg-image-small')[0];
 
 						// массив фоновых картинок
 						var images = [
@@ -89,7 +90,6 @@ mixin header()
 						}
 						svgElement.classList.add('bg-img-clip--is-visible');
 						svgElement.style.willChange = 'auto';
-
 
 						var img = d.querySelectorAll('.js-main-bg-image')[0];
 						var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
