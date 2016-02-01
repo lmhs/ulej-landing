@@ -6265,7 +6265,7 @@ $(function() {
 	});
 
 	// placeholder polyfill — если не поддерживается, используется плагин
-	if(Modernizr.input.placeholder) {
+	if(!Modernizr.input.placeholder) {
 		$.getScript( "./assets/scripts/jquery.placeholder.js" )
 			.done(function( script, textStatus ) {
 				$('input[placeholder], textarea[placeholder]').placeholder();
