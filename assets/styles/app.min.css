@@ -1082,10 +1082,6 @@ button:hover,
 	background: #333;
 	opacity: 0;
 	will-change: opacity;
-	-webkit-transition: opacity 1s ease-in-out;
-	-moz-transition: opacity 1s ease-in-out;
-	-o-transition: opacity 1s ease-in-out;
-	transition: opacity 1s ease-in-out;
 }
 
 .tile-header__image--is-loaded {
