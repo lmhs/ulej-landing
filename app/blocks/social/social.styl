@@ -1,5 +1,4 @@
 .social
-	padding-x 5px
 	position absolute
 	width 116px
 	padding-bottom 40px
@@ -26,22 +25,25 @@
 
 	&__content
 		display none
+		font-size 0
 		margin-top 108px
 		+above(1140px)
-			margin-top 20px
+			margin-top 21px
 			position relative
 			z-index 2
 	&--is-opened
+		background #FFF
 		background url(../images/social-bg.svg) center top no-repeat
 		background-size 116px 276px
 		+above(1140px)
+			width 418px
 			background url(../images/social-bg-horizontal.svg) center top no-repeat
 			background-size 418px 101px
-			left 52px
+			left 41px
 			top 409px
 			.social-link
 				top 10px
-				left 114px
+				left 120px
 				margin-left auto
 		.social__content
 			display block
@@ -68,7 +70,7 @@
 			&:hover
 				background-color #4F7091
 			+above(1140px)
-				margin-right 86px
+				margin-right 90px
 		&--fb
 			background-color #4d6fa8
 			&:hover

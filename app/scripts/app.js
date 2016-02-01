@@ -145,6 +145,8 @@ $(() => {
 	var socialSection = $('.js-toggle-social').closest('.js-social-section');
 
 	$('.js-toggle-social').on('click', function(){
+		// repaint on safari
+		socialSection.hide().show(0);
 		socialSection.hasClass('social--is-opened') ? socialSection.removeClass('social--is-opened') : socialSection.addClass('social--is-opened');
 	});
 
