@@ -14,21 +14,21 @@
 		<meta name="google" value="notranslate">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-		<link rel="apple-touch-icon" sizes="57x57" href="./apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="./apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="./apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="./apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="./apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="./apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="./apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="./apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32">
-		<link rel="icon" type="image/png" href="./favicon-194x194.png" sizes="194x194">
-		<link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96">
-		<link rel="icon" type="image/png" href="./android-chrome-192x192.png" sizes="192x192">
-		<link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16">
-		<link rel="manifest" href="./assets/icons/manifest.json">
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="manifest" href="/assets/icons/manifest.json">
 		<meta name="msapplication-TileColor" content="#06b7c5">
 		<meta name="msapplication-TileImage" content="mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
@@ -36,16 +36,16 @@
 		<meta name="application-name" content="">
 		<meta name="msapplication-tooltip" content="">
 		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="./mstile-large.png">
-		<meta name="msapplication-starturl" content="http://ulej.by/">
+		<meta name="msapplication-TileImage" content="/mstile-large.png">
+		<meta name="msapplication-starturl" content="http://intro.ulej.by/">
 		<meta name="msapplication-tap-highlight" content="no">
 		<title>Улей — краудфандинговая площадка</title>
 		<meta name="description" content="">
 		<meta name="keywords" content="">
-		<link href="./assets/styles/app.min.css" rel="stylesheet">
+		<link href="/assets/styles/app.min.css" rel="stylesheet">
 		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300%7COpen+Sans:400,300,600,700,800&amp;subset=cyrillic-ext,latin,cyrillic,latin-ext" rel="stylesheet" type="text/css">
 		<style type="text/css">
-		.tile-header__image--small {
+			.tile-header__image--small {
 				-webkit-filter: url("#blurry");
 				filter: url("#blurry");
 				-webkit-filter: blur(40px);
@@ -73,6 +73,9 @@
 					<stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:1"></stop>
 					<stop offset="100%" style="stop-color:rgb(19,8,6);stop-opacity:1"></stop>
 				</linearGradient>
+				<filter id="blurry">
+					<feGaussianBlur stdDeviation="50"></feGaussianBlur>
+				</filter>
 			</defs>
 		</svg>
 		<div class="js-what-is-popup mfp-hide popup">
@@ -161,12 +164,12 @@
 			<div class="header__inner">
 				<div class="header__bg-clip">
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="bg-green">
-						<use xlink:href="./assets/images/icon.svg#icon_green"></use>
+						<use xlink:href="/assets/images/icon.svg#icon_green"></use>
 					</svg>
 					<svg width="1120" height="640" class="header__bg-img-clip">
 						<rect width="770" height="440" x="50%" y="50%" transform="translate(-350,-120)" fill="url(#gradient2)" clip-path="url(#clipping-bg)" class="tile__gradient js-change-svg-position"></rect>
-						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01-small.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image tile-header__image--small tile-header__image--is-loaded js-main-bg-image-small js-change-svg-position"></image>
-						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image js-main-bg-image js-change-svg-position"></image>
+						<image width="770" height="440" x="50%" y="50%" xlink:href="/assets/images/Main-01-small.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image tile-header__image--small tile-header__image--is-loaded js-main-bg-image-small js-change-svg-position"></image>
+						<image width="770" height="440" x="50%" y="50%" xlink:href="/assets/images/Main-01.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image js-main-bg-image js-change-svg-position"></image>
 						<rect width="770" height="440" x="50%" y="50%" transform="translate(-350,-120)" fill="url(#gradient)" clip-path="url(#clipping-bg)" class="tile__gradient js-change-svg-position"></rect>
 					</svg>
 					<script type="text/javascript">
@@ -180,6 +183,8 @@
 							var clip = d.querySelectorAll('.clipping-bg')[0];
 							var svgElement = d.querySelectorAll('.header__bg-img-clip')[0];
 
+							var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
+
 							// массив фоновых картинок
 							var images = [
 														'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
@@ -191,6 +196,24 @@
 														'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
 														'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
 														'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
+
+
+							function addClass(el, cls) {
+								if (el.classList)
+									el.classList.add(cls);
+								else
+									el.className.baseVal += ' ' + cls;
+							}
+
+
+							function removeClass(el, cls) {
+								if (el.classList) {
+									el.classList.remove(cls);
+								} else {
+									el.className.baseVal = el.className.baseVal.replace(new RegExp('(^|\\b)' + cls.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+								}
+							}
+
 
 							// в ios safari появлялись артефакты при смене ширины
 							if (x >= 720) {
@@ -204,59 +227,55 @@
 								clip.setAttribute('transform', 'translate(560,320)');
 								clip.setAttribute('x', '50%');
 								clip.setAttribute('y', '50%');
+								imgSmall.setAttribute('width', '1120');
+								imgSmall.setAttribute('height', '644');
+								imgSmall.setAttribute('transform', 'translate(-560,-320)');
+								imgSmall.setAttribute('x', '50%');
+								imgSmall.setAttribute('y', '50%');
 							}
-							svgElement.classList.add('bg-img-clip--is-visible');
+							addClass(svgElement,'bg-img-clip--is-visible')
 							svgElement.style.willChange = 'auto';
 
-
 							var img = d.querySelectorAll('.js-main-bg-image')[0];
-							var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
 
-							// отображение большой картинки после загрузки замыленной маленькой
-							(function(){
-								var image = new Image();
-
-								image.onload = function () {
-
-									img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
-
-									img.classList.add('tile-header__image--is-loaded');
-									imgSmall.classList.remove('tile-header__image--is-loaded');
-								};
-
-								image.src = './assets/images/' + images[0];
-							})()
-
-
+							addClass(imgSmall,'tile-header__image--is-loaded');
 
 							var imgO = new Array();
+							// чередование
+							var current = -1;
+							var start = true;
+							var speed = 10000;
+							preload(images);
+
+							window.onload = function(){
+								swapImage();
+							};
 
 							// предзагрузка фоновых изображений и сохранение объектов в массив
 							function preload(imageArray, index) {
 								index = index || 0;
+
 								if (imageArray && imageArray.length > index) {
 
 									imgO[index] = new Image ();
 									imgO[index].onload = function() {
 										preload(imageArray, index + 1);
 									}
-									imgO[index].src = './assets/images/' + imageArray[index];
+									imgO[index].src = '/assets/images/' + imageArray[index];
 								}
 							}
 
-							preload(images);
-
-							var current = -1;
-							var speed = 10000;
-
 							function swapImage() {
 								current = (++current > images.length - 1) ? 0 : current;
+
+								if (start) {
+									removeClass(imgSmall, 'tile-header__image--is-loaded');
+									addClass(img, 'tile-header__image--is-loaded');
+									start = false;
+									imgSmall.parentElement.removeChild(imgSmall);
+								}
 								img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO[current].src);
 								setTimeout(swapImage, speed);
-							}
-
-							window.onload = function () {
-								swapImage();
 							}
 						})()
 					</script>
@@ -269,23 +288,23 @@
 								<path fill="#FFF" d="M42.72 22c-2.337 0-4.42 1.182-5.717 3.02-1.3-1.838-3.38-3.02-5.72-3.02-4.03 0-7.28 3.283-7.28 7.353 0 5.778 13 16.283 13 16.283s13-10.505 13-16.283c0-4.07-3.25-7.353-7.28-7.353z"></path>
 							</a>
 						</svg>
-						<div class="social__content"><a href="javascript:void(0);" class="social__block social__block--vk"><span class="social__block-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="social__vk"><use xlink:href="./assets/images/icon.svg#icon_vk"></use></svg></span><span class="social__block-counter">322</span></a>
+						<div class="social__content"><a href="javascript:void(0);" class="social__block social__block--vk"><span class="social__block-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="social__vk"><use xlink:href="/assets/images/icon.svg#icon_vk"></use></svg></span><span class="social__block-counter">322</span></a>
 							<a
-							href="javascript:void(0);" class="social__block social__block--fb"><span class="social__block-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="social__fb"><use xlink:href="./assets/images/icon.svg#icon_fb"></use></svg></span><span class="social__block-counter">322</span>
-								</a><a href="javascript:void(0);" class="social__block social__block--tw"><span class="social__block-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="social__tw"><use xlink:href="./assets/images/icon.svg#icon_tw"></use></svg></span><span class="social__block-counter">322</span></a>
+							href="javascript:void(0);" class="social__block social__block--fb"><span class="social__block-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="social__fb"><use xlink:href="/assets/images/icon.svg#icon_fb"></use></svg></span><span class="social__block-counter">322</span>
+								</a><a href="javascript:void(0);" class="social__block social__block--tw"><span class="social__block-icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="social__tw"><use xlink:href="/assets/images/icon.svg#icon_tw"></use></svg></span><span class="social__block-counter">322</span></a>
 						</div>
 					</section>
 					<a href="javascript:void(0);" class="header__sticker-link js-open-what-is sticker-link">
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sticker-link__bg">
-							<use xlink:href="./assets/images/icon.svg#icon_green-hexagon"></use>
+							<use xlink:href="/assets/images/icon.svg#icon_green-hexagon"></use>
 						</svg>
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="sticker-link__bg sticker-link__bg-mobile">
-							<use xlink:href="./assets/images/icon.svg#icon_green-hexagon-mobile"></use>
+							<use xlink:href="/assets/images/icon.svg#icon_green-hexagon-mobile"></use>
 						</svg><span class="sticker-link__inner"><h3 class="sticker-link__heading">Что такое краудфандинг?<small>Узнайте сейчас!</small></h3></span>
 					</a>
 					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="logo">
 						<a xlink:href="http://ulej.by" target="_blank">
-							<use xlink:href="./assets/images/icon.svg#icon_logo"></use>
+							<use xlink:href="/assets/images/icon.svg#icon_logo"></use>
 						</a>
 					</svg>
 					<div class="help-block">
@@ -298,7 +317,7 @@
 						<div class="header__subheader">
 							<h2 class="header__subheading heading">За полгода активной работы Улья<br>общая сумма финансирования составила <strong>700&nbsp;000&nbsp;000</strong>&nbsp;рублей.</h2>
 						</div>
-						<img src="./assets/images/header-hexagon-items.png" srcset="./assets/images/header-hexagon-items@2x.png 2x, ./assets/images/header-hexagon-items.png 1x" class="header__hexagon-items" alt="" />
+						<img src="/assets/images/header-hexagon-items.png" srcset="/assets/images/header-hexagon-items@2x.png 2x, /assets/images/header-hexagon-items.png 1x" class="header__hexagon-items" alt="" />
 						<div class="header__subsection">
 							<div class="half-subsection half-subsection--left">
 								<div class="half-subsection__content">
@@ -334,12 +353,12 @@
 							</div>
 							<div class="story-card__body">
 								<div class="story-card__img-wrap">
-									<img src="./assets/images/Card-1.jpg" width="290" height="200" alt="Картина на стене" class="story-card__img" title="" />
+									<img src="/assets/images/Card-1.jpg" width="290" height="200" alt="Картина на стене" class="story-card__img" title="" />
 								</div><strong class="story-card__price">33 407 994 руб.</strong>
 							</div>
 							<div class="story-card__foot">
 								<div class="story-card__author-img-wrap">
-									<img src="./assets/images/Ava-1.jpg" width="60" height="60" alt="Митя Писляк" class="story-card__author-img" title="" />
+									<img src="/assets/images/Ava-1.jpg" width="60" height="60" alt="Митя Писляк" class="story-card__author-img" title="" />
 								</div>
 								<div class="story-card__author-name">Митя Писляк</div>
 							</div>
@@ -372,12 +391,12 @@
 							</div>
 							<div class="story-card__body">
 								<div class="story-card__img-wrap">
-									<img src="./assets/images/Card-2.jpg" width="290" height="200" alt="Клип группы The Road Dogs" class="story-card__img" title="" />
+									<img src="/assets/images/Card-2.jpg" width="290" height="200" alt="Клип группы The Road Dogs" class="story-card__img" title="" />
 								</div><strong class="story-card__price">23 940 000 руб.</strong>
 							</div>
 							<div class="story-card__foot">
 								<div class="story-card__author-img-wrap">
-									<img src="./assets/images/Ava-2.jpg" width="60" height="60" alt="Сергей Скляров" class="story-card__author-img" title="" />
+									<img src="/assets/images/Ava-2.jpg" width="60" height="60" alt="Сергей Скляров" class="story-card__author-img" title="" />
 								</div>
 								<div class="story-card__author-name">Сергей Скляров</div>
 							</div>
@@ -409,12 +428,12 @@
 							</div>
 							<div class="story-card__body">
 								<div class="story-card__img-wrap">
-									<img src="./assets/images/Card-3.jpg" width="290" height="200" alt="Роман «Авессалом. Начало»" class="story-card__img" title="" />
+									<img src="/assets/images/Card-3.jpg" width="290" height="200" alt="Роман «Авессалом. Начало»" class="story-card__img" title="" />
 								</div><strong class="story-card__price">30 720 000 руб.</strong>
 							</div>
 							<div class="story-card__foot">
 								<div class="story-card__author-img-wrap">
-									<img src="./assets/images/Ava-3.jpg" width="60" height="60" alt="Виталий Радченко" class="story-card__author-img" title="" />
+									<img src="/assets/images/Ava-3.jpg" width="60" height="60" alt="Виталий Радченко" class="story-card__author-img" title="" />
 								</div>
 								<div class="story-card__author-name">Виталий Радченко</div>
 							</div>
@@ -499,7 +518,7 @@
 											<div class="js-tile tile tile-1">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/01.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/01.jpg" class="tile__image"></image>
 														<rect fill="rgb(234,176,30)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Реализуй спортивные амбиции</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -507,7 +526,7 @@
 											<div class="js-tile tile tile-2">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/02.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/02.jpg" class="tile__image"></image>
 														<rect fill="rgb(162,5,9)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Организуй особенную выставку</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -515,7 +534,7 @@
 											<div class="js-tile tile tile-3">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/03.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/03.jpg" class="tile__image"></image>
 														<rect fill="rgb(61,43,33)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Создай невероятный стартап</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -523,7 +542,7 @@
 											<div class="js-tile tile tile-4">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/04.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/04.jpg" class="tile__image"></image>
 														<rect fill="rgb(51,55,64)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Помогай беззащитным существам</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -531,7 +550,7 @@
 											<div class="js-tile tile tile-5">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/05.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/05.jpg" class="tile__image"></image>
 														<rect fill="rgb(1,21,28)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Выпусти инновационное устройство</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -539,7 +558,7 @@
 											<div class="js-tile tile tile-6">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/06.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/06.jpg" class="tile__image"></image>
 														<rect fill="rgb(40,29,13)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Издай свою книгу</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -547,7 +566,7 @@
 											<div class="js-tile tile tile-7">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/07.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/07.jpg" class="tile__image"></image>
 														<rect fill="rgb(234,160,0)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Сделай мир ярче</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -559,7 +578,7 @@
 											<div class="js-tile tile tile-8">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/08.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/08.jpg" class="tile__image"></image>
 														<rect fill="rgb(2,12,24)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Начни работу над научным проектом</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -567,7 +586,7 @@
 											<div class="js-tile tile tile-9">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/09.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/09.jpg" class="tile__image"></image>
 														<rect fill="rgb(0,102,199)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Издай захватывающую игру</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -575,7 +594,7 @@
 											<div class="js-tile tile tile-10">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/10.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/10.jpg" class="tile__image"></image>
 														<rect fill="rgb(3,3,3)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Запиши альбом или проведи концерт</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -583,7 +602,7 @@
 											<div class="js-tile tile tile-11">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/11.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/11.jpg" class="tile__image"></image>
 														<rect fill="rgb(21,95,132)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Запусти проект своей мечты</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -591,7 +610,7 @@
 											<div class="js-tile tile tile-12">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/12.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/12.jpg" class="tile__image"></image>
 														<rect fill="rgb(7,35,83)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Измени свой город</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -599,7 +618,7 @@
 											<div class="js-tile tile tile-13">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/13.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/13.jpg" class="tile__image"></image>
 														<rect fill="rgb(19,9,8)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Разработай полезное приложение</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -607,7 +626,7 @@
 											<div class="js-tile tile tile-14">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/14.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/14.jpg" class="tile__image"></image>
 														<rect fill="rgb(1,10,43)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Поставь уникальный спектакль</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -619,7 +638,7 @@
 											<div class="js-tile tile tile-15">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/15.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/15.jpg" class="tile__image"></image>
 														<rect fill="rgb(104,3,25)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Сделай что-нибудь особенное</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -627,7 +646,7 @@
 											<div class="js-tile tile tile-16">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/16.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/16.jpg" class="tile__image"></image>
 														<rect fill="rgb(19,19,19)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Помогай слабым</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -635,7 +654,7 @@
 											<div class="js-tile tile tile-17">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/17.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/17.jpg" class="tile__image"></image>
 														<rect fill="rgb(1,1,1)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Выпусти свою дизайнерскую коллекцию</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -643,7 +662,7 @@
 											<div class="js-tile tile tile-18">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/18.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/18.jpg" class="tile__image"></image>
 														<rect fill="rgb(25,34,93)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Достигай новых высот</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -655,7 +674,7 @@
 											<div class="js-tile tile tile-19">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/19.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/19.jpg" class="tile__image"></image>
 														<rect fill="rgb(13,12,20)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Дай волю творчеству</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -663,7 +682,7 @@
 											<div class="js-tile tile tile-20">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/20.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/20.jpg" class="tile__image"></image>
 														<rect fill="rgb(110,26,0)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Стань вторым Гауди</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -671,7 +690,7 @@
 											<div class="js-tile tile tile-21">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/21.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/21.jpg" class="tile__image"></image>
 														<rect fill="rgb(7,35,83)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Сними особенный фильм</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -679,7 +698,7 @@
 											<div class="js-tile tile tile-22">
 												<svg width="200" height="218" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tile__element">
 													<a width="200" height="218" x="0" y="0" xlink:href="javascript:void(0);" clip-path="url(#clipping-tile)" class="js-open-send tile__link">
-														<image width="200" height="218" x="0" y="0" xlink:href="./assets/images/22.jpg" class="tile__image"></image>
+														<image width="200" height="218" x="0" y="0" xlink:href="/assets/images/22.jpg" class="tile__image"></image>
 														<rect fill="rgb(234,176,30)" width="200" height="218" opacity=".7" class="tile__fill js-tile-fill"></rect>
 													</a>
 												</svg><a href="javascript:void(0);" class="is-hidden js-open-send js-tile-text tile__text"><span class="tile__text-inner-wrap"><span class="tile__text-inner">Проведи интересное мероприятие</span></span><svg width="18" height="12" viewbox="0 0 18 12" class="tile__mail-icon"><path fill="currentColor" d="M11.227 6.58l6.364 5.093c-.23.202-.54.327-.882.327H1.294c-.344 0-.656-.124-.888-.325L6.773 6.58 9 8.4l2.227-1.82zM9 7.2L.41.327C.64.125.95 0 1.293 0h15.412c.344 0 .656.123.888.325L9 7.2zm9 3.823l-6.213-4.928L18 1.05v9.973zm-18 0v-9.97l6.213 5.042L0 11.023z"></path></svg></a>
@@ -737,11 +756,11 @@
 										<a href="http://news.tut.by/society/447696.html" target="_blank" class="support-card__link"></a>
 										<div class="support-card__head">
 											<div class="support-card__logo">
-												<img src="./assets/images/tutby.png" srcset="./assets/images/tutby@2x.png 2x, ./assets/images/tutby.png 1x" class="support-card__logo-img" alt="" />
+												<img src="/assets/images/tutby.png" srcset="/assets/images/tutby@2x.png 2x, /assets/images/tutby.png 1x" class="support-card__logo-img" alt="" />
 											</div>
 										</div>
 										<div class="support-card__body"><a href="http://news.tut.by/society/447696.html" target="_blank" class="link support-card__text">Картина Хруцкого на стене дома по Карла Маркса</a>
-											<div class="support-card__comment"><span class="support-card__comment-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="comment-icon"><use xlink:href="./assets/images/icon.svg#icon_comment"></use></svg><span class="js-count support-card__comment-count">57</span></span>
+											<div class="support-card__comment"><span class="support-card__comment-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="comment-icon"><use xlink:href="/assets/images/icon.svg#icon_comment"></use></svg><span class="js-count support-card__comment-count">57</span></span>
 											</div>
 										</div>
 									</section>
@@ -751,11 +770,11 @@
 										<a href="http://people.onliner.by/2015/05/18/magik" target="_blank" class="support-card__link"></a>
 										<div class="support-card__head">
 											<div class="support-card__logo">
-												<img src="./assets/images/onliner.png" srcset="./assets/images/onliner@2x.png 2x, ./assets/images/onliner.png 1x" class="support-card__logo-img" alt="" />
+												<img src="/assets/images/onliner.png" srcset="/assets/images/onliner@2x.png 2x, /assets/images/onliner.png 1x" class="support-card__logo-img" alt="" />
 											</div>
 										</div>
 										<div class="support-card__body"><a href="http://people.onliner.by/2015/05/18/magik" target="_blank" class="link support-card__text">Magic: The Gathering по-белорусски</a>
-											<div class="support-card__comment"><span class="support-card__comment-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="comment-icon"><use xlink:href="./assets/images/icon.svg#icon_comment"></use></svg><span class="js-count support-card__comment-count">99</span></span>
+											<div class="support-card__comment"><span class="support-card__comment-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="comment-icon"><use xlink:href="/assets/images/icon.svg#icon_comment"></use></svg><span class="js-count support-card__comment-count">99</span></span>
 											</div>
 										</div>
 									</section>
@@ -766,12 +785,12 @@
 										<div class="support-card__head">
 											<div class="support-card__logo">
 												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="support-card__logo-img support-card__logo-img-icon">
-													<use xlink:href="./assets/images/icon.svg#icon_kyky"></use>
+													<use xlink:href="/assets/images/icon.svg#icon_kyky"></use>
 												</svg>
 											</div>
 										</div>
 										<div class="support-card__body"><a href="http://kyky.org/culture/hto-robits-belaruskamo-nyya-kazki-dlya-aypada" target="_blank" class="link support-card__text">Хто робіць беларускія казкі для айпада</a>
-											<div class="support-card__comment"><span class="support-card__comment-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="comment-icon"><use xlink:href="./assets/images/icon.svg#icon_comment"></use></svg><span class="js-count support-card__comment-count">2</span></span>
+											<div class="support-card__comment"><span class="support-card__comment-link"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="comment-icon"><use xlink:href="/assets/images/icon.svg#icon_comment"></use></svg><span class="js-count support-card__comment-count">2</span></span>
 											</div>
 										</div>
 									</section>
@@ -793,7 +812,7 @@
 									<section class="support-card-small">
 										<div class="support-card-small__logo">
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="support-card-small__logo-img support__icon-bgpb">
-												<use xlink:href="./assets/images/icon.svg#icon_belgazprombank"></use>
+												<use xlink:href="/assets/images/icon.svg#icon_belgazprombank"></use>
 											</svg>
 										</div>
 									</section>
@@ -802,7 +821,7 @@
 									<section class="support-card-small">
 										<div class="support-card-small__logo support-card-small__logo--epam">
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="support-card-small__logo-img support__icon-epam">
-												<use xlink:href="./assets/images/icon.svg#icon_epam"></use>
+												<use xlink:href="/assets/images/icon.svg#icon_epam"></use>
 											</svg>
 										</div>
 									</section>
@@ -810,7 +829,7 @@
 								<div class="col col-33">
 									<section class="support-card-small">
 										<div class="support-card-small__logo">
-											<img src="./assets/images/priorbank.png" srcset="./assets/images/priorbank@2x.png 2x, ./assets/images/priorbank.png 1x" class="support-card-small__logo-img" alt="" />
+											<img src="/assets/images/priorbank.png" srcset="/assets/images/priorbank@2x.png 2x, /assets/images/priorbank.png 1x" class="support-card-small__logo-img" alt="" />
 										</div>
 									</section>
 								</div>
@@ -819,7 +838,7 @@
 								<div class="col col-33">
 									<section class="support-card-small">
 										<div class="support-card-small__logo">
-											<img src="./assets/images/beltelecom.png" srcset="./assets/images/beltelecom@2x.png 2x, ./assets/images/beltelecom.png 1x" class="support-card-small__logo-img" alt="" />
+											<img src="/assets/images/beltelecom.png" srcset="/assets/images/beltelecom@2x.png 2x, /assets/images/beltelecom.png 1x" class="support-card-small__logo-img" alt="" />
 										</div>
 									</section>
 								</div>
@@ -827,7 +846,7 @@
 									<section class="support-card-small">
 										<div class="support-card-small__logo support-card-small__logo--lwo">
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="support-card-small__logo-img support__icon-lwo">
-												<use xlink:href="./assets/images/icon.svg#icon_lwo"></use>
+												<use xlink:href="/assets/images/icon.svg#icon_lwo"></use>
 											</svg>
 										</div>
 									</section>
@@ -835,7 +854,7 @@
 								<div class="col col-33">
 									<section class="support-card-small">
 										<div class="support-card-small__logo">
-											<img src="./assets/images/unistar.png" srcset="./assets/images/unistar@2x.png 2x, ./assets/images/unistar.png 1x" class="support-card-small__logo-img" alt="" />
+											<img src="/assets/images/unistar.png" srcset="/assets/images/unistar@2x.png 2x, /assets/images/unistar.png 1x" class="support-card-small__logo-img" alt="" />
 										</div>
 									</section>
 								</div>
@@ -865,18 +884,18 @@
 					<div class="footer__social">
 						<div class="footer__social-row-1">
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-30 honeycomb-order-1">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-20 honeycomb-order-2">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 						</div>
 						<div class="footer__social-row-2">
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-10 honeycomb-order-3">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-60 honeycomb-order-4">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="36" preserveaspectratio="xMidYMid" viewbox="0 0 32 36" class="honeycomb-vk honeycomb-order-5">
 								<a xlink:href="https://vk.com/ulejby" target="_blank">
@@ -885,24 +904,24 @@
 								</a>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-50 honeycomb-order-6">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-30 honeycomb-order-7">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 						</div>
 						<div class="footer__social-row-3">
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-10 honeycomb-order-8">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-20 honeycomb-order-9">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-30 honeycomb-order-10">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-50 honeycomb-order-11">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="36" preserveaspectratio="xMidYMid" viewbox="0 0 32 36" class="honeycomb-fb honeycomb-order-12">
 								<a xlink:href="https://www.facebook.com/ulejby" target="_blank">
@@ -911,7 +930,7 @@
 								</a>
 							</svg>
 							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="honeycomb-60 honeycomb-order-13">
-								<use xlink:href="./assets/images/icon.svg#icon_honeycomb-30"></use>
+								<use xlink:href="/assets/images/icon.svg#icon_honeycomb-30"></use>
 							</svg>
 						</div>
 					</div>
@@ -919,7 +938,7 @@
 				<div class="col footer__partner-col">
 					<a href="http://belgazprombank.by/" target="_blank" class="footer__partner-logo-wrap">
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="footer__partner-logo">
-							<use xlink:href="./assets/images/icon.svg#icon_belgazprombank"></use>
+							<use xlink:href="/assets/images/icon.svg#icon_belgazprombank"></use>
 						</svg>
 					</a>
 					<div class="footer__partner-text">Официальный партнер</div>
@@ -928,7 +947,7 @@
 		</div>
 		</div>
 	</body>
-	<script src="./assets/scripts/jquery.js" defer></script>
-	<script src="./assets/scripts/app.js" defer></script>
+	<script src="/assets/scripts/jquery.js" defer></script>
+	<script src="/assets/scripts/app.js" defer></script>
 
 </html>
