@@ -43,7 +43,7 @@
 		<meta name="description" content="">
 		<meta name="keywords" content="">
 		<link href="./assets/styles/app.min.css" rel="stylesheet">
-		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300%7CRoboto:500%7COpen+Sans:400,300,600,700,800&amp;subset=cyrillic-ext,latin,cyrillic,latin-ext" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300%7COpen+Sans:400,300,600,700,800&amp;subset=cyrillic-ext,latin,cyrillic,latin-ext" rel="stylesheet" type="text/css">
 	</head>
 
 	<body class="page">
@@ -156,16 +156,12 @@
 					</svg>
 					<svg width="1120" height="640" class="header__bg-img-clip">
 						<rect width="770" height="440" x="50%" y="50%" transform="translate(-350,-120)" fill="url(#gradient2)" clip-path="url(#clipping-bg)" class="tile__gradient js-change-svg-position"></rect>
-						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01-small.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image tile-header__image--small js-main-bg-image-small"></image>
-						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image js-main-temp-image js-change-svg-position"></image>
+						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01-small.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image tile-header__image--small tile-header__image--is-loaded js-main-bg-image-small js-change-svg-position"></image>
 						<image width="770" height="440" x="50%" y="50%" xlink:href="./assets/images/Main-01.jpg" transform="translate(-350,-120)" clip-path="url(#clipping-bg)" class="tile-header__image js-main-bg-image js-change-svg-position"></image>
 						<rect width="770" height="440" x="50%" y="50%" transform="translate(-350,-120)" fill="url(#gradient)" clip-path="url(#clipping-bg)" class="tile__gradient js-change-svg-position"></rect>
-						<filter id="blurry">
-							<feGaussianBlur stdDeviation="50"></feGaussianBlur>
-						</filter>
 					</svg>
 					<script type="text/javascript">
-						(function () {
+						(function(){
 							var d = document;
 							var e = d.documentElement;
 							var g = d.getElementsByTagName('body')[0];
@@ -174,8 +170,6 @@
 							var svgPos = d.querySelectorAll('.js-change-svg-position');
 							var clip = d.querySelectorAll('.clipping-bg')[0];
 							var svgElement = d.querySelectorAll('.header__bg-img-clip')[0];
-
-							var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
 
 							// массив фоновых картинок
 							var images = [
@@ -189,25 +183,6 @@
 														'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
 														'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
 
-
-							function addClass(el, cls) {
-								if (el.classList)
-									el.classList.add(cls);
-								else
-									el.className.baseVal += ' ' + cls;
-							}
-
-
-							function removeClass(el, cls) {
-								if (el.classList) {
-									el.classList.remove(cls);
-								} else {
-									el.className.baseVal = el.className.baseVal.replace(new RegExp('(^|\\b)' + cls.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-								}
-							}
-
-
-
 							// в ios safari появлялись артефакты при смене ширины
 							if (x >= 720) {
 								for (var i = 0; i < svgPos.length; i++) {
@@ -220,38 +195,36 @@
 								clip.setAttribute('transform', 'translate(560,320)');
 								clip.setAttribute('x', '50%');
 								clip.setAttribute('y', '50%');
-								imgSmall.setAttribute('width', '1120');
-								imgSmall.setAttribute('height', '644');
-								imgSmall.setAttribute('transform', 'translate(-560,-320)');
-								imgSmall.setAttribute('x', '50%');
-								imgSmall.setAttribute('y', '50%');
 							}
-							addClass(svgElement,'bg-img-clip--is-visible')
+							svgElement.classList.add('bg-img-clip--is-visible');
 							svgElement.style.willChange = 'auto';
 
-							var img = d.querySelectorAll('.js-main-bg-image')[0];
-							var imgTemp = d.querySelectorAll('.js-main-temp-image')[0];
 
-							addClass(imgSmall,'tile-header__image--is-loaded');
-							var imgO = new Array();
-							// чередование
-							var current = -1;
-							var next = false;
-							var start = true;
-							var currentImage = img;
-							var nextImage = imgTemp;
-							var speed = 5000;
-							preload(images);
+							var img = d.querySelectorAll('.js-main-bg-image')[0];
+							var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
 
 							// отображение большой картинки после загрузки замыленной маленькой
-							window.onload = function(){
-								swapImage();
-							};
+							(function(){
+								var image = new Image();
+
+								image.onload = function () {
+
+									img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
+
+									img.classList.add('tile-header__image--is-loaded');
+									imgSmall.classList.remove('tile-header__image--is-loaded');
+								};
+
+								image.src = './assets/images/' + images[0];
+							})()
+
+
+
+							var imgO = new Array();
 
 							// предзагрузка фоновых изображений и сохранение объектов в массив
 							function preload(imageArray, index) {
 								index = index || 0;
-
 								if (imageArray && imageArray.length > index) {
 
 									imgO[index] = new Image ();
@@ -262,26 +235,20 @@
 								}
 							}
 
+							preload(images);
+
+							var current = -1;
+							var speed = 5000;
+
 							function swapImage() {
 								current = (++current > images.length - 1) ? 0 : current;
-								if (next) {
-									nextImage = img;
-									currentImage = imgTemp;
-								} else {
-									nextImage = imgTemp;
-									currentImage = img;
-								}
-								if (start) {
-									removeClass(imgSmall, 'tile-header__image--is-loaded');
-									start = false;
-								}
-								nextImage.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO[current].src);
-								addClass(nextImage, 'tile-header__image--is-loaded');
-								removeClass(currentImage, 'tile-header__image--is-loaded');
-								next = !next;
+								img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO[current].src);
 								setTimeout(swapImage, speed);
 							}
 
+							window.onload = function () {
+								swapImage();
+							}
 						})()
 					</script>
 					<h1 class="header__heading">Финансирование проектов в Улье<small>Ulej.by&nbsp;&mdash; первая в Беларуси краудфандинговая площадка.</small></h1>
@@ -289,7 +256,7 @@
 						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="74" height="82" preserveaspectratio="xMidYMid" viewbox="0 0 74 82" class="social-link">
 							<a xlink:href="javascript:void(0);" class="js-toggle-social">
 								<path fill="currentColor" d="M68.754 17.258L42.252 2.368c-3.25-1.824-7.252-1.824-10.5 0L5.25 17.26C2 19.083 0 22.455 0 26.108v29.777c0 3.65 2 7.025 5.25 8.85l26.502 14.89c3.248 1.824 7.25 1.824 10.5 0l26.502-14.89c3.25-1.825 5.25-5.2 5.25-8.85V26.107c0-3.652-2-7.024-5.25-8.85z"></path>
-								<text fill="#FFF" x="47%" y="63">322</text>
+								<text fill="#FFF" x="38" text-anchor="middle" y="63">322</text>
 								<path fill="#FFF" d="M42.72 22c-2.337 0-4.42 1.182-5.717 3.02-1.3-1.838-3.38-3.02-5.72-3.02-4.03 0-7.28 3.283-7.28 7.353 0 5.778 13 16.283 13 16.283s13-10.505 13-16.283c0-4.07-3.25-7.353-7.28-7.353z"></path>
 							</a>
 						</svg>
@@ -952,6 +919,7 @@
 		</div>
 		</div>
 	</body>
-	<script src="./assets/scripts/app.min.js"></script>
+	<script src="./assets/scripts/jquery.js" defer></script>
+	<script src="./assets/scripts/app.js" defer></script>
 
 </html>
