@@ -1,0 +1,75 @@
+mixin support()
+	+b('section').support.support-write
+		+box()
+			+e.head
+				+e('h2').heading.heading О наших проектах !{''}
+					strong пишут...
+			+e.body
+				+container-33()
+					- var data=getData('support')
+					- var length = data.length
+					- var n = 0
+						while n < length
+							+col-33()
+								+support-card(data[n])
+								- n++
+
+	+b('section').support
+		+box()
+			+e.head
+				+e('h2').heading.heading ... наши проекты !{''}
+					strong поддерживают
+			+e.body
+				.container-33
+					.row-33
+						- var data=getData('support-companies')
+						- var length = data.length
+						- var n = 0
+							while n < 3
+								+col-33()
+									+support-card-small(data[n])
+									- n++
+					.row-33
+						while n < 6
+							+col-33()
+								+support-card-small(data[n])
+								- n++
+
+
+
+mixin support-card(item)
+	+b('section').support-card
+		+e('a')(href=item.href, target='_blank').link
+		+e.head
+			+e.logo
+				if item.author === 'kyky'
+					+icon('kyky').support-card__logo-img.support-card__logo-img-icon
+				else
+					+e('img')(src='./assets/images/'+item.author+'.png',
+										srcset='./assets/images/'+item.author+'@2x.png 2x, ./assets/images/'+item.author+'.png 1x'
+										).logo-img
+		+e.body
+			+e('a')(href=item.href, target='_blank').text.link
+				| !{item.title}
+			+e.comment
+				+e('span').comment-link
+					+icon('comment').comment-icon
+					+e.comment-count.js-count
+						| !{item.comments}
+
+mixin support-card-small(item)
+	+b('section').support-card-small
+		if item.company === 'belgazprombank'
+			+e.logo
+				+icon('belgazprombank').support__icon-bgpb.support-card-small__logo-img
+		else if item.company === 'epam'
+			+e.logo.support-card-small__logo--epam
+				+icon('epam').support__icon-epam.support-card-small__logo-img
+		else if item.company === 'lwo'
+			+e.logo.support-card-small__logo--lwo
+				+icon('lwo').support__icon-lwo.support-card-small__logo-img
+		else
+			+e.logo
+				+e('img')(src='./assets/images/'+item.company+'.png',
+								srcset='./assets/images/'+item.company+'@2x.png 2x, ./assets/images/'+item.company+'.png 1x'
+								).logo-img

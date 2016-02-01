@@ -1,0 +1,20 @@
+rupture.scale =        0        320px       480px       720px       1024px      1360px
+//                     └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────
+// Slice numbers:           1           2           3           4           5           6
+// rupture.scale-names:    'xs'        's'         'm'         'l'         'xl'        'hd'
+//							               						   mobile       |   tablet  |  desktop  |  hd ...
+rupture.scale-names = 'xs' 's' 'm' 'l' 'xl' 'hd'
+rupture.desktop-cutoff = 1024px
+rupture.hd-cutoff = 1360px
+rupture.anti-overlap = -1px
+rupture.mobile-cutoff = 720px
+
+@import 'sprites/*'
+@import 'helpers/svg-size'
+@import 'helpers/variables'
+@import 'helpers/mixins'
+@import 'helpers/fonts'
+@import 'helpers/optimize'
+@import 'helpers/base'
+
+@import '../blocks/**/*'

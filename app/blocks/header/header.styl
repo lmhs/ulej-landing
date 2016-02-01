@@ -1,0 +1,308 @@
+.header
+	overflow hidden
+	&__inner
+		position relative
+		max-width 1200px
+		margin-x auto
+
+	&__bg-img-clip
+		position absolute
+		z-index 0
+		top 0
+		left 50%
+		margin-left -580px
+		opacity 0
+		will-change opacity
+		transition opacity 2s linear
+
+		filter drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.22))
+		+mobile()
+			transform translate3d(0,-200px,0)
+
+
+	&__bg-img
+		position absolute
+		z-index 0
+		top 0
+		left 50%
+		margin-left -560px
+		+mobile()
+			margin-left 0
+			left auto
+			top auto
+		+below(660px)
+			width 660px
+			height 440px
+		+below(480px)
+			margin-left -420px
+			left 50%
+
+
+	&__bg-clip
+		position relative
+		top 0
+		left 50%
+		margin-left -580px
+		height 860px
+		width 1160px
+		padding-top 260px
+		+below(1160px)
+			width 100%
+			margin-left auto
+			left 0
+			right 0
+		+mobile()
+			padding-top 170px
+			height 650px
+			background-position-y -200px
+			padding-x 20px
+
+
+		&:before
+		&:after
+			content ''
+			position absolute
+			display block
+			background-color #FFF
+			top 0
+			width 100%
+			bottom 0
+		&:before
+			left -100%
+		&:after
+			right -100%
+
+	&__content
+		position relative
+
+	&__hexagon-items
+		position absolute
+		top -400px
+		right 40px
+		+below(1160px)
+			right -90px
+		+below(960px)
+			display none
+
+	&__heading
+		color #FFF
+		font-family openSans
+
+		font-weight semibold
+		font-size 40px
+		text-align center
+		text-shadow 0px 1px 48.02px rgba(0, 0, 0, 0.88)
+
+		position relative
+		z-index 1
+		+mobile()
+			font-size 24px
+			line-height 30px
+		small
+			font-weight regular
+			display block
+			margin-top 14px
+			font-size 19px
+			color #DDD
+			+mobile()
+				font-size 14px
+				line-height 20px
+				color #FFF
+
+	&__subheader
+		position relative
+		text-align center
+		padding-top 70px
+		padding-bottom 80px
+		z-index 0
+		+mobile()
+			padding 30px 25px
+
+		&:before
+			content ''
+			display block
+			height 1px
+			background-image linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+			position absolute
+			top -1px
+			width 1000px
+			left 50%
+			margin-left -500px
+			z-index -1
+			+mobile()
+				left 20px
+				right 20px
+				width auto
+				margin-left auto
+
+
+
+	&__subheading
+		+mobile()
+			font-size 24px
+			line-height 1.2
+		strong
+			font-weight bold
+
+	&__subsection
+		font-size 0
+		text-align center
+		padding-x 75px
+		+mobile()
+			padding-x 20px
+
+.half-subsection
+	width 50%
+	display inline-block
+	vertical-align top
+	font-family openSans
+
+	position relative
+	padding 50px 40px 80px
+
+
+	+mobile()
+		width 100%
+		padding 25px 60px
+
+	&:before
+		content ''
+		position absolute
+		top -1px
+		height 1px
+		background-image linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+
+	&--left
+		// padding-right 30px
+		// padding-left 150px
+		+mobile()
+			padding-x 0
+		&:before
+			left 0
+			right 40px
+			+mobile()
+				right 20px
+				left 20px
+	&--right
+		// padding-left 100px
+		// padding-right 150px
+		+mobile()
+			padding-x 0
+		&:before
+			left 40px
+			right 0
+			+mobile()
+				right 20px
+				left 20px
+
+	&__content
+		color #171717
+		text-transform uppercase
+		font-weight bold
+		text-align left
+		display inline-block
+		vertical-align top
+		white-space nowrap
+		+mobile()
+			// width 200px
+			font-size 12px
+			line-height 16px
+			display block
+
+	&__strong
+		display inline-block
+		vertical-align top
+		font-size 48px
+		font-weight semibold
+		line-height 41px
+		margin-right 15px
+		+mobile()
+			font-size 34px
+			line-height 32px
+			width 40%
+			text-align right
+
+	&__description
+		display inline-block
+		vertical-align top
+		font-size 18px
+		line-height 21px
+
+.svg-defs
+	position absolute
+	width 0
+	height 0
+
+.help-block
+	position absolute
+	z-index 1
+	top 560px
+	left 30px
+	padding 16px 20px
+	width 280px
+	border-radius 6px
+	background-color #fff
+	border 1px dashed #CCC
+	font-size 14px
+	line-height 20px
+	color #333
+	+below(1160px)
+		top 600px
+	+below(1140px)
+		top 690px
+	+below(960px)
+		bottom 37px
+		top auto
+		left 50%
+		margin-left -140px
+	+mobile()
+		left 20px
+		right 20px
+		margin-left auto
+		width auto
+
+	&__phone
+		margin-top 5px
+		margin-bottom 5px
+		display block
+		text-decoration none
+		color #000
+		font-size 18px
+		font-weight semibold
+
+.bg-green
+	position absolute
+	top 0
+	left 50%
+	margin-left -540px
+	width 1120px
+	height 660px
+	+mobile()
+		top -200px
+
+
+.tile-header__image
+	background #333
+	opacity 0
+	will-change opacity
+	transition opacity 2s ease-in-out
+	&--is-loaded
+		opacity 1
+	&--small
+		filter url(index.html#blurry)
+		filter blur(40px)
+		filter unquote('progid:DXImageTransform.Microsoft.Blur(PixelRadius=50)')
+
+.tile__gradient
+	+mobile()
+		width 770px
+		height 440px
+		transform translate(-350px,-120px)
+
+.clipping-bg
+	+mobile()
+		transform translate(350px,120px)
+
+
+.bg-img-clip--is-visible
+	opacity 1

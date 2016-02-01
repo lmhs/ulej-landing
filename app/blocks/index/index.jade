@@ -1,0 +1,23 @@
+include ../content/content
+include ../container/container
+include ../history/history
+include ../how-works/how-works
+include ../projects/projects
+include ../support/support
+include ../banner/banner
+
+
+include ../subtitle/subtitle
+include ../list/list
+include ../col/col
+include ../popup/popup
+
+mixin index()
+	+b.index
+		+history
+		+how-works
+		+projects
+		+support
+		+box()
+			+banner
+

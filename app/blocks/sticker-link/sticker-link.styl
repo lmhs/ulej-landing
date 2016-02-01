@@ -1,0 +1,73 @@
+.sticker-link
+	display block
+	text-align center
+	text-decoration none
+
+	width 180px
+	height 195px
+
+	color #16bb7f
+
+	&__bg
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+		filter drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.22))
+		display block
+		&-mobile
+			display none
+			+mobile()
+				display block
+
+	&__inner
+		position absolute
+		top 50%
+		left 0
+		width 100%
+		margin-top -40px
+
+	&:hover
+		color #00A273
+		cursor pointer
+
+	&:before
+		display inline-block
+
+		height 100%
+
+		content ''
+		vertical-align middle
+
+	&__heading
+		font-size 22px
+		color #FFF
+		line-height 24px
+		font-family robotoCond
+		display inline-block
+		vertical-align middle
+		+mobile()
+			display none
+		small
+			font-family openSans
+			color #E5FFF6
+			font-size 14px
+			display block
+			margin-top 8px
+
+
+.header__sticker-link
+	position absolute
+	right 215px
+	top 416px
+	z-index 2
+
+	+below(1160px)
+		right 127px
+
+	+mobile()
+		right 20px
+		top 365px
+		width 74px
+		height 80px

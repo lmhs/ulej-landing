@@ -1,0 +1,44 @@
+mixin history()
+	+b('section').history
+		-var stories = getData('stories')
+		+box()
+			+e().inner
+				i.bottom-left-hexagon
+				i.project-hexagon
+		+e('h2').heading.heading Истории !{''}
+			strong успеха
+		+e.stories-cards.js-cards-carousel
+			each item in stories
+				+e.story-card-wrap
+					+story-card(item)
+					+popup({
+						jsClass:'js-about-project-popup-'+item.id,
+						heading: item.title,
+						type: 'about-project',
+						message: item.bigText,
+						author: item.author
+					})
+
+		+e.stories-text.js-stories-carousel
+			each item in stories
+				+story(item)
+
+
+mixin story-card(item)
+	+b('section').story-card&attributes(attributes)
+		+e.head
+			+e('h3').title !{item.title}
+				small !{item.sponsors}
+		+e.body
+			+e.img-wrap
+				+e('img')(src="./assets/images/"+ item.project, width='290', height='200', alt=item.title).img
+			+e('strong').price !{item.sum}
+		+e.foot
+			+e.author-img-wrap
+				+e('img')(src="./assets/images/"+ item.avatar, width='60', height='60', alt=item.author).author-img
+			+e.author-name !{item.author}
+
+mixin story(item)
+	+b('section').story&attributes(attributes)
+		+e.text !{item.text}
+			+e('a')(class='more-link js-open-about-project-popup-'+item.id, href=jv0) Ещё...

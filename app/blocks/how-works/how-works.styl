@@ -1,0 +1,67 @@
+.how-works
+	padding-top 80px
+	padding-bottom 90px
+	text-align center
+	+mobile()
+		padding-top 30px
+		padding-bottom 0
+
+	.content
+		+below(800px)
+			padding-x 0
+	.container
+		+below(780px)
+			display block
+
+	&__heading
+		margin-bottom 80px
+		+mobile()
+			margin-bottom 30px
+
+.how-col-33
+	position relative
+	+below(950px)
+		width 50%
+		margin-bottom 35px
+	+below(600px)
+		width 100%
+	& + &
+		&:before
+			content ''
+			retinaSprite $how_arrow_group
+			position absolute
+			left 0
+			margin-left -83px
+			top 100px
+			+below(970px)
+				content none
+
+.how-item
+	width 240px
+	display inline-block
+
+	&__icon
+		display inline-block
+		vertical-align top
+	&__heading
+		color #171717
+		font-size 18px
+		line-height 30px
+		font-family openSans
+		font-weight bold
+		margin-top 65px
+		margin-bottom 15px
+		+mobile()
+			margin-top 30px
+	&__caption
+		color #666
+		font-size 14px
+		line-height 20px
+
+
+.icon-how-1
+	retinaSprite $icon_how_1_group
+.icon-how-2
+	retinaSprite $icon_how_2_group
+.icon-how-3
+	retinaSprite $icon_how_3_group

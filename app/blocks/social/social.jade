@@ -1,0 +1,26 @@
+mixin social()
+	+b('section').social.js-social-section
+		+b('svg')(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='74', height='82', preserveaspectratio='xMidYMid', viewbox='0 0 74 82').social-link&attributes(attributes)
+			a(xlink:href=jv0).js-toggle-social
+				path(fill='currentColor', d='M68.754 17.258L42.252 2.368c-3.25-1.824-7.252-1.824-10.5 0L5.25 17.26C2 19.083 0 22.455 0 26.108v29.777c0 3.65 2 7.025 5.25 8.85l26.502 14.89c3.248 1.824 7.25 1.824 10.5 0l26.502-14.89c3.25-1.825 5.25-5.2 5.25-8.85V26.107c0-3.652-2-7.024-5.25-8.85z')
+				text(fill='#FFF', x='38', text-anchor='middle', y='63')
+					| 322
+				path(fill='#FFF', d='M42.72 22c-2.337 0-4.42 1.182-5.717 3.02-1.3-1.838-3.38-3.02-5.72-3.02-4.03 0-7.28 3.283-7.28 7.353 0 5.778 13 16.283 13 16.283s13-10.505 13-16.283c0-4.07-3.25-7.353-7.28-7.353z')
+		+e.content
+			+e('a')(href=jv0).block.social__block--vk
+				+e.block-icon-wrap
+					+icon('vk').social__vk
+				+e.block-counter
+					| 322
+			+e('a')(href=jv0).block.social__block--fb
+				+e.block-icon-wrap
+					+icon('fb').social__fb
+				+e.block-counter
+					| 322
+			+e('a')(href=jv0).block.social__block--tw
+				+e.block-icon-wrap
+					+icon('tw').social__tw
+				+e.block-counter
+					| 322
+
+

@@ -1,0 +1,182 @@
+include ../logo/logo
+include ../dark/dark
+include ../title/title
+include ../social/social
+
+include ../description/description
+include ../sticker-link/sticker-link
+
+include ../svg-defs/svg-defs
+
+mixin header()
+	+svg-defs()
+
+	+popup({
+						jsClass:'js-what-is-popup',
+						heading: 'Что такое',
+						strong: 'краудфандинг?',
+						type: 'what-is'
+	})
+	+popup({
+						jsClass:'js-callback-popup',
+						heading: 'звонок',
+						strong: 'Обратный',
+						type: 'callback'
+	}).popup--callback
+	+popup({
+						jsClass:'js-send-popup',
+						heading: 'о проекте',
+						strong: 'Рассказать',
+						type: 'send'
+	}).popup--send
+	+popup({
+						jsClass:'js-callback-message-popup',
+						heading: 'Спасибо!',
+						type: 'message',
+						message: 'Очень-очень скоро мы перезвоним вам! :)'
+	}).popup--message
+	+popup({
+						jsClass:'js-send-message-popup',
+						heading: 'Большое спасибо за уделeнное время!',
+						type: 'message',
+						message: 'Совсем скоро с вами свяжется наш менеджер, и мы начнем обсуждение проекта.'
+	}).popup--message
+
+	+b.header&attributes(attributes)
+		+e.inner
+			+e.bg-clip
+				+icon('green').bg-green
+				+e('svg')(width='1120', height='640').bg-img-clip
+					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient2)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
+					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01-small.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.tile-header__image--small.tile-header__image--is-loaded.js-main-bg-image-small.js-change-svg-position
+					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-bg-image.js-change-svg-position
+					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
+				script(type='text/javascript').
+					(function(){
+						var d = document;
+						var e = d.documentElement;
+						var g = d.getElementsByTagName('body')[0];
+						var x = e.clientWidth || g.clientWidth;
+						var y = e.clientHeight|| g.clientHeight;
+						var svgPos = d.querySelectorAll('.js-change-svg-position');
+						var clip = d.querySelectorAll('.clipping-bg')[0];
+						var svgElement = d.querySelectorAll('.header__bg-img-clip')[0];
+
+						// массив фоновых картинок
+						var images = [
+													'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
+													'Main-06.jpg','Main-07.jpg','Main-08.jpg','Main-09.jpg','Main-10.jpg','Main-11.jpg',
+													'Main-12.jpg','Main-13.jpg','Main-14.jpg'];
+
+						// массив маленьких фоновых картинок
+						var imagesSmall = [
+													'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
+													'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
+													'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
+
+						// в ios safari появлялись артефакты при смене ширины
+						if (x >= 720) {
+							for (var i = 0; i < svgPos.length; i++) {
+								svgPos[i].setAttribute('width', '1120');
+								svgPos[i].setAttribute('height', '640');
+								svgPos[i].setAttribute('transform', 'translate(-560,-320)');
+								svgPos[i].setAttribute('x', '50%');
+								svgPos[i].setAttribute('y', '50%');
+							}
+							clip.setAttribute('transform', 'translate(560,320)');
+							clip.setAttribute('x', '50%');
+							clip.setAttribute('y', '50%');
+						}
+						svgElement.classList.add('bg-img-clip--is-visible');
+						svgElement.style.willChange = 'auto';
+
+
+						var img = d.querySelectorAll('.js-main-bg-image')[0];
+						var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
+
+						// отображение большой картинки после загрузки замыленной маленькой
+						(function(){
+							var image = new Image();
+
+							image.onload = function () {
+
+								img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', this.src);
+
+								img.classList.add('tile-header__image--is-loaded');
+								imgSmall.classList.remove('tile-header__image--is-loaded');
+							};
+
+							image.src = './assets/images/' + images[0];
+						})()
+
+
+
+						var imgO = new Array();
+
+						// предзагрузка фоновых изображений и сохранение объектов в массив
+						function preload(imageArray, index) {
+							index = index || 0;
+							if (imageArray && imageArray.length > index) {
+
+								imgO[index] = new Image ();
+								imgO[index].onload = function() {
+									preload(imageArray, index + 1);
+								}
+								imgO[index].src = './assets/images/' + imageArray[index];
+							}
+						}
+
+						preload(images);
+
+						var current = -1;
+						var speed = 5000;
+
+						function swapImage() {
+							current = (++current > images.length - 1) ? 0 : current;
+							img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO[current].src);
+							setTimeout(swapImage, speed);
+						}
+
+						window.onload = function () {
+							swapImage();
+						}
+					})()
+				+e('h1').heading Финансирование проектов в Улье
+					small Ulej.by&nbsp;&mdash; первая в Беларуси краудфандинговая площадка.
+				+social()
+				+sticker-link().header__sticker-link.js-open-what-is
+				+logo
+				+b.help-block
+					+e.text Звоните нам!
+					+e('a')(href='tel:+375291323123').phone +375 (29) 132-31-23
+					+e.text
+						| Вы также !{''}
+						a(href=jv0).link.js-open-callback можете заказать звонок
+						|  от нашего консультанта.
+			+e.content
+				+box()
+					+e.subheader
+						+e('h2').subheading.heading
+							| За полгода активной работы Улья
+							br
+							| общая сумма финансирования составила !{''}
+							strong 700&nbsp;000&nbsp;000
+							| &nbsp;рублей.
+					+e('img')(src='./assets/images/header-hexagon-items.png',
+								srcset='./assets/images/header-hexagon-items@2x.png 2x, ./assets/images/header-hexagon-items.png 1x'
+								).hexagon-items
+					+e.subsection
+						+b.half-subsection.half-subsection--left
+							+e.content
+								+e.strong 1&nbsp;700
+								+e.description Умных
+									br
+									| инвесторов
+						+b.half-subsection.half-subsection--right
+							+e.content
+								+e.strong 15
+								+e.description Категорий
+									br
+									| проектов
+
+

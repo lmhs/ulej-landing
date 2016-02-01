@@ -1,0 +1,172 @@
+.support
+	padding-top 30px
+	padding-bottom 60px
+	position relative
+
+	+mobile()
+		padding-bottom 30px
+
+	&-write
+		padding-top 40px
+		+mobile()
+			padding-bottom 0
+		&:before
+			content ''
+			display block
+			height 1px
+			position absolute
+			left 50%
+			width 1000px
+			margin-left -500px
+			top -1px
+			background-image linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+			+below(1000px)
+				width auto
+				left 20px
+				right 20px
+				margin-left auto
+
+
+	&__heading
+		text-align center
+		margin-top 20px
+		margin-bottom 70px
+		+mobile()
+			line-height 1.2
+			margin-top 0
+			margin-bottom 25px
+
+	&__body
+		font-size 0
+		text-align center
+
+
+
+.support-card
+	display inline-block
+	vertical-align top
+	font-size 14px
+	border-radius 6px
+	border 1px solid rgb(204, 204, 204)
+	max-width 290px
+	height 278px
+	position relative
+	&:hover
+		border-color #999
+
+	+mobile()
+		margin-bottom 10px
+
+	&__link
+		&:after
+			position absolute
+			content ''
+			equal(-1px)
+			z-index 1
+
+	&__head
+	&__body
+		height 50%
+
+	&__logo
+		position relative
+		width 100%
+		height 100%
+		border 25px solid rgba(0,0,0,0)
+		color #000
+
+		&-img
+			position absolute
+			equal()
+			max-width 100%
+			max-height 100%
+			margin auto
+			transform translateZ(0)
+
+			&-icon
+				width 148px
+				height 38px
+
+	&__body
+		position relative
+		padding 25px
+		text-align center
+		&:before
+			content ''
+			position absolute
+			top -1px
+			right 25px
+			left 25px
+			height 1px
+			background linear-gradient( 0deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+
+	&__text
+		display block
+		line-height 22px
+		height 44px
+		overflow hidden
+		margin-bottom 22px
+		font-weight semibold
+		position relative
+		z-index 2
+		text-decoration none
+		&:hover
+			text-decoration underline
+
+	.comment-icon
+		width 14px
+		height 12px
+		color #666
+		margin-right 6px
+
+	&__comment
+		&-link
+			color #666
+		&-count
+			color #666
+
+
+.support-card-small
+	display inline-block
+	vertical-align top
+	border-radius 6px
+	border 1px solid rgb(204, 204, 204)
+	margin-bottom 40px
+	max-width 290px
+	width 100%
+	height 138px
+	+mobile()
+		margin-bottom 10px
+
+	&__logo
+		position relative
+		width 100%
+		height 100%
+		border 25px solid rgba(0,0,0,0)
+
+		&--epam
+		&--lwo
+			border-width 45px
+
+		&-img
+			position absolute
+			equal()
+			max-width 100%
+			max-height 100%
+			margin auto
+			transform translateZ(0)
+
+
+.support__icon
+	&-bgpb
+		color #21518F
+		width 210px
+		height 60px
+	&-lwo
+		height 60px
+		width 178px
+	&-epam
+		width 157px
+		height 55px
+		margin-top 10px
+
