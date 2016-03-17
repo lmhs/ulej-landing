@@ -1,6 +1,6 @@
 .how-works
 	padding-top 80px
-	padding-bottom 90px
+	padding-bottom 40px
 	text-align center
 	+mobile()
 		padding-top 30px
@@ -17,6 +17,23 @@
 		margin-bottom 80px
 		+mobile()
 			margin-bottom 30px
+
+	&__send-btn-wrap
+		text-align center
+		margin-top 65px
+		position relative
+		&:after
+			content ''
+			display block
+			height 1px
+			width 100%
+			position absolute
+			top 50%
+			left 0
+			z-index -1
+			background-image linear-gradient( 90deg, rgba(204,204,204,0.5) 0%, rgb(204,204,204) 50%, rgba(204,204,204,0.5) 100%)
+
+
 
 .how-col-33
 	position relative
@@ -43,6 +60,8 @@
 	&__icon
 		display inline-block
 		vertical-align top
+		width 202px
+		height 219px
 	&__heading
 		color #171717
 		font-size 18px
@@ -57,11 +76,3 @@
 		color #666
 		font-size 14px
 		line-height 20px
-
-
-.icon-how-1
-	retinaSprite $icon_how_1_group
-.icon-how-2
-	retinaSprite $icon_how_2_group
-.icon-how-3
-	retinaSprite $icon_how_3_group

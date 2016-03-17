@@ -22,6 +22,8 @@ mixin history()
 		+e.stories-text.js-stories-carousel
 			each item in stories
 				+story(item)
+		+e.send-btn-wrap
+			+getFinances()
 
 
 mixin story-card(item)
