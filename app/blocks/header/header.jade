@@ -47,7 +47,7 @@ mixin header()
 				+e('svg')(width='1120', height='640').bg-img-clip
 					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient2)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
 					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01-small.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.tile-header__image--small.tile-header__image--is-loaded.js-main-bg-image-small.js-change-svg-position
-					image(width='770', height='440', x='50%', y='50%', xlink:href='./assets/images/Main-01.jpg', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-bg-image.js-change-svg-position
+					image(width='770', height='440', x='50%', y='50%', transform='translate(-350,-120)', clip-path='url(#clipping-bg)').tile-header__image.js-main-bg-image.js-change-svg-position
 					rect(width='770',height='440',x='50%',y='50%',transform='translate(-350,-120)', fill='url(#gradient)', clip-path='url(#clipping-bg)').tile__gradient.js-change-svg-position
 				script(type='text/javascript').
 					(function(){
@@ -63,16 +63,18 @@ mixin header()
 						var imgSmall = d.querySelectorAll('.js-main-bg-image-small')[0];
 
 						// массив фоновых картинок
-						var images = [
-													'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
-													'Main-06.jpg','Main-07.jpg','Main-08.jpg','Main-09.jpg','Main-10.jpg','Main-11.jpg',
-													'Main-12.jpg','Main-13.jpg','Main-14.jpg'];
+						var images = ['Main-01.jpg'];
+						//- var images = [
+						//- 							'Main-01.jpg','Main-02.jpg','Main-03.jpg','Main-04.jpg','Main-05.jpg',
+						//- 							'Main-06.jpg','Main-07.jpg','Main-08.jpg','Main-09.jpg','Main-10.jpg','Main-11.jpg',
+						//- 							'Main-12.jpg','Main-13.jpg','Main-14.jpg'];
 
 						// массив маленьких фоновых картинок
-						var imagesSmall = [
-													'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
-													'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
-													'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
+						var imagesSmall = ['Main-01-small.jpg'];
+						//- var imagesSmall = [
+						//- 							'Main-01-small.jpg','Main-02-small.jpg','Main-03-small.jpg','Main-04-small.jpg','Main-05-small.jpg',
+						//- 							'Main-06-small.jpg','Main-07-small.jpg','Main-08-small.jpg','Main-09-small.jpg','Main-10-small.jpg','Main-11-small.jpg',
+						//- 							'Main-12-small.jpg','Main-13-small.jpg','Main-14-small.jpg'];
 
 
 						function addClass(el, cls) {
@@ -117,46 +119,27 @@ mixin header()
 
 						addClass(imgSmall,'tile-header__image--is-loaded');
 
-						var imgO = new Array();
+						var imgO = new Image();
 						// чередование
 						var current = -1;
-						var start = true;
-						var speed = 10000;
-						preload(images);
 
-						window.onload = function(){
-							swapImage();
-						};
-
-						// предзагрузка фоновых изображений и сохранение объектов в массив
-						function preload(imageArray, index) {
-							index = index || 0;
-
-							if (imageArray && imageArray.length > index) {
-
-								imgO[index] = new Image ();
-								imgO[index].onload = function() {
-									preload(imageArray, index + 1);
-								}
-								imgO[index].src = './assets/images/' + imageArray[index];
-							}
-						}
-
-						function swapImage() {
-							current = (++current > images.length - 1) ? 0 : current;
-
-							if (start) {
+						window.onload = function() {
+							imgO.onload = function() {
 								removeClass(imgSmall, 'tile-header__image--is-loaded');
 								addClass(img, 'tile-header__image--is-loaded');
-								start = false;
-								imgSmall.parentElement.removeChild(imgSmall);
+								img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO.src);
 							}
-							img.setAttributeNS('http://www.w3.org/1999/xlink', 'xlink:href', imgO[current].src);
-							setTimeout(swapImage, speed);
-						}
+							imgO.src = './assets/images/' + images[0];
+
+						};
 					})()
-				+e('h1').heading Финансирование проектов в Улье
-					small Ulej.by&nbsp;&mdash; первая в Беларуси краудфандинговая площадка.
+				+e('h1').heading Финансирование ваших идей
+					small
+						| Улей&nbsp;&mdash; первая в Беларуси !{''}
+						+e('a')(href=jv0).underline.js-open-what-is краудфандинговая
+						|  площадка.
+				+e.action-wrap
+					+getFinances()
 				+social()
 				+sticker-link().header__sticker-link.js-open-what-is
 				+logo
@@ -174,7 +157,9 @@ mixin header()
 							| За полгода активной работы Улья
 							br
 							| общая сумма финансирования составила !{''}
-							strong 700&nbsp;000&nbsp;000
+							br
+							| более !{''}
+							strong 1&nbsp;000&nbsp;000&nbsp;000
 							| &nbsp;рублей.
 					+e('img')(src='./assets/images/header-hexagon-items.png',
 								srcset='./assets/images/header-hexagon-items@2x.png 2x, ./assets/images/header-hexagon-items.png 1x'
@@ -183,14 +168,14 @@ mixin header()
 						+b.half-subsection.half-subsection--left
 							+e.content
 								+e.strong 1&nbsp;700
-								+e.description Умных
+								+e.description Активных
 									br
 									| инвесторов
 						+b.half-subsection.half-subsection--right
 							+e.content
 								+e.strong 15
-								+e.description Категорий
+								+e.description Различных
 									br
-									| проектов
+									| направлений
 
 
