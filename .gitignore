@@ -17,6 +17,7 @@ dist
 *.swo
 *.swp
 *.vi
+*.psd
 *~
 
 # OS or Editor folders

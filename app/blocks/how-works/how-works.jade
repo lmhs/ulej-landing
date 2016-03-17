@@ -11,22 +11,27 @@ mixin how-works()
 				+container-33()
 					+col-33().how-col-33
 						+b.how-item
-							+e('i').icon.icon-how-1
+							+e('svg')(xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink").icon
+								use(xlink:href="./assets/images/icon.svg#icon_bulb")
 							+e('h3').heading
-								| Проект
+								| Идея
 							+e('p').caption
-								| Финансирование могут получить проекты из любой области. Важна оригинальность вашей задумки.
+								| Для начала нужен проект, на реализацию которого вам необходимы деньги.
 					+col-33().how-col-33
 						+b.how-item
-							+e('i').icon.icon-how-2
+							+e('svg')(xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink").icon
+								use(xlink:href="./assets/images/icon.svg#icon_ulej-site")
 							+e('h3').heading
 								| Размещение в Улье
 							+e('p').caption
-								| Подайте заявку на размещение проекта в Улье – наши менеджеры обязательно свяжутся с вами.
+								| Затем необходимо подать заявку, чтобы менеджеры Улья могли проконсультировать вас.
 					+col-33().how-col-33
 						+b.how-item
-							+e('i').icon.icon-how-3
+							+e('svg')(xmlns="http://www.w3.org/2000/svg", xmlns:xlink="http://www.w3.org/1999/xlink").icon
+								use(xlink:href="./assets/images/icon.svg#icon_cash")
 							+e('h3').heading
 								| Финансирование
 							+e('p').caption
-								| Ваш проект обязательно получит финансирование, если окажется нужным и интересным обществу.
+								| Финансирование начинается после публикации проекта на сайте Ulej.by.
+				+e.send-btn-wrap
+					+getFinances()
