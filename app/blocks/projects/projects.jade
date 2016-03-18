@@ -8,7 +8,7 @@ mixin projects()
 				strong идея
 				| ?!{''}
 				br
-				| Мы можем привлечь !{''}
+				| Мы поможем привлечь !{''}
 				strong деньги
 				| !
 		+content()
@@ -30,12 +30,7 @@ mixin projects()
 									i.projects-right-hexagon
 							+e.tiles-row.tiles-row-3
 								+e.tiles-row__inner
-									while n < 18
-										+tile({"count":n+1,"data":data[n]})
-										- n++
-							+e.tiles-row.tiles-row-4
-								+e.tiles-row__inner
-									while (n < 22)
+									while (n < 21)
 										+tile({"count":n+1,"data":data[n]})
 										- n++
 
