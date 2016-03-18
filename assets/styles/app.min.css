@@ -715,7 +715,7 @@ button:hover,
   margin-left: -580px;
   height: 860px;
   width: 1160px;
-  padding-top: 260px;
+  padding-top: 245px;
 }
 
 .header__bg-clip:before,
@@ -750,7 +750,7 @@ button:hover,
 .header__heading {
   color: #fff;
   font-family: 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 40px;
   text-align: center;
   text-shadow: 0px 1px 48.02px rgba(0,0,0,0.88);
@@ -877,6 +877,7 @@ button:hover,
   vertical-align: top;
   font-size: 18px;
   line-height: 21px;
+  font-weight: 700;
 }
 
 .svg-defs {
@@ -984,7 +985,8 @@ button:hover,
 
 .history__send-btn-wrap {
   text-align: center;
-  margin-top: 4px;
+  margin-top: 30px;
+  display: none;
 }
 
 .story-card {
@@ -1325,7 +1327,7 @@ button:hover,
 
 .how-works {
   padding-top: 80px;
-  padding-bottom: 40px;
+  padding-bottom: 35px;
   text-align: center;
 }
 
@@ -1335,7 +1337,7 @@ button:hover,
 
 .how-works__send-btn-wrap {
   text-align: center;
-  margin-top: 65px;
+  margin-top: 30px;
   position: relative;
 }
 
@@ -1343,6 +1345,7 @@ button:hover,
   content: '';
   display: block;
   height: 1px;
+  margin-top: -1px;
   width: 100%;
   position: absolute;
   top: 50%;
@@ -1357,6 +1360,7 @@ button:hover,
 
 .how-col-33 {
   position: relative;
+  margin-bottom: 35px;
 }
 
 .how-col-33 + .how-col-33:before {
@@ -2161,19 +2165,6 @@ html.mfp-helper body {
   transform: translateY(-80px);
 }
 
-.tiles-row-4 {
-  margin-left: 65px;
-}
-
-.tiles-row-4 .tile a,
-.isie .tiles-row-4 .tile__element {
-  -webkit-transform: translateY(-120px);
-  -moz-transform: translateY(-120px);
-  -ms-transform: translateY(-120px);
-  -o-transform: translateY(-120px);
-  transform: translateY(-120px);
-}
-
 .projects-right-hexagon {
   background-image: url("../images/sprites/sprites.png");
   background-position: -352px -141px;
@@ -2832,7 +2823,6 @@ svg.tile__element {
 @media only screen and (max-width: 949px) {
   .how-col-33 {
     width: 50%;
-    margin-bottom: 35px;
   }
 }
 
@@ -3043,11 +3033,11 @@ svg.tile__element {
   }
 
   .header__bg-clip {
-    padding-top: 170px;
+    padding-top: 150px;
     height: 650px;
     background-position-y: -200px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
   .header__heading {
@@ -3116,8 +3106,13 @@ svg.tile__element {
   .half-subsection__strong {
     font-size: 34px;
     line-height: 32px;
-    width: 40%;
+    width: 50%;
     text-align: right;
+  }
+
+  .half-subsection__description {
+    font-size: 12px;
+    line-height: 16px;
   }
 
   .help-block {
@@ -3165,6 +3160,10 @@ svg.tile__element {
     display: none;
   }
 
+  .history__send-btn-wrap {
+    display: block;
+  }
+
   .story-card {
     margin-left: 15px;
     margin-right: 15px;
@@ -3196,11 +3195,18 @@ svg.tile__element {
 
   .how-works {
     padding-top: 30px;
-    padding-bottom: 0;
+    padding-bottom: 60px;
   }
 
   .how-works__heading {
     margin-bottom: 30px;
+  }
+
+  .how-works__send-btn-wrap:after {
+    width: -webkit-calc(100% - 44px);
+    width: -moz-calc(100% - 44px);
+    width: calc(100% - 44px);
+    left: 22px;
   }
 
   .how-item__heading {
@@ -3208,6 +3214,7 @@ svg.tile__element {
   }
 
   .logo {
+    top: 24px;
     left: 50%;
     margin-left: -47px;
   }
@@ -3253,12 +3260,14 @@ svg.tile__element {
   .projects .content {
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 14px;
   }
 
   .projects__heading {
     font-size: 18px;
     line-height: 1.1;
     max-width: 320px;
+    margin-bottom: 46px;
     font-weight: 600;
   }
 
@@ -3274,101 +3283,35 @@ svg.tile__element {
   }
 
   .projects__tiles {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -moz-box-orient: horizontal;
-    -moz-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: start;
-    -webkit-align-items: flex-start;
-    -moz-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-align-content: flex-start;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-    -moz-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
     white-space: normal;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
     margin-left: 0;
     margin-right: 0;
-    width: 2420px;
   }
 
-  .projects__tiles:after {
-    content: '';
-    -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-    -moz-box-ordinal-group: 4;
-    -ms-flex-order: 3;
-    order: 3;
+  .tiles-row {
+    white-space: nowrap;
   }
 
   .tiles-row-1 {
-    -webkit-box-ordinal-group: 2;
-    -webkit-order: 1;
-    -moz-box-ordinal-group: 2;
-    -ms-flex-order: 1;
-    order: 1;
-    margin-left: 0;
+    margin-left: 10px;
   }
 
   .tiles-row-2 {
-    -webkit-box-ordinal-group: 5;
-    -webkit-order: 4;
-    -moz-box-ordinal-group: 5;
-    -ms-flex-order: 4;
-    order: 4;
-    margin-left: 106px;
+    display: none;
   }
 
   .tiles-row-3 {
-    -webkit-box-ordinal-group: 3;
-    -webkit-order: 2;
-    -moz-box-ordinal-group: 3;
-    -ms-flex-order: 2;
-    order: 2;
-    margin-left: 10px;
+    margin-left: 116px;
+    margin-right: 10px;
   }
 
   .tiles-row-3 .tile a,
   .isie .tiles-row-3 .tile__element {
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -o-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  .tiles-row-4 {
-    -webkit-box-ordinal-group: 6;
-    -webkit-order: 5;
-    -moz-box-ordinal-group: 6;
-    -ms-flex-order: 5;
-    order: 5;
-    margin-left: 10px;
-  }
-
-  .tiles-row-4 .tile a,
-  .isie .tiles-row-4 .tile__element {
-    -webkit-transform: translateY(-40px);
-    -moz-transform: translateY(-40px);
-    -ms-transform: translateY(-40px);
-    -o-transform: translateY(-40px);
-    transform: translateY(-40px);
+    -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -ms-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
+    transform: translateY(-50px);
   }
 
   .projects-right-hexagon {
