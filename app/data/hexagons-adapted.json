@@ -146,30 +146,22 @@
 	},{
 		"id": "19",
 		"href": "19.jpg",
-		"text": "Дай волю творчеству",
-		"bgColor": "rgb(13,12,20)",
-		"width" : "200",
-		"height" : "218",
-		"color": "#FFF"
-	},{
-		"id": "20",
-		"href": "20.jpg",
 		"text": "Стань вторым Гауди",
 		"bgColor": "rgb(110,26,0)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
-		"id": "21",
-		"href": "21.jpg",
+		"id": "20",
+		"href": "20.jpg",
 		"text": "Сними особенный фильм",
 		"bgColor": "rgb(7,35,83)",
 		"width" : "200",
 		"height" : "218",
 		"color": "#FFF"
 	},{
-		"id": "22",
-		"href": "22.jpg",
+		"id": "21",
+		"href": "21.jpg",
 		"text": "Проведи интересное мероприятие",
 		"bgColor": "rgb(234,176,30)",
 		"width" : "200",

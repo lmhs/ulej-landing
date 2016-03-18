@@ -175,51 +175,6 @@ $(() => {
 		});
 	}
 
-	// открытие попапа о проекте 1
-	if ($('.js-open-about-project-popup-1').length) {
-		$('.js-open-about-project-popup-1').magnificPopup({
-			items: {
-					src: '.js-about-project-popup-1',
-					preloader: false,
-					type: 'inline'
-			},
-			callbacks: Utils.magnificPopupConfiguration()
-		});
-		$('.js-about-project-popup-1').on('click', '.js-close-message-popup', function(){
-			$.magnificPopup.close();
-		});
-	}
-
-	// открытие попапа о проекте 2
-	if ($('.js-open-about-project-popup-2').length) {
-		$('.js-open-about-project-popup-2').magnificPopup({
-			items: {
-					src: '.js-about-project-popup-2',
-					preloader: false,
-					type: 'inline'
-			},
-			callbacks: Utils.magnificPopupConfiguration()
-		});
-		$('.js-about-project-popup-2').on('click', '.js-close-message-popup', function(){
-			$.magnificPopup.close();
-		});
-	}
-
-	// открытие попапа о проекте 3
-	if ($('.js-open-about-project-popup-3').length) {
-		$('.js-open-about-project-popup-3').magnificPopup({
-			items: {
-					src: '.js-about-project-popup-3',
-					preloader: false,
-					type: 'inline'
-			},
-			callbacks: Utils.magnificPopupConfiguration()
-		});
-		$('.js-about-project-popup-3').on('click', '.js-close-message-popup', function(){
-			$.magnificPopup.close();
-		});
-	}
-
 	// открытие попапа "перезвонить"
 	if ($('.js-open-callback').length) {
 		$('.js-open-callback').magnificPopup({
