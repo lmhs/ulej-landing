@@ -10,6 +10,7 @@
 	.content
 		+mobile()
 			padding-x 0
+			padding-bottom 14px
 
 
 	&__head
@@ -31,6 +32,7 @@
 			font-size 18px
 			line-height 1.1
 			max-width 320px
+			margin-bottom 46px
 			font-weight semibold
 		strong
 			font-weight semibold
@@ -60,57 +62,37 @@
 		&:after
 			width 100%
 		+mobile()
-			display flex
-			flex-direction row
-			align-items flex-start
-			align-content flex-start
-			justify-content flex-start
 			white-space normal
-			flex-wrap wrap
 			margin-left 0
 			margin-right 0
-			// fix two lines
-			width 2420px
-			&:after
-				content ''
-				order 3
 
 .tiles-row
+	+mobile()
+		white-space nowrap
 
 	&-1
 		margin-left 380px
 		+mobile()
-			order 1
-			margin-left 0
+			margin-left 10px
+
 
 	&-2
 		margin-left 275px
 		+mobile()
-			order 4
-			margin-left 106px
+			display none
 		.tile a
 		.isie & .tile__element
 			transform translateY(-40px)
 	&-3
 		margin-left 170px
 		+mobile()
-			order 2
-			margin-left 10px
+			margin-left 116px
+			margin-right 10px
 		.tile a
 		.isie & .tile__element
 			transform translateY(-80px)
 			+mobile()
-				transform translateY(0)
-	&-4
-		margin-left 65px
-		+mobile()
-			order 5
-			margin-left 10px
-		.tile a
-		.isie & .tile__element
-			transform translateY(-120px)
-			+mobile()
-				transform translateY(-40px)
+				transform translateY(-50px)
 
 .projects-right-hexagon
 	retinaSprite $projects_right_hexagon_group

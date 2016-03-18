@@ -11,13 +11,6 @@ mixin history()
 			each item in stories
 				+e.story-card-wrap
 					+story-card(item)
-					+popup({
-						jsClass:'js-about-project-popup-'+item.id,
-						heading: item.title,
-						type: 'about-project',
-						message: item.bigText,
-						author: item.author
-					})
 
 		+e.stories-text.js-stories-carousel
 			each item in stories
@@ -43,4 +36,3 @@ mixin story-card(item)
 mixin story(item)
 	+b('section').story&attributes(attributes)
 		+e.text !{item.text}
-			+e('a')(class='more-link js-open-about-project-popup-'+item.id, href=jv0) Ещё...
