@@ -1,16 +1,15 @@
-import runSequence from 'run-sequence';
 import gulp from 'gulp';
 
-gulp.task('styles:dependencies', () => (
-	runSequence(
+gulp.task('styles:dependencies', () => {(
+	gulp.parallel(
 		'sprites',
 		'icons',
 		'styles'
 	)
-));
+)});
 
 gulp.task('default', () => (
-	runSequence(
+	gulp.series(
 		[
 			'styles:dependencies',
 			'templates',
