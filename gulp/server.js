@@ -1,9 +1,9 @@
 import browserSync from 'browser-sync';
-import gulp from 'gulp';
 import gutil from 'gulp-util';
 import debuga from 'debuga';
+import gulp from 'gulp';
 
-gulp.task('server', () => (
+function server() {
 	browserSync.init({
 		files: ['dist/**/*'],
 		open: !!gutil.env.open,
@@ -19,4 +19,6 @@ gulp.task('server', () => (
 		},
 		tunnel: !!gutil.env.tunnel
 	})
-));
+}
+
+export default server;

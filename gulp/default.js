@@ -1,29 +1,32 @@
-import gulp from 'gulp';
+import {series, parallel} from 'gulp';
+import {templates} from './templates.js';
+import {server} from './server.js';
+import {watch} from './watch.js';
 
-gulp.task('styles:dependencies', () => {(
-	gulp.parallel(
-		'sprites',
-		'icons',
-		'styles'
-	)
-)});
+// function stylesDependencies() {
+// 	parallel(
+// 		sprites,
+// 		icons,
+// 		styles
+// 	)
+// }
 
-gulp.task('default', () => (
-	gulp.series(
-		[
-			'styles:dependencies',
-			'templates',
-		],
-		'server',
-		'watch'
-	)
-));
+function defaultTask() {
+	// series(
+	// 	parallel(
+	// 		stylesDependencies,
+	// 		templates,
+	// 	),
+	// 	server,
+	// 	watch
+	// )
+}
 
-gulp.task('build', () => (
-	gulp.start(
-		'styles:dependencies',
-		'templates',
-		'scripts',
-		'copy'
-	)
-));
+// export const build = () => series(
+// 	stylesDependencies,
+// 	templates,
+// 	scripts,
+// 	copy
+// );
+
+export default defaultTask;

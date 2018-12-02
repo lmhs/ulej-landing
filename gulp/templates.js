@@ -17,20 +17,22 @@ const data = {
 	timestamp: Date.now()
 };
 
-gulp.task('templates', () => (
+function templates() {
 	gulp.src('app/**/*.jade')
-		.pipe(plumber({errorHandler: errorHandler('Error in \'templates\' task')}))
-		.pipe(cached('jade'))
-		.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
-		.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
-		.pipe(jade({data}))
-		.pipe(prettify({
-			brace_style: 'expand',
-			indent_size: 1,
-			indent_char: '\t',
-			indent_inner_html: true,
-			preserve_newlines: true
-		}))
-		.pipe(rename({dirname: '.'}))
-		.pipe(gulp.dest('dist'))
-));
+	.pipe(plumber({errorHandler: errorHandler('Error in \'templates\' task')}))
+	.pipe(cached('jade'))
+	.pipe(gulpif(global.watch, inheritance({basedir: 'app'})))
+	.pipe(filter(file => /app[\\\/]pages/.test(file.path)))
+	.pipe(jade({data}))
+	.pipe(prettify({
+		brace_style: 'expand',
+		indent_size: 1,
+		indent_char: '\t',
+		indent_inner_html: true,
+		preserve_newlines: true
+	}))
+	.pipe(rename({dirname: '.'}))
+	.pipe(gulp.dest('dist'))
+}
+
+export default templates;

@@ -16,7 +16,7 @@ import minifyCss from 'gulp-minify-css';
 import csscomb from 'gulp-csscomb';
 import rename from 'gulp-rename';
 import errorHandler from 'gulp-plumber-error-handler';
-import { browsers } from '../package.json';
+import { browsers } from '../../package.json';
 
 gulp.task('styles', () => (
 	gulp.src('*.styl', {
